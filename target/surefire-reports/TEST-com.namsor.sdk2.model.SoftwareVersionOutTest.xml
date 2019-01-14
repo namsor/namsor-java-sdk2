@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.SoftwareVersionOutTest" name="softwareNameAndVersionTest" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.SoftwareVersionOutTest" name="softwareVersionTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.SoftwareVersionOutTest" name="softwareNameAndVersionTest" time="0.002"/>
+  <testcase classname="com.namsor.sdk2.model.SoftwareVersionOutTest" name="softwareVersionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SoftwareVersionOutTest" name="testSoftwareVersionOut" time="0"/>
 </testsuite>

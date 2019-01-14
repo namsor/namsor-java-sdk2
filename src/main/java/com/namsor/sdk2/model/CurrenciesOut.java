@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * CurrenciesOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T10:14:57.526+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T10:34:07.082+01:00[Europe/Berlin]")
 public class CurrenciesOut {
   public static final String SERIALIZED_NAME_CURRENCIES_ISO3 = "currenciesIso3";
   @SerializedName(SERIALIZED_NAME_CURRENCIES_ISO3)

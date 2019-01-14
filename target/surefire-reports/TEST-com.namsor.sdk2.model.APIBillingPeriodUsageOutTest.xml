@@ -67,8 +67,8 @@
   <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="billingStatusTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="stripeCurrentPeriodEndTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="usageTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="apiKeyTest" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="stripeCurrentPeriodStartTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="apiKeyTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="stripeCurrentPeriodStartTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="softLimitTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="hardLimitTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIBillingPeriodUsageOutTest" name="periodStartedTest" time="0"/>
