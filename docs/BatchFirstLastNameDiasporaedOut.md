@@ -1,0 +1,10 @@
+
+# BatchFirstLastNameDiasporaedOut
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**personalNames** | [**List&lt;FirstLastNameDiasporaedOut&gt;**](FirstLastNameDiasporaedOut.md) |  |  [optional]
+
+
+
