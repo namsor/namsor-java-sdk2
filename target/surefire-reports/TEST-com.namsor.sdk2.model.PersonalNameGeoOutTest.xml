@@ -61,11 +61,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="regionTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="regionTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="topRegionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="testPersonalNameGeoOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="countryTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="subRegionTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="subRegionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="idTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="countryAltTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGeoOutTest" name="nameTest" time="0"/>

@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * APIUsageAggregatedOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T09:54:19.925+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T10:14:57.526+01:00[Europe/Berlin]")
 public class APIUsageAggregatedOut {
   public static final String SERIALIZED_NAME_TIME_UNIT = "timeUnit";
   @SerializedName(SERIALIZED_NAME_TIME_UNIT)

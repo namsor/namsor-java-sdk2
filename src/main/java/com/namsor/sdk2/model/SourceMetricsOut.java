@@ -29,7 +29,7 @@ import java.io.IOException;
  * Simple metrics on a classifier, for a given source
  */
 @ApiModel(description = "Simple metrics on a classifier, for a given source")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T09:54:19.925+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T10:14:57.526+01:00[Europe/Berlin]")
 public class SourceMetricsOut {
   public static final String SERIALIZED_NAME_CLASSIFIER_NAME = "classifierName";
   @SerializedName(SERIALIZED_NAME_CLASSIFIER_NAME)
