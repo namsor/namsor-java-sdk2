@@ -5,6 +5,7 @@
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/PersonalNameIn.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/invoke/auth/OAuthOkHttpClient.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/CurrenciesOut.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/BatchPersonalNameGenderedOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/SourceDetailedMetricsOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/FirstLastNameIn.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/invoke/JSON.java
@@ -61,11 +62,14 @@
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/BatchPersonalNameIn.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/api/SocialApi.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/invoke/auth/OAuthFlow.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/BatchPersonalNameGeoIn.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/PersonalNameGeoIn.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/APIPlansOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/invoke/Pair.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/FirstLastNameDiasporaedOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/BatchFirstLastNameIn.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/FirstLastNameGenderedOut.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/PersonalNameGenderedOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/InvoiceItemOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/NameMatchCandidatesOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/SystemMetricsOut.java

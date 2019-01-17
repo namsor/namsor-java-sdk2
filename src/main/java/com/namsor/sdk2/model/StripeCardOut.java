@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * StripeCardOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T10:34:07.082+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-17T18:30:50.594+01:00[Europe/Berlin]")
 public class StripeCardOut {
   public static final String SERIALIZED_NAME_DEFAULT_CARD = "defaultCard";
   @SerializedName(SERIALIZED_NAME_DEFAULT_CARD)
@@ -39,11 +39,11 @@ public class StripeCardOut {
 
   public static final String SERIALIZED_NAME_EXP_MONTH = "expMonth";
   @SerializedName(SERIALIZED_NAME_EXP_MONTH)
-  private Integer expMonth;
+  private Long expMonth;
 
   public static final String SERIALIZED_NAME_EXP_YEAR = "expYear";
   @SerializedName(SERIALIZED_NAME_EXP_YEAR)
-  private Integer expYear;
+  private Long expYear;
 
   public static final String SERIALIZED_NAME_LAST4 = "last4";
   @SerializedName(SERIALIZED_NAME_LAST4)
@@ -89,7 +89,7 @@ public class StripeCardOut {
     this.sourceId = sourceId;
   }
 
-  public StripeCardOut expMonth(Integer expMonth) {
+  public StripeCardOut expMonth(Long expMonth) {
     this.expMonth = expMonth;
     return this;
   }
@@ -99,15 +99,15 @@ public class StripeCardOut {
    * @return expMonth
   **/
   @ApiModelProperty(value = "")
-  public Integer getExpMonth() {
+  public Long getExpMonth() {
     return expMonth;
   }
 
-  public void setExpMonth(Integer expMonth) {
+  public void setExpMonth(Long expMonth) {
     this.expMonth = expMonth;
   }
 
-  public StripeCardOut expYear(Integer expYear) {
+  public StripeCardOut expYear(Long expYear) {
     this.expYear = expYear;
     return this;
   }
@@ -117,11 +117,11 @@ public class StripeCardOut {
    * @return expYear
   **/
   @ApiModelProperty(value = "")
-  public Integer getExpYear() {
+  public Long getExpYear() {
     return expYear;
   }
 
-  public void setExpYear(Integer expYear) {
+  public void setExpYear(Long expYear) {
     this.expYear = expYear;
   }
 

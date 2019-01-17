@@ -814,6 +814,492 @@ public class PersonalApi {
         return call;
     }
     /**
+     * Build call for genderFull
+     * @param fullName  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call genderFullCall(String fullName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/api2/json/genderFull/{fullName}"
+            .replaceAll("\\{" + "fullName" + "\\}", apiClient.escapeString(fullName.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call genderFullValidateBeforeCall(String fullName, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'fullName' is set
+        if (fullName == null) {
+            throw new ApiException("Missing the required parameter 'fullName' when calling genderFull(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = genderFullCall(fullName, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Infer the likely gender of a full name, ex. John H. Smith
+     * 
+     * @param fullName  (required)
+     * @return FirstLastNameGenderedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FirstLastNameGenderedOut genderFull(String fullName) throws ApiException {
+        ApiResponse<FirstLastNameGenderedOut> resp = genderFullWithHttpInfo(fullName);
+        return resp.getData();
+    }
+
+    /**
+     * Infer the likely gender of a full name, ex. John H. Smith
+     * 
+     * @param fullName  (required)
+     * @return ApiResponse&lt;FirstLastNameGenderedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FirstLastNameGenderedOut> genderFullWithHttpInfo(String fullName) throws ApiException {
+        com.squareup.okhttp.Call call = genderFullValidateBeforeCall(fullName, null, null);
+        Type localVarReturnType = new TypeToken<FirstLastNameGenderedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Infer the likely gender of a full name, ex. John H. Smith (asynchronously)
+     * 
+     * @param fullName  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call genderFullAsync(String fullName, final ApiCallback<FirstLastNameGenderedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = genderFullValidateBeforeCall(fullName, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FirstLastNameGenderedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for genderFullBatch
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call genderFullBatchCall(BatchPersonalNameIn batchPersonalNameIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = batchPersonalNameIn;
+
+        // create path and map variables
+        String localVarPath = "/api2/json/genderFullBatch";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call genderFullBatchValidateBeforeCall(BatchPersonalNameIn batchPersonalNameIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = genderFullBatchCall(batchPersonalNameIn, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Infer the likely gender of up to 1000 full names, detecting automatically the cultural context.
+     * 
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @return BatchFirstLastNameGenderedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BatchFirstLastNameGenderedOut genderFullBatch(BatchPersonalNameIn batchPersonalNameIn) throws ApiException {
+        ApiResponse<BatchFirstLastNameGenderedOut> resp = genderFullBatchWithHttpInfo(batchPersonalNameIn);
+        return resp.getData();
+    }
+
+    /**
+     * Infer the likely gender of up to 1000 full names, detecting automatically the cultural context.
+     * 
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @return ApiResponse&lt;BatchFirstLastNameGenderedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BatchFirstLastNameGenderedOut> genderFullBatchWithHttpInfo(BatchPersonalNameIn batchPersonalNameIn) throws ApiException {
+        com.squareup.okhttp.Call call = genderFullBatchValidateBeforeCall(batchPersonalNameIn, null, null);
+        Type localVarReturnType = new TypeToken<BatchFirstLastNameGenderedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Infer the likely gender of up to 1000 full names, detecting automatically the cultural context. (asynchronously)
+     * 
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call genderFullBatchAsync(BatchPersonalNameIn batchPersonalNameIn, final ApiCallback<BatchFirstLastNameGenderedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = genderFullBatchValidateBeforeCall(batchPersonalNameIn, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BatchFirstLastNameGenderedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for genderFullGeo
+     * @param fullName  (required)
+     * @param countryIso2  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call genderFullGeoCall(String fullName, String countryIso2, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/api2/json/genderFullGeo/{fullName}/{countryIso2}"
+            .replaceAll("\\{" + "fullName" + "\\}", apiClient.escapeString(fullName.toString()))
+            .replaceAll("\\{" + "countryIso2" + "\\}", apiClient.escapeString(countryIso2.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call genderFullGeoValidateBeforeCall(String fullName, String countryIso2, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'fullName' is set
+        if (fullName == null) {
+            throw new ApiException("Missing the required parameter 'fullName' when calling genderFullGeo(Async)");
+        }
+        
+        // verify the required parameter 'countryIso2' is set
+        if (countryIso2 == null) {
+            throw new ApiException("Missing the required parameter 'countryIso2' when calling genderFullGeo(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = genderFullGeoCall(fullName, countryIso2, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Infer the likely gender of a full name, given a local context (ISO2 country code).
+     * 
+     * @param fullName  (required)
+     * @param countryIso2  (required)
+     * @return FirstLastNameGenderedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FirstLastNameGenderedOut genderFullGeo(String fullName, String countryIso2) throws ApiException {
+        ApiResponse<FirstLastNameGenderedOut> resp = genderFullGeoWithHttpInfo(fullName, countryIso2);
+        return resp.getData();
+    }
+
+    /**
+     * Infer the likely gender of a full name, given a local context (ISO2 country code).
+     * 
+     * @param fullName  (required)
+     * @param countryIso2  (required)
+     * @return ApiResponse&lt;FirstLastNameGenderedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FirstLastNameGenderedOut> genderFullGeoWithHttpInfo(String fullName, String countryIso2) throws ApiException {
+        com.squareup.okhttp.Call call = genderFullGeoValidateBeforeCall(fullName, countryIso2, null, null);
+        Type localVarReturnType = new TypeToken<FirstLastNameGenderedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Infer the likely gender of a full name, given a local context (ISO2 country code). (asynchronously)
+     * 
+     * @param fullName  (required)
+     * @param countryIso2  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call genderFullGeoAsync(String fullName, String countryIso2, final ApiCallback<FirstLastNameGenderedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = genderFullGeoValidateBeforeCall(fullName, countryIso2, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FirstLastNameGenderedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for genderFullGeoBatch
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call genderFullGeoBatchCall(BatchPersonalNameIn batchPersonalNameIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = batchPersonalNameIn;
+
+        // create path and map variables
+        String localVarPath = "/api2/json/genderFullGeoBatch";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call genderFullGeoBatchValidateBeforeCall(BatchPersonalNameIn batchPersonalNameIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = genderFullGeoBatchCall(batchPersonalNameIn, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
+     * 
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @return BatchFirstLastNameGenderedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BatchFirstLastNameGenderedOut genderFullGeoBatch(BatchPersonalNameIn batchPersonalNameIn) throws ApiException {
+        ApiResponse<BatchFirstLastNameGenderedOut> resp = genderFullGeoBatchWithHttpInfo(batchPersonalNameIn);
+        return resp.getData();
+    }
+
+    /**
+     * Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
+     * 
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @return ApiResponse&lt;BatchFirstLastNameGenderedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BatchFirstLastNameGenderedOut> genderFullGeoBatchWithHttpInfo(BatchPersonalNameIn batchPersonalNameIn) throws ApiException {
+        com.squareup.okhttp.Call call = genderFullGeoBatchValidateBeforeCall(batchPersonalNameIn, null, null);
+        Type localVarReturnType = new TypeToken<BatchFirstLastNameGenderedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code). (asynchronously)
+     * 
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call genderFullGeoBatchAsync(BatchPersonalNameIn batchPersonalNameIn, final ApiCallback<BatchFirstLastNameGenderedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = genderFullGeoBatchValidateBeforeCall(batchPersonalNameIn, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BatchFirstLastNameGenderedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for genderGeo
      * @param firstName  (required)
      * @param lastName  (required)

@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="priceTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="priceTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="priceOverageUSDTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="taxRateTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="priceOverageTest" time="0"/>
@@ -70,15 +70,15 @@
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planEndedTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="stripeStatusTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="testAPIPlanSubscriptionOut" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="testAPIPlanSubscriptionOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="priorPlanStartedTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planQuotaTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planQuotaTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="stripeCustomerIdTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="stripeSubscriptionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="currencyFactorTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="apiKeyTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="currencyTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="userIdTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="priceUSDTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="priceUSDTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planStartedTest" time="0"/>
 </testsuite>

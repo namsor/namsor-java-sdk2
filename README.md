@@ -2,7 +2,7 @@
 
 NamSor API v2
 - API version: 2.0.2-beta
-  - Build date: 2019-01-14T10:34:07.082+01:00[Europe/Berlin]
+  - Build date: 2019-01-17T18:30:50.594+01:00[Europe/Berlin]
 
 NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 1000 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
 
@@ -128,6 +128,7 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**paymentInfo**](docs/AdminApi.md#paymentInfo) | **GET** /api2/json/paymentInfo/{token} | Get the Stripe payment information associated with the current google auth session token.
 *AdminApi* | [**procureKey**](docs/AdminApi.md#procureKey) | **GET** /api2/json/procureKey/{token} | Procure an API Key (sent via Email), based on an auth token. Keep your API Key secret.
 *AdminApi* | [**redeployUI**](docs/AdminApi.md#redeployUI) | **GET** /api2/json/redeployUI | Redeploy UI from current dev branch.
+*AdminApi* | [**redeployUI1**](docs/AdminApi.md#redeployUI1) | **GET** /api2/json/redeployUI/{live} | Redeploy UI from current dev branch.
 *AdminApi* | [**removeUserAccount**](docs/AdminApi.md#removeUserAccount) | **GET** /api2/json/removeUserAccount/{token} | Subscribe to a give API plan, using the user&#39;s preferred or default currency.
 *AdminApi* | [**shutdown**](docs/AdminApi.md#shutdown) | **GET** /api2/json/shutdown | Stop learning and shutdown system.
 *AdminApi* | [**softwareVersion**](docs/AdminApi.md#softwareVersion) | **GET** /api2/json/softwareVersion | Get the current software version
@@ -152,6 +153,10 @@ Class | Method | HTTP request | Description
 *PersonalApi* | [**diasporaBatch**](docs/PersonalApi.md#diasporaBatch) | **POST** /api2/json/diasporaBatch | [USES 20 UNITS] Infer the likely ethnicity/diaspora of up to 1000 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
 *PersonalApi* | [**gender**](docs/PersonalApi.md#gender) | **GET** /api2/json/gender/{firstName}/{lastName} | Infer the likely gender of a name.
 *PersonalApi* | [**genderBatch**](docs/PersonalApi.md#genderBatch) | **POST** /api2/json/genderBatch | Infer the likely gender of up to 1000 names, detecting automatically the cultural context.
+*PersonalApi* | [**genderFull**](docs/PersonalApi.md#genderFull) | **GET** /api2/json/genderFull/{fullName} | Infer the likely gender of a full name, ex. John H. Smith
+*PersonalApi* | [**genderFullBatch**](docs/PersonalApi.md#genderFullBatch) | **POST** /api2/json/genderFullBatch | Infer the likely gender of up to 1000 full names, detecting automatically the cultural context.
+*PersonalApi* | [**genderFullGeo**](docs/PersonalApi.md#genderFullGeo) | **GET** /api2/json/genderFullGeo/{fullName}/{countryIso2} | Infer the likely gender of a full name, given a local context (ISO2 country code).
+*PersonalApi* | [**genderFullGeoBatch**](docs/PersonalApi.md#genderFullGeoBatch) | **POST** /api2/json/genderFullGeoBatch | Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
 *PersonalApi* | [**genderGeo**](docs/PersonalApi.md#genderGeo) | **GET** /api2/json/genderGeo/{firstName}/{lastName}/{countryIso2} | Infer the likely gender of a name, given a local context (ISO2 country code).
 *PersonalApi* | [**genderGeoBatch**](docs/PersonalApi.md#genderGeoBatch) | **POST** /api2/json/genderGeoBatch | Infer the likely gender of up to 1000 names, each given a local context (ISO2 country code).
 *PersonalApi* | [**origin**](docs/PersonalApi.md#origin) | **GET** /api2/json/origin/{firstName}/{lastName} | [USES 10 UNITS] Infer the likely country of origin of a personal name. Assumes names as they are in the country of origin. For US, CA, AU, NZ and other melting-pots : use &#39;diaspora&#39; instead.
@@ -191,6 +196,8 @@ Class | Method | HTTP request | Description
  - [BatchNameMatchCandidatesOut](docs/BatchNameMatchCandidatesOut.md)
  - [BatchParsedFullNameGeoIn](docs/BatchParsedFullNameGeoIn.md)
  - [BatchParsedFullNameIn](docs/BatchParsedFullNameIn.md)
+ - [BatchPersonalNameGenderedOut](docs/BatchPersonalNameGenderedOut.md)
+ - [BatchPersonalNameGeoIn](docs/BatchPersonalNameGeoIn.md)
  - [BatchPersonalNameGeoOut](docs/BatchPersonalNameGeoOut.md)
  - [BatchPersonalNameIn](docs/BatchPersonalNameIn.md)
  - [BillingHistoryOut](docs/BillingHistoryOut.md)
@@ -217,6 +224,8 @@ Class | Method | HTTP request | Description
  - [NameMatchCandidatesOut](docs/NameMatchCandidatesOut.md)
  - [ParsedFullNameGeoIn](docs/ParsedFullNameGeoIn.md)
  - [ParsedFullNameIn](docs/ParsedFullNameIn.md)
+ - [PersonalNameGenderedOut](docs/PersonalNameGenderedOut.md)
+ - [PersonalNameGeoIn](docs/PersonalNameGeoIn.md)
  - [PersonalNameGeoOut](docs/PersonalNameGeoOut.md)
  - [PersonalNameIn](docs/PersonalNameIn.md)
  - [RomanizedNameOut](docs/RomanizedNameOut.md)

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NameMatchCandidateOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T10:34:07.082+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-17T18:30:50.594+01:00[Europe/Berlin]")
 public class NameMatchCandidateOut {
   public static final String SERIALIZED_NAME_CANDIDATE_NAME = "candidateName";
   @SerializedName(SERIALIZED_NAME_CANDIDATE_NAME)

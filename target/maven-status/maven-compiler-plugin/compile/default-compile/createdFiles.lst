@@ -27,6 +27,7 @@ com/namsor/sdk2/invoke/ApiClient$2.class
 com/namsor/sdk2/api/AdminApi$24.class
 com/namsor/sdk2/api/AdminApi$141.class
 com/namsor/sdk2/api/ChineseApi$18.class
+com/namsor/sdk2/api/PersonalApi$92.class
 com/namsor/sdk2/model/BatchFirstLastNameOriginedOut.class
 com/namsor/sdk2/api/PersonalApi$44.class
 com/namsor/sdk2/invoke/JSON$SqlDateTypeAdapter.class
@@ -36,6 +37,8 @@ com/namsor/sdk2/model/DeployUIOut.class
 com/namsor/sdk2/api/PersonalApi$9.class
 com/namsor/sdk2/api/PersonalApi$24.class
 com/namsor/sdk2/api/PersonalApi$72.class
+com/namsor/sdk2/api/PersonalApi$84.class
+com/namsor/sdk2/model/PersonalNameGeoIn.class
 com/namsor/sdk2/model/ExpectedClassMetricsOut.class
 com/namsor/sdk2/api/AdminApi$7.class
 com/namsor/sdk2/model/BatchParsedFullNameGeoIn.class
@@ -66,7 +69,9 @@ com/namsor/sdk2/api/AdminApi$77.class
 com/namsor/sdk2/api/PersonalApi$71.class
 com/namsor/sdk2/api/PersonalApi$31.class
 com/namsor/sdk2/invoke/auth/ApiKeyAuth.class
+com/namsor/sdk2/api/PersonalApi$89.class
 com/namsor/sdk2/api/AdminApi$48.class
+com/namsor/sdk2/model/PersonalNameGenderedOut$LikelyGenderEnum$Adapter.class
 com/namsor/sdk2/api/PersonalApi$77.class
 com/namsor/sdk2/api/AdminApi$100.class
 com/namsor/sdk2/api/AdminApi$140.class
@@ -107,6 +112,7 @@ com/namsor/sdk2/api/AdminApi$133.class
 com/namsor/sdk2/api/PersonalApi$38.class
 com/namsor/sdk2/api/PersonalApi$18.class
 com/namsor/sdk2/invoke/auth/OAuth.class
+com/namsor/sdk2/api/PersonalApi$96.class
 com/namsor/sdk2/model/SoftwareVersionOut.class
 com/namsor/sdk2/api/AdminApi$128.class
 com/namsor/sdk2/model/StripeCustomerOut.class
@@ -119,6 +125,7 @@ com/namsor/sdk2/api/ChineseApi$12.class
 com/namsor/sdk2/model/BatchFirstLastNameDiasporaedOut.class
 com/namsor/sdk2/model/BatchFirstLastNamePhoneCodedOut.class
 com/namsor/sdk2/api/AdminApi$12.class
+com/namsor/sdk2/api/PersonalApi$99.class
 com/namsor/sdk2/api/ChineseApi$3.class
 com/namsor/sdk2/invoke/ApiResponse.class
 com/namsor/sdk2/model/ParsedFullNameIn.class
@@ -136,6 +143,7 @@ com/namsor/sdk2/api/PersonalApi$22.class
 com/namsor/sdk2/api/SocialApi$10.class
 com/namsor/sdk2/api/AdminApi$63.class
 com/namsor/sdk2/api/ChineseApi$15.class
+com/namsor/sdk2/model/BatchPersonalNameGenderedOut.class
 com/namsor/sdk2/api/PersonalApi.class
 com/namsor/sdk2/api/PersonalApi$52.class
 com/namsor/sdk2/api/ChineseApi$5.class
@@ -151,6 +159,7 @@ com/namsor/sdk2/api/AdminApi$27.class
 com/namsor/sdk2/api/SocialApi$3.class
 com/namsor/sdk2/api/AdminApi$126.class
 com/namsor/sdk2/api/PersonalApi$16.class
+com/namsor/sdk2/api/PersonalApi$98.class
 com/namsor/sdk2/api/AdminApi$86.class
 com/namsor/sdk2/api/AdminApi$56.class
 com/namsor/sdk2/model/BillingHistoryOut.class
@@ -166,9 +175,11 @@ com/namsor/sdk2/api/PersonalApi$46.class
 com/namsor/sdk2/model/InvoiceOut.class
 com/namsor/sdk2/api/AdminApi$103.class
 com/namsor/sdk2/api/AdminApi$62.class
+com/namsor/sdk2/model/PersonalNameGenderedOut$LikelyGenderEnum.class
 com/namsor/sdk2/api/PersonalApi$51.class
 com/namsor/sdk2/api/AdminApi$57.class
 com/namsor/sdk2/api/AdminApi$85.class
+com/namsor/sdk2/api/PersonalApi$100.class
 com/namsor/sdk2/api/PersonalApi$69.class
 com/namsor/sdk2/invoke/JSON$OffsetDateTimeTypeAdapter.class
 com/namsor/sdk2/api/PersonalApi$74.class
@@ -177,6 +188,8 @@ com/namsor/sdk2/api/SocialApi$2.class
 com/namsor/sdk2/api/AdminApi$90.class
 com/namsor/sdk2/api/PersonalApi$17.class
 com/namsor/sdk2/api/AdminApi$10.class
+com/namsor/sdk2/api/PersonalApi$97.class
+com/namsor/sdk2/model/BatchPersonalNameGeoIn.class
 com/namsor/sdk2/api/PersonalApi$47.class
 com/namsor/sdk2/api/PersonalApi$67.class
 com/namsor/sdk2/api/ChineseApi$7.class
@@ -199,6 +212,7 @@ com/namsor/sdk2/api/AdminApi$131.class
 com/namsor/sdk2/api/AdminApi$74.class
 com/namsor/sdk2/api/AdminApi$61.class
 com/namsor/sdk2/api/AdminApi$124.class
+com/namsor/sdk2/api/AdminApi$144.class
 com/namsor/sdk2/api/AdminApi$19.class
 com/namsor/sdk2/api/AdminApi$59.class
 com/namsor/sdk2/api/ChineseApi$16.class
@@ -207,6 +221,7 @@ com/namsor/sdk2/api/PersonalApi$41.class
 com/namsor/sdk2/model/FirstLastNameGenderedOut.class
 com/namsor/sdk2/model/APIPlanOut.class
 com/namsor/sdk2/api/AdminApi$26.class
+com/namsor/sdk2/api/PersonalApi$81.class
 com/namsor/sdk2/api/PersonalApi$61.class
 com/namsor/sdk2/invoke/GzipRequestInterceptor$1.class
 com/namsor/sdk2/api/AdminApi$67.class
@@ -215,11 +230,13 @@ com/namsor/sdk2/api/AdminApi$47.class
 com/namsor/sdk2/api/PersonalApi$21.class
 com/namsor/sdk2/model/StripeCardOut.class
 com/namsor/sdk2/invoke/auth/OAuthFlow.class
+com/namsor/sdk2/api/PersonalApi$87.class
 com/namsor/sdk2/api/PersonalApi$6.class
 com/namsor/sdk2/api/PersonalApi$27.class
 com/namsor/sdk2/invoke/JSON.class
 com/namsor/sdk2/model/BatchFirstLastNamePhoneNumberIn.class
 com/namsor/sdk2/invoke/JSON$ByteArrayAdapter.class
+com/namsor/sdk2/api/PersonalApi$95.class
 com/namsor/sdk2/model/InlineObject.class
 com/namsor/sdk2/api/AdminApi$53.class
 com/namsor/sdk2/api/PersonalApi$19.class
@@ -236,6 +253,7 @@ com/namsor/sdk2/invoke/ProgressResponseBody$ProgressListener.class
 com/namsor/sdk2/api/AdminApi$136.class
 com/namsor/sdk2/api/PersonalApi$15.class
 com/namsor/sdk2/model/FirstLastNameGeoIn.class
+com/namsor/sdk2/api/PersonalApi$88.class
 com/namsor/sdk2/api/SocialApi$4.class
 com/namsor/sdk2/model/APIPeriodUsageOut.class
 com/namsor/sdk2/api/ChineseApi$11.class
@@ -253,6 +271,7 @@ com/namsor/sdk2/api/PersonalApi$66.class
 com/namsor/sdk2/api/AdminApi$54.class
 com/namsor/sdk2/api/AdminApi$14.class
 com/namsor/sdk2/api/ChineseApi$1.class
+com/namsor/sdk2/api/PersonalApi$94.class
 com/namsor/sdk2/api/AdminApi$5.class
 com/namsor/sdk2/api/ChineseApi$8.class
 com/namsor/sdk2/model/PersonalNameIn.class
@@ -260,6 +279,7 @@ com/namsor/sdk2/api/PersonalApi$26.class
 com/namsor/sdk2/api/AdminApi$42.class
 com/namsor/sdk2/model/CurrenciesOut.class
 com/namsor/sdk2/api/PersonalApi$54.class
+com/namsor/sdk2/api/PersonalApi$82.class
 com/namsor/sdk2/api/AdminApi.class
 com/namsor/sdk2/api/AdminApi$118.class
 com/namsor/sdk2/api/PersonalApi$14.class
@@ -270,6 +290,7 @@ com/namsor/sdk2/invoke/ApiClient$1.class
 com/namsor/sdk2/api/AdminApi$15.class
 com/namsor/sdk2/api/PersonalApi$60.class
 com/namsor/sdk2/api/PersonalApi$70.class
+com/namsor/sdk2/api/PersonalApi$90.class
 com/namsor/sdk2/api/PersonalApi$40.class
 com/namsor/sdk2/api/AdminApi$98.class
 com/namsor/sdk2/api/AdminApi$68.class
@@ -283,6 +304,8 @@ com/namsor/sdk2/api/PersonalApi$33.class
 com/namsor/sdk2/model/APIServicesOut.class
 com/namsor/sdk2/api/PersonalApi$13.class
 com/namsor/sdk2/api/PersonalApi$63.class
+com/namsor/sdk2/api/PersonalApi$93.class
+com/namsor/sdk2/api/PersonalApi$83.class
 com/namsor/sdk2/model/BatchPersonalNameGeoOut.class
 com/namsor/sdk2/model/NamSorCounterOut.class
 com/namsor/sdk2/api/AdminApi$113.class
@@ -304,6 +327,7 @@ com/namsor/sdk2/api/AdminApi$20.class
 com/namsor/sdk2/api/AdminApi$80.class
 com/namsor/sdk2/api/AdminApi$75.class
 com/namsor/sdk2/model/APIBillingPeriodUsageOut.class
+com/namsor/sdk2/api/AdminApi$142.class
 com/namsor/sdk2/api/AdminApi$73.class
 com/namsor/sdk2/api/PersonalApi$29.class
 com/namsor/sdk2/api/PersonalApi$12.class
@@ -311,7 +335,9 @@ com/namsor/sdk2/api/AdminApi$1.class
 com/namsor/sdk2/api/AdminApi$23.class
 com/namsor/sdk2/model/BillingInfoInOut.class
 com/namsor/sdk2/api/AdminApi$96.class
+com/namsor/sdk2/model/PersonalNameGenderedOut.class
 com/namsor/sdk2/api/SocialApi$7.class
+com/namsor/sdk2/api/PersonalApi$85.class
 com/namsor/sdk2/invoke/JSON$1.class
 com/namsor/sdk2/api/AdminApi$17.class
 com/namsor/sdk2/model/PersonalNameGeoOut.class
@@ -326,10 +352,13 @@ com/namsor/sdk2/api/AdminApi$109.class
 com/namsor/sdk2/api/AdminApi$139.class
 com/namsor/sdk2/api/AdminApi$69.class
 com/namsor/sdk2/api/PersonalApi$28.class
+com/namsor/sdk2/api/PersonalApi$86.class
+com/namsor/sdk2/api/AdminApi$143.class
 com/namsor/sdk2/api/AdminApi$138.class
 com/namsor/sdk2/api/AdminApi$16.class
 com/namsor/sdk2/api/SocialApi$8.class
 com/namsor/sdk2/api/AdminApi$97.class
+com/namsor/sdk2/api/PersonalApi$91.class
 com/namsor/sdk2/model/BatchFirstLastNameGenderedOut.class
 com/namsor/sdk2/api/PersonalApi$11.class
 com/namsor/sdk2/api/AdminApi$120.class

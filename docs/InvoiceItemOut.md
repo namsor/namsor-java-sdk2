@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **amount** | **Long** |  |  [optional]
 **currency** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
-**quantity** | **Integer** |  |  [optional]
+**quantity** | **Long** |  |  [optional]
 **subscription** | **String** |  |  [optional]
 **subscriptionItem** | **String** |  |  [optional]
 **invoiceItemType** | **String** |  |  [optional]

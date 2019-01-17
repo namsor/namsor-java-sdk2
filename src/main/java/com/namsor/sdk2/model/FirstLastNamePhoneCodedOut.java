@@ -28,7 +28,7 @@ import java.io.IOException;
  * Represents the output of inferring the LIKELY country and phone code from a personal name and phone number.
  */
 @ApiModel(description = "Represents the output of inferring the LIKELY country and phone code from a personal name and phone number.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T10:34:07.082+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-17T18:30:50.594+01:00[Europe/Berlin]")
 public class FirstLastNamePhoneCodedOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

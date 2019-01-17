@@ -147,6 +147,71 @@ public class PersonalApiTest {
     }
     
     /**
+     * Infer the likely gender of a full name, ex. John H. Smith
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void genderFullTest() throws ApiException {
+        String fullName = null;
+        FirstLastNameGenderedOut response = api.genderFull(fullName);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Infer the likely gender of up to 1000 full names, detecting automatically the cultural context.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void genderFullBatchTest() throws ApiException {
+        BatchPersonalNameIn batchPersonalNameIn = null;
+        BatchFirstLastNameGenderedOut response = api.genderFullBatch(batchPersonalNameIn);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Infer the likely gender of a full name, given a local context (ISO2 country code).
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void genderFullGeoTest() throws ApiException {
+        String fullName = null;
+        String countryIso2 = null;
+        FirstLastNameGenderedOut response = api.genderFullGeo(fullName, countryIso2);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void genderFullGeoBatchTest() throws ApiException {
+        BatchPersonalNameIn batchPersonalNameIn = null;
+        BatchFirstLastNameGenderedOut response = api.genderFullGeoBatch(batchPersonalNameIn);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Infer the likely gender of a name, given a local context (ISO2 country code).
      *
      * 

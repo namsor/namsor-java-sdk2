@@ -307,6 +307,22 @@ public class AdminApiTest {
     }
     
     /**
+     * Redeploy UI from current dev branch.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void redeployUI1Test() throws ApiException {
+        Boolean live = null;
+        api.redeployUI1(live);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Subscribe to a give API plan, using the user&#39;s preferred or default currency.
      *
      * 

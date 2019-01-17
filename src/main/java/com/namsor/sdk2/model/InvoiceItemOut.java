@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InvoiceItemOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-14T10:34:07.082+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-17T18:30:50.594+01:00[Europe/Berlin]")
 public class InvoiceItemOut {
   public static final String SERIALIZED_NAME_ITEM_ID = "itemId";
   @SerializedName(SERIALIZED_NAME_ITEM_ID)
@@ -47,7 +47,7 @@ public class InvoiceItemOut {
 
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
   @SerializedName(SERIALIZED_NAME_QUANTITY)
-  private Integer quantity;
+  private Long quantity;
 
   public static final String SERIALIZED_NAME_SUBSCRIPTION = "subscription";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTION)
@@ -145,7 +145,7 @@ public class InvoiceItemOut {
     this.description = description;
   }
 
-  public InvoiceItemOut quantity(Integer quantity) {
+  public InvoiceItemOut quantity(Long quantity) {
     this.quantity = quantity;
     return this;
   }
@@ -155,11 +155,11 @@ public class InvoiceItemOut {
    * @return quantity
   **/
   @ApiModelProperty(value = "")
-  public Integer getQuantity() {
+  public Long getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(Integer quantity) {
+  public void setQuantity(Long quantity) {
     this.quantity = quantity;
   }
 

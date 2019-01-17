@@ -62,8 +62,8 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.namsor.sdk2.model.APIPlanOutTest" name="priceTest" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.APIPlanOutTest" name="testAPIPlanOut" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIPlanOutTest" name="testAPIPlanOut" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanOutTest" name="priceOverageTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanOutTest" name="planNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIPlanOutTest" name="planQuotaTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.APIPlanOutTest" name="planQuotaTest" time="0"/>
 </testsuite>

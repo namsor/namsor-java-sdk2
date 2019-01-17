@@ -19,6 +19,7 @@ com/namsor/sdk2/model/CurrenciesOutTest.class
 com/namsor/sdk2/model/APIServicesOutTest.class
 com/namsor/sdk2/model/InvoiceItemOutTest.class
 com/namsor/sdk2/model/FirstLastNameGeoZippedInTest.class
+com/namsor/sdk2/model/BatchPersonalNameGenderedOutTest.class
 com/namsor/sdk2/model/BatchParsedFullNameGeoInTest.class
 com/namsor/sdk2/model/FirstLastNamePhoneNumberInTest.class
 com/namsor/sdk2/model/BatchFirstLastNameGeoInTest.class
@@ -41,6 +42,7 @@ com/namsor/sdk2/model/BatchFirstLastNameOriginedOutTest.class
 com/namsor/sdk2/model/SourceMetricsOutTest.class
 com/namsor/sdk2/model/BatchFirstLastNamePhoneCodedOutTest.class
 com/namsor/sdk2/model/BillingHistoryOutTest.class
+com/namsor/sdk2/model/PersonalNameGeoInTest.class
 com/namsor/sdk2/model/PersonalNameGeoOutTest.class
 com/namsor/sdk2/model/FirstLastNameDiasporaedOutTest.class
 com/namsor/sdk2/model/BatchPersonalNameGeoOutTest.class
@@ -59,5 +61,7 @@ com/namsor/sdk2/model/APIUsageAggregatedOutTest.class
 com/namsor/sdk2/model/DeployUIOutTest.class
 com/namsor/sdk2/model/BatchFirstLastNamePhoneNumberInTest.class
 com/namsor/sdk2/model/StripeCardOutTest.class
+com/namsor/sdk2/model/PersonalNameGenderedOutTest.class
 com/namsor/sdk2/model/SoftwareVersionOutTest.class
+com/namsor/sdk2/model/BatchPersonalNameGeoInTest.class
 com/namsor/sdk2/model/BatchFirstLastNameDiasporaedOutTest.class
