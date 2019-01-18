@@ -66,13 +66,13 @@
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="taxRateTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="priceOverageTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planBaseFeesKeyTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planStatusTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planStatusTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planEndedTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="stripeStatusTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="testAPIPlanSubscriptionOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="priorPlanStartedTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planQuotaTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="planQuotaTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="stripeCustomerIdTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="stripeSubscriptionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPlanSubscriptionOutTest" name="currencyFactorTest" time="0"/>

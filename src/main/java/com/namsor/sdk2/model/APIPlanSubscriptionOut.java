@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * APIPlanSubscriptionOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-17T18:30:50.594+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-18T02:05:58.814+01:00[Europe/Berlin]")
 public class APIPlanSubscriptionOut {
   public static final String SERIALIZED_NAME_API_KEY = "apiKey";
   @SerializedName(SERIALIZED_NAME_API_KEY)

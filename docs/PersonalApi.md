@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 <a name="genderFullBatch"></a>
 # **genderFullBatch**
-> BatchFirstLastNameGenderedOut genderFullBatch(batchPersonalNameIn)
+> BatchPersonalNameGenderedOut genderFullBatch(batchPersonalNameIn)
 
 Infer the likely gender of up to 1000 full names, detecting automatically the cultural context.
 
@@ -429,7 +429,7 @@ api_key.setApiKey("YOUR API KEY");
 PersonalApi apiInstance = new PersonalApi();
 BatchPersonalNameIn batchPersonalNameIn = new BatchPersonalNameIn(); // BatchPersonalNameIn | A list of personal names
 try {
-    BatchFirstLastNameGenderedOut result = apiInstance.genderFullBatch(batchPersonalNameIn);
+    BatchPersonalNameGenderedOut result = apiInstance.genderFullBatch(batchPersonalNameIn);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PersonalApi#genderFullBatch");
@@ -445,7 +445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BatchFirstLastNameGenderedOut**](BatchFirstLastNameGenderedOut.md)
+[**BatchPersonalNameGenderedOut**](BatchPersonalNameGenderedOut.md)
 
 ### Authorization
 
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 <a name="genderFullGeoBatch"></a>
 # **genderFullGeoBatch**
-> BatchFirstLastNameGenderedOut genderFullGeoBatch(batchPersonalNameIn)
+> BatchPersonalNameGenderedOut genderFullGeoBatch(batchPersonalNameIn)
 
 Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
 
@@ -537,7 +537,7 @@ api_key.setApiKey("YOUR API KEY");
 PersonalApi apiInstance = new PersonalApi();
 BatchPersonalNameIn batchPersonalNameIn = new BatchPersonalNameIn(); // BatchPersonalNameIn | A list of personal names
 try {
-    BatchFirstLastNameGenderedOut result = apiInstance.genderFullGeoBatch(batchPersonalNameIn);
+    BatchPersonalNameGenderedOut result = apiInstance.genderFullGeoBatch(batchPersonalNameIn);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PersonalApi#genderFullGeoBatch");
@@ -553,7 +553,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BatchFirstLastNameGenderedOut**](BatchFirstLastNameGenderedOut.md)
+[**BatchPersonalNameGenderedOut**](BatchPersonalNameGenderedOut.md)
 
 ### Authorization
 

@@ -2,7 +2,7 @@
 
 NamSor API v2
 - API version: 2.0.2-beta
-  - Build date: 2019-01-17T18:30:50.594+01:00[Europe/Berlin]
+  - Build date: 2019-01-18T02:05:58.814+01:00[Europe/Berlin]
 
 NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 1000 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
 

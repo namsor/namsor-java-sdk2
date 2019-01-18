@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="24" failures="0" name="com.namsor.sdk2.model.ClassifierMetricsOutTest" time="0.004" errors="0" skipped="0">
+<testsuite tests="24" failures="0" name="com.namsor.sdk2.model.ClassifierMetricsOutTest" time="0.005" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -68,7 +68,7 @@
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="classifyDurationsCurrentTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedEstimatePrecisionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="learnDurationsCurrentTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedExpectedClassMetricsTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedExpectedClassMetricsTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiVettedEstimateRecallTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="featuresSizeTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="preClassifyQueueSizeTest" time="0"/>
@@ -76,12 +76,12 @@
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedLearnTotalTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="classifierNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="factsLearnedTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="classifyDurationsSummaryTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="classifyDurationsSummaryTest" time="0.002"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="learnDurationsSummaryTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiVettedEstimatePrecisionTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="learnQueueSizeTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="learnQueueSizeTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="testClassifierMetricsOut" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiStartTimeTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiStartTimeTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="metricTimeStampTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="bufferSizeTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiVettedLearnTotalTest" time="0"/>
