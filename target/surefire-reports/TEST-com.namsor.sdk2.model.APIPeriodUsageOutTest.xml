@@ -61,9 +61,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.APIPeriodUsageOutTest" name="overageInclTaxTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.APIPeriodUsageOutTest" name="overageInclTaxTest" time="0.002"/>
   <testcase classname="com.namsor.sdk2.model.APIPeriodUsageOutTest" name="overageExclTaxTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIPeriodUsageOutTest" name="subscriptionTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.APIPeriodUsageOutTest" name="subscriptionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPeriodUsageOutTest" name="testAPIPeriodUsageOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPeriodUsageOutTest" name="billingPeriodTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIPeriodUsageOutTest" name="overageCurrencyTest" time="0"/>

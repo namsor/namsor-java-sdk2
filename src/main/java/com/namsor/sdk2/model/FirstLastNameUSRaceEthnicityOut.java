@@ -28,7 +28,7 @@ import java.io.IOException;
  * Represents the output of inferring the LIKELY US &#39;race/ethnicity&#39; from a personal name, given US country of residence and (optionally) a ZIP5 code.
  */
 @ApiModel(description = "Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-18T02:05:58.814+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-26T16:44:07.917+01:00[Europe/Berlin]")
 public class FirstLastNameUSRaceEthnicityOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -42,13 +42,115 @@ public class FirstLastNameUSRaceEthnicityOut {
   @SerializedName(SERIALIZED_NAME_LAST_NAME)
   private String lastName;
 
+  /**
+   * Second most likely US &#39;race&#39;/ethnicity
+   */
+  @JsonAdapter(RaceEthnicityAltEnum.Adapter.class)
+  public enum RaceEthnicityAltEnum {
+    W_NL("W_NL"),
+    
+    HL("HL"),
+    
+    A("A"),
+    
+    B_NL("B_NL");
+
+    private String value;
+
+    RaceEthnicityAltEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RaceEthnicityAltEnum fromValue(String text) {
+      for (RaceEthnicityAltEnum b : RaceEthnicityAltEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<RaceEthnicityAltEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RaceEthnicityAltEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RaceEthnicityAltEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return RaceEthnicityAltEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
+
   public static final String SERIALIZED_NAME_RACE_ETHNICITY_ALT = "raceEthnicityAlt";
   @SerializedName(SERIALIZED_NAME_RACE_ETHNICITY_ALT)
-  private String raceEthnicityAlt;
+  private RaceEthnicityAltEnum raceEthnicityAlt;
+
+  /**
+   * Most likely US &#39;race&#39;/ethnicity
+   */
+  @JsonAdapter(RaceEthnicityEnum.Adapter.class)
+  public enum RaceEthnicityEnum {
+    W_NL("W_NL"),
+    
+    HL("HL"),
+    
+    A("A"),
+    
+    B_NL("B_NL");
+
+    private String value;
+
+    RaceEthnicityEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RaceEthnicityEnum fromValue(String text) {
+      for (RaceEthnicityEnum b : RaceEthnicityEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + text + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<RaceEthnicityEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RaceEthnicityEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RaceEthnicityEnum read(final JsonReader jsonReader) throws IOException {
+        String value = jsonReader.nextString();
+        return RaceEthnicityEnum.fromValue(String.valueOf(value));
+      }
+    }
+  }
 
   public static final String SERIALIZED_NAME_RACE_ETHNICITY = "raceEthnicity";
   @SerializedName(SERIALIZED_NAME_RACE_ETHNICITY)
-  private String raceEthnicity;
+  private RaceEthnicityEnum raceEthnicity;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
@@ -108,39 +210,39 @@ public class FirstLastNameUSRaceEthnicityOut {
     this.lastName = lastName;
   }
 
-  public FirstLastNameUSRaceEthnicityOut raceEthnicityAlt(String raceEthnicityAlt) {
+  public FirstLastNameUSRaceEthnicityOut raceEthnicityAlt(RaceEthnicityAltEnum raceEthnicityAlt) {
     this.raceEthnicityAlt = raceEthnicityAlt;
     return this;
   }
 
    /**
-   * Get raceEthnicityAlt
+   * Second most likely US &#39;race&#39;/ethnicity
    * @return raceEthnicityAlt
   **/
-  @ApiModelProperty(value = "")
-  public String getRaceEthnicityAlt() {
+  @ApiModelProperty(value = "Second most likely US 'race'/ethnicity")
+  public RaceEthnicityAltEnum getRaceEthnicityAlt() {
     return raceEthnicityAlt;
   }
 
-  public void setRaceEthnicityAlt(String raceEthnicityAlt) {
+  public void setRaceEthnicityAlt(RaceEthnicityAltEnum raceEthnicityAlt) {
     this.raceEthnicityAlt = raceEthnicityAlt;
   }
 
-  public FirstLastNameUSRaceEthnicityOut raceEthnicity(String raceEthnicity) {
+  public FirstLastNameUSRaceEthnicityOut raceEthnicity(RaceEthnicityEnum raceEthnicity) {
     this.raceEthnicity = raceEthnicity;
     return this;
   }
 
    /**
-   * Get raceEthnicity
+   * Most likely US &#39;race&#39;/ethnicity
    * @return raceEthnicity
   **/
-  @ApiModelProperty(value = "")
-  public String getRaceEthnicity() {
+  @ApiModelProperty(value = "Most likely US 'race'/ethnicity")
+  public RaceEthnicityEnum getRaceEthnicity() {
     return raceEthnicity;
   }
 
-  public void setRaceEthnicity(String raceEthnicity) {
+  public void setRaceEthnicity(RaceEthnicityEnum raceEthnicity) {
     this.raceEthnicity = raceEthnicity;
   }
 

@@ -37,6 +37,7 @@ import com.namsor.sdk2.model.BatchFirstLastNameUSRaceEthnicityOut;
 import com.namsor.sdk2.model.BatchParsedFullNameGeoIn;
 import com.namsor.sdk2.model.BatchParsedFullNameIn;
 import com.namsor.sdk2.model.BatchPersonalNameGenderedOut;
+import com.namsor.sdk2.model.BatchPersonalNameGeoIn;
 import com.namsor.sdk2.model.BatchPersonalNameGeoOut;
 import com.namsor.sdk2.model.BatchPersonalNameIn;
 import com.namsor.sdk2.model.FirstLastNameDiasporaedOut;
@@ -1186,14 +1187,14 @@ public class PersonalApi {
     }
     /**
      * Build call for genderFullGeoBatch
-     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param batchPersonalNameGeoIn A list of personal names, with a country ISO2 code (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call genderFullGeoBatchCall(BatchPersonalNameIn batchPersonalNameIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = batchPersonalNameIn;
+    public com.squareup.okhttp.Call genderFullGeoBatchCall(BatchPersonalNameGeoIn batchPersonalNameGeoIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = batchPersonalNameGeoIn;
 
         // create path and map variables
         String localVarPath = "/api2/json/genderFullGeoBatch";
@@ -1233,10 +1234,10 @@ public class PersonalApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call genderFullGeoBatchValidateBeforeCall(BatchPersonalNameIn batchPersonalNameIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call genderFullGeoBatchValidateBeforeCall(BatchPersonalNameGeoIn batchPersonalNameGeoIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = genderFullGeoBatchCall(batchPersonalNameIn, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = genderFullGeoBatchCall(batchPersonalNameGeoIn, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1244,24 +1245,24 @@ public class PersonalApi {
     /**
      * Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
      * 
-     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param batchPersonalNameGeoIn A list of personal names, with a country ISO2 code (optional)
      * @return BatchPersonalNameGenderedOut
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BatchPersonalNameGenderedOut genderFullGeoBatch(BatchPersonalNameIn batchPersonalNameIn) throws ApiException {
-        ApiResponse<BatchPersonalNameGenderedOut> resp = genderFullGeoBatchWithHttpInfo(batchPersonalNameIn);
+    public BatchPersonalNameGenderedOut genderFullGeoBatch(BatchPersonalNameGeoIn batchPersonalNameGeoIn) throws ApiException {
+        ApiResponse<BatchPersonalNameGenderedOut> resp = genderFullGeoBatchWithHttpInfo(batchPersonalNameGeoIn);
         return resp.getData();
     }
 
     /**
      * Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
      * 
-     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param batchPersonalNameGeoIn A list of personal names, with a country ISO2 code (optional)
      * @return ApiResponse&lt;BatchPersonalNameGenderedOut&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BatchPersonalNameGenderedOut> genderFullGeoBatchWithHttpInfo(BatchPersonalNameIn batchPersonalNameIn) throws ApiException {
-        com.squareup.okhttp.Call call = genderFullGeoBatchValidateBeforeCall(batchPersonalNameIn, null, null);
+    public ApiResponse<BatchPersonalNameGenderedOut> genderFullGeoBatchWithHttpInfo(BatchPersonalNameGeoIn batchPersonalNameGeoIn) throws ApiException {
+        com.squareup.okhttp.Call call = genderFullGeoBatchValidateBeforeCall(batchPersonalNameGeoIn, null, null);
         Type localVarReturnType = new TypeToken<BatchPersonalNameGenderedOut>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1269,12 +1270,12 @@ public class PersonalApi {
     /**
      * Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code). (asynchronously)
      * 
-     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param batchPersonalNameGeoIn A list of personal names, with a country ISO2 code (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call genderFullGeoBatchAsync(BatchPersonalNameIn batchPersonalNameIn, final ApiCallback<BatchPersonalNameGenderedOut> callback) throws ApiException {
+    public com.squareup.okhttp.Call genderFullGeoBatchAsync(BatchPersonalNameGeoIn batchPersonalNameGeoIn, final ApiCallback<BatchPersonalNameGenderedOut> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1295,7 +1296,7 @@ public class PersonalApi {
             };
         }
 
-        com.squareup.okhttp.Call call = genderFullGeoBatchValidateBeforeCall(batchPersonalNameIn, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = genderFullGeoBatchValidateBeforeCall(batchPersonalNameGeoIn, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BatchPersonalNameGenderedOut>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

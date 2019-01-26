@@ -63,9 +63,9 @@
   </properties>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameGenderedOutTest" name="idTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameGenderedOutTest" name="firstNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameGenderedOutTest" name="lastNameTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameGenderedOutTest" name="lastNameTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameGenderedOutTest" name="genderScaleTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameGenderedOutTest" name="likelyGenderTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameGenderedOutTest" name="testFirstLastNameGenderedOut" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameGenderedOutTest" name="testFirstLastNameGenderedOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameGenderedOutTest" name="scoreTest" time="0"/>
 </testsuite>

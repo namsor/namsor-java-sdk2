@@ -24,6 +24,7 @@ import com.namsor.sdk2.model.BatchFirstLastNameUSRaceEthnicityOut;
 import com.namsor.sdk2.model.BatchParsedFullNameGeoIn;
 import com.namsor.sdk2.model.BatchParsedFullNameIn;
 import com.namsor.sdk2.model.BatchPersonalNameGenderedOut;
+import com.namsor.sdk2.model.BatchPersonalNameGeoIn;
 import com.namsor.sdk2.model.BatchPersonalNameGeoOut;
 import com.namsor.sdk2.model.BatchPersonalNameIn;
 import com.namsor.sdk2.model.FirstLastNameDiasporaedOut;
@@ -206,8 +207,8 @@ public class PersonalApiTest {
      */
     @Test
     public void genderFullGeoBatchTest() throws ApiException {
-        BatchPersonalNameIn batchPersonalNameIn = null;
-        BatchPersonalNameGenderedOut response = api.genderFullGeoBatch(batchPersonalNameIn);
+        BatchPersonalNameGeoIn batchPersonalNameGeoIn = null;
+        BatchPersonalNameGenderedOut response = api.genderFullGeoBatch(batchPersonalNameGeoIn);
 
         // TODO: test validations
     }

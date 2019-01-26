@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 <a name="genderFullGeoBatch"></a>
 # **genderFullGeoBatch**
-> BatchPersonalNameGenderedOut genderFullGeoBatch(batchPersonalNameIn)
+> BatchPersonalNameGenderedOut genderFullGeoBatch(batchPersonalNameGeoIn)
 
 Infer the likely gender of up to 1000 full names, with a given cultural context (country ISO2 code).
 
@@ -535,9 +535,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 PersonalApi apiInstance = new PersonalApi();
-BatchPersonalNameIn batchPersonalNameIn = new BatchPersonalNameIn(); // BatchPersonalNameIn | A list of personal names
+BatchPersonalNameGeoIn batchPersonalNameGeoIn = new BatchPersonalNameGeoIn(); // BatchPersonalNameGeoIn | A list of personal names, with a country ISO2 code
 try {
-    BatchPersonalNameGenderedOut result = apiInstance.genderFullGeoBatch(batchPersonalNameIn);
+    BatchPersonalNameGenderedOut result = apiInstance.genderFullGeoBatch(batchPersonalNameGeoIn);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PersonalApi#genderFullGeoBatch");
@@ -549,7 +549,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batchPersonalNameIn** | [**BatchPersonalNameIn**](BatchPersonalNameIn.md)| A list of personal names | [optional]
+ **batchPersonalNameGeoIn** | [**BatchPersonalNameGeoIn**](BatchPersonalNameGeoIn.md)| A list of personal names, with a country ISO2 code | [optional]
 
 ### Return type
 
