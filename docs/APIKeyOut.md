@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **userId** | **String** |  |  [optional]
 **admin** | **Boolean** |  |  [optional]
 **vetted** | **Boolean** |  |  [optional]
+**learnable** | **Boolean** |  |  [optional]
 **partner** | **Boolean** |  |  [optional]
 **striped** | **Boolean** |  |  [optional]
 **corporate** | **Boolean** |  |  [optional]

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * APIKeyOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-26T16:44:07.917+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-02T02:26:05.074+01:00[Europe/Berlin]")
 public class APIKeyOut {
   public static final String SERIALIZED_NAME_API_KEY = "apiKey";
   @SerializedName(SERIALIZED_NAME_API_KEY)
@@ -44,6 +44,10 @@ public class APIKeyOut {
   public static final String SERIALIZED_NAME_VETTED = "vetted";
   @SerializedName(SERIALIZED_NAME_VETTED)
   private Boolean vetted;
+
+  public static final String SERIALIZED_NAME_LEARNABLE = "learnable";
+  @SerializedName(SERIALIZED_NAME_LEARNABLE)
+  private Boolean learnable;
 
   public static final String SERIALIZED_NAME_PARTNER = "partner";
   @SerializedName(SERIALIZED_NAME_PARTNER)
@@ -133,6 +137,24 @@ public class APIKeyOut {
     this.vetted = vetted;
   }
 
+  public APIKeyOut learnable(Boolean learnable) {
+    this.learnable = learnable;
+    return this;
+  }
+
+   /**
+   * Get learnable
+   * @return learnable
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean getLearnable() {
+    return learnable;
+  }
+
+  public void setLearnable(Boolean learnable) {
+    this.learnable = learnable;
+  }
+
   public APIKeyOut partner(Boolean partner) {
     this.partner = partner;
     return this;
@@ -219,6 +241,7 @@ public class APIKeyOut {
         Objects.equals(this.userId, apIKeyOut.userId) &&
         Objects.equals(this.admin, apIKeyOut.admin) &&
         Objects.equals(this.vetted, apIKeyOut.vetted) &&
+        Objects.equals(this.learnable, apIKeyOut.learnable) &&
         Objects.equals(this.partner, apIKeyOut.partner) &&
         Objects.equals(this.striped, apIKeyOut.striped) &&
         Objects.equals(this.corporate, apIKeyOut.corporate) &&
@@ -227,7 +250,7 @@ public class APIKeyOut {
 
   @Override
   public int hashCode() {
-    return Objects.hash(apiKey, userId, admin, vetted, partner, striped, corporate, disabled);
+    return Objects.hash(apiKey, userId, admin, vetted, learnable, partner, striped, corporate, disabled);
   }
 
 
@@ -239,6 +262,7 @@ public class APIKeyOut {
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    admin: ").append(toIndentedString(admin)).append("\n");
     sb.append("    vetted: ").append(toIndentedString(vetted)).append("\n");
+    sb.append("    learnable: ").append(toIndentedString(learnable)).append("\n");
     sb.append("    partner: ").append(toIndentedString(partner)).append("\n");
     sb.append("    striped: ").append(toIndentedString(striped)).append("\n");
     sb.append("    corporate: ").append(toIndentedString(corporate)).append("\n");

@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import com.namsor.sdk2.model.BatchFirstLastNamePhoneCodedOut;
+import com.namsor.sdk2.model.BatchFirstLastNamePhoneNumberGeoIn;
 import com.namsor.sdk2.model.BatchFirstLastNamePhoneNumberIn;
 import com.namsor.sdk2.model.FirstLastNamePhoneCodedOut;
 
@@ -57,7 +58,7 @@ public class SocialApi {
     }
 
     /**
-     * Build call for phonePrefix
+     * Build call for phoneCode
      * @param firstName  (required)
      * @param lastName  (required)
      * @param phoneNumber  (required)
@@ -66,7 +67,7 @@ public class SocialApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call phonePrefixCall(String firstName, String lastName, String phoneNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call phoneCodeCall(String firstName, String lastName, String phoneNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -110,25 +111,25 @@ public class SocialApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call phonePrefixValidateBeforeCall(String firstName, String lastName, String phoneNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call phoneCodeValidateBeforeCall(String firstName, String lastName, String phoneNumber, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'firstName' is set
         if (firstName == null) {
-            throw new ApiException("Missing the required parameter 'firstName' when calling phonePrefix(Async)");
+            throw new ApiException("Missing the required parameter 'firstName' when calling phoneCode(Async)");
         }
         
         // verify the required parameter 'lastName' is set
         if (lastName == null) {
-            throw new ApiException("Missing the required parameter 'lastName' when calling phonePrefix(Async)");
+            throw new ApiException("Missing the required parameter 'lastName' when calling phoneCode(Async)");
         }
         
         // verify the required parameter 'phoneNumber' is set
         if (phoneNumber == null) {
-            throw new ApiException("Missing the required parameter 'phoneNumber' when calling phonePrefix(Async)");
+            throw new ApiException("Missing the required parameter 'phoneNumber' when calling phoneCode(Async)");
         }
         
 
-        com.squareup.okhttp.Call call = phonePrefixCall(firstName, lastName, phoneNumber, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = phoneCodeCall(firstName, lastName, phoneNumber, progressListener, progressRequestListener);
         return call;
 
     }
@@ -142,8 +143,8 @@ public class SocialApi {
      * @return FirstLastNamePhoneCodedOut
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public FirstLastNamePhoneCodedOut phonePrefix(String firstName, String lastName, String phoneNumber) throws ApiException {
-        ApiResponse<FirstLastNamePhoneCodedOut> resp = phonePrefixWithHttpInfo(firstName, lastName, phoneNumber);
+    public FirstLastNamePhoneCodedOut phoneCode(String firstName, String lastName, String phoneNumber) throws ApiException {
+        ApiResponse<FirstLastNamePhoneCodedOut> resp = phoneCodeWithHttpInfo(firstName, lastName, phoneNumber);
         return resp.getData();
     }
 
@@ -156,8 +157,8 @@ public class SocialApi {
      * @return ApiResponse&lt;FirstLastNamePhoneCodedOut&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<FirstLastNamePhoneCodedOut> phonePrefixWithHttpInfo(String firstName, String lastName, String phoneNumber) throws ApiException {
-        com.squareup.okhttp.Call call = phonePrefixValidateBeforeCall(firstName, lastName, phoneNumber, null, null);
+    public ApiResponse<FirstLastNamePhoneCodedOut> phoneCodeWithHttpInfo(String firstName, String lastName, String phoneNumber) throws ApiException {
+        com.squareup.okhttp.Call call = phoneCodeValidateBeforeCall(firstName, lastName, phoneNumber, null, null);
         Type localVarReturnType = new TypeToken<FirstLastNamePhoneCodedOut>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -172,7 +173,7 @@ public class SocialApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call phonePrefixAsync(String firstName, String lastName, String phoneNumber, final ApiCallback<FirstLastNamePhoneCodedOut> callback) throws ApiException {
+    public com.squareup.okhttp.Call phoneCodeAsync(String firstName, String lastName, String phoneNumber, final ApiCallback<FirstLastNamePhoneCodedOut> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -193,20 +194,20 @@ public class SocialApi {
             };
         }
 
-        com.squareup.okhttp.Call call = phonePrefixValidateBeforeCall(firstName, lastName, phoneNumber, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = phoneCodeValidateBeforeCall(firstName, lastName, phoneNumber, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<FirstLastNamePhoneCodedOut>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
-     * Build call for phonePrefixBatch
+     * Build call for phoneCodeBatch
      * @param batchFirstLastNamePhoneNumberIn A list of personal names (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call phonePrefixBatchCall(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call phoneCodeBatchCall(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = batchFirstLastNamePhoneNumberIn;
 
         // create path and map variables
@@ -247,10 +248,10 @@ public class SocialApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call phonePrefixBatchValidateBeforeCall(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call phoneCodeBatchValidateBeforeCall(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = phonePrefixBatchCall(batchFirstLastNamePhoneNumberIn, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = phoneCodeBatchCall(batchFirstLastNamePhoneNumberIn, progressListener, progressRequestListener);
         return call;
 
     }
@@ -262,8 +263,8 @@ public class SocialApi {
      * @return BatchFirstLastNamePhoneCodedOut
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public BatchFirstLastNamePhoneCodedOut phonePrefixBatch(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn) throws ApiException {
-        ApiResponse<BatchFirstLastNamePhoneCodedOut> resp = phonePrefixBatchWithHttpInfo(batchFirstLastNamePhoneNumberIn);
+    public BatchFirstLastNamePhoneCodedOut phoneCodeBatch(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn) throws ApiException {
+        ApiResponse<BatchFirstLastNamePhoneCodedOut> resp = phoneCodeBatchWithHttpInfo(batchFirstLastNamePhoneNumberIn);
         return resp.getData();
     }
 
@@ -274,8 +275,8 @@ public class SocialApi {
      * @return ApiResponse&lt;BatchFirstLastNamePhoneCodedOut&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<BatchFirstLastNamePhoneCodedOut> phonePrefixBatchWithHttpInfo(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn) throws ApiException {
-        com.squareup.okhttp.Call call = phonePrefixBatchValidateBeforeCall(batchFirstLastNamePhoneNumberIn, null, null);
+    public ApiResponse<BatchFirstLastNamePhoneCodedOut> phoneCodeBatchWithHttpInfo(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn) throws ApiException {
+        com.squareup.okhttp.Call call = phoneCodeBatchValidateBeforeCall(batchFirstLastNamePhoneNumberIn, null, null);
         Type localVarReturnType = new TypeToken<BatchFirstLastNamePhoneCodedOut>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -288,7 +289,7 @@ public class SocialApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call phonePrefixBatchAsync(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn, final ApiCallback<BatchFirstLastNamePhoneCodedOut> callback) throws ApiException {
+    public com.squareup.okhttp.Call phoneCodeBatchAsync(BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn, final ApiCallback<BatchFirstLastNamePhoneCodedOut> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -309,7 +310,275 @@ public class SocialApi {
             };
         }
 
-        com.squareup.okhttp.Call call = phonePrefixBatchValidateBeforeCall(batchFirstLastNamePhoneNumberIn, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = phoneCodeBatchValidateBeforeCall(batchFirstLastNamePhoneNumberIn, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BatchFirstLastNamePhoneCodedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for phoneCodeGeo
+     * @param firstName  (required)
+     * @param lastName  (required)
+     * @param phoneNumber  (required)
+     * @param countryIso2  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call phoneCodeGeoCall(String firstName, String lastName, String phoneNumber, String countryIso2, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/api2/json/phoneCodeGeo/{firstName}/{lastName}/{phoneNumber}/{countryIso2}"
+            .replaceAll("\\{" + "firstName" + "\\}", apiClient.escapeString(firstName.toString()))
+            .replaceAll("\\{" + "lastName" + "\\}", apiClient.escapeString(lastName.toString()))
+            .replaceAll("\\{" + "phoneNumber" + "\\}", apiClient.escapeString(phoneNumber.toString()))
+            .replaceAll("\\{" + "countryIso2" + "\\}", apiClient.escapeString(countryIso2.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call phoneCodeGeoValidateBeforeCall(String firstName, String lastName, String phoneNumber, String countryIso2, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'firstName' is set
+        if (firstName == null) {
+            throw new ApiException("Missing the required parameter 'firstName' when calling phoneCodeGeo(Async)");
+        }
+        
+        // verify the required parameter 'lastName' is set
+        if (lastName == null) {
+            throw new ApiException("Missing the required parameter 'lastName' when calling phoneCodeGeo(Async)");
+        }
+        
+        // verify the required parameter 'phoneNumber' is set
+        if (phoneNumber == null) {
+            throw new ApiException("Missing the required parameter 'phoneNumber' when calling phoneCodeGeo(Async)");
+        }
+        
+        // verify the required parameter 'countryIso2' is set
+        if (countryIso2 == null) {
+            throw new ApiException("Missing the required parameter 'countryIso2' when calling phoneCodeGeo(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = phoneCodeGeoCall(firstName, lastName, phoneNumber, countryIso2, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * [USES 11 UNITS] Infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence).
+     * 
+     * @param firstName  (required)
+     * @param lastName  (required)
+     * @param phoneNumber  (required)
+     * @param countryIso2  (required)
+     * @return FirstLastNamePhoneCodedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public FirstLastNamePhoneCodedOut phoneCodeGeo(String firstName, String lastName, String phoneNumber, String countryIso2) throws ApiException {
+        ApiResponse<FirstLastNamePhoneCodedOut> resp = phoneCodeGeoWithHttpInfo(firstName, lastName, phoneNumber, countryIso2);
+        return resp.getData();
+    }
+
+    /**
+     * [USES 11 UNITS] Infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence).
+     * 
+     * @param firstName  (required)
+     * @param lastName  (required)
+     * @param phoneNumber  (required)
+     * @param countryIso2  (required)
+     * @return ApiResponse&lt;FirstLastNamePhoneCodedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<FirstLastNamePhoneCodedOut> phoneCodeGeoWithHttpInfo(String firstName, String lastName, String phoneNumber, String countryIso2) throws ApiException {
+        com.squareup.okhttp.Call call = phoneCodeGeoValidateBeforeCall(firstName, lastName, phoneNumber, countryIso2, null, null);
+        Type localVarReturnType = new TypeToken<FirstLastNamePhoneCodedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * [USES 11 UNITS] Infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence). (asynchronously)
+     * 
+     * @param firstName  (required)
+     * @param lastName  (required)
+     * @param phoneNumber  (required)
+     * @param countryIso2  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call phoneCodeGeoAsync(String firstName, String lastName, String phoneNumber, String countryIso2, final ApiCallback<FirstLastNamePhoneCodedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = phoneCodeGeoValidateBeforeCall(firstName, lastName, phoneNumber, countryIso2, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<FirstLastNamePhoneCodedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for phoneCodeGeoBatch
+     * @param batchFirstLastNamePhoneNumberGeoIn A list of personal names (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call phoneCodeGeoBatchCall(BatchFirstLastNamePhoneNumberGeoIn batchFirstLastNamePhoneNumberGeoIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = batchFirstLastNamePhoneNumberGeoIn;
+
+        // create path and map variables
+        String localVarPath = "/api2/json/phoneCodeGeoBatch";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call phoneCodeGeoBatchValidateBeforeCall(BatchFirstLastNamePhoneNumberGeoIn batchFirstLastNamePhoneNumberGeoIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = phoneCodeGeoBatchCall(batchFirstLastNamePhoneNumberGeoIn, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * [USES 11 UNITS] Infer the likely country and phone prefix, of up to 1000 personal names, with a local context (ISO2 country of residence).
+     * 
+     * @param batchFirstLastNamePhoneNumberGeoIn A list of personal names (optional)
+     * @return BatchFirstLastNamePhoneCodedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BatchFirstLastNamePhoneCodedOut phoneCodeGeoBatch(BatchFirstLastNamePhoneNumberGeoIn batchFirstLastNamePhoneNumberGeoIn) throws ApiException {
+        ApiResponse<BatchFirstLastNamePhoneCodedOut> resp = phoneCodeGeoBatchWithHttpInfo(batchFirstLastNamePhoneNumberGeoIn);
+        return resp.getData();
+    }
+
+    /**
+     * [USES 11 UNITS] Infer the likely country and phone prefix, of up to 1000 personal names, with a local context (ISO2 country of residence).
+     * 
+     * @param batchFirstLastNamePhoneNumberGeoIn A list of personal names (optional)
+     * @return ApiResponse&lt;BatchFirstLastNamePhoneCodedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BatchFirstLastNamePhoneCodedOut> phoneCodeGeoBatchWithHttpInfo(BatchFirstLastNamePhoneNumberGeoIn batchFirstLastNamePhoneNumberGeoIn) throws ApiException {
+        com.squareup.okhttp.Call call = phoneCodeGeoBatchValidateBeforeCall(batchFirstLastNamePhoneNumberGeoIn, null, null);
+        Type localVarReturnType = new TypeToken<BatchFirstLastNamePhoneCodedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * [USES 11 UNITS] Infer the likely country and phone prefix, of up to 1000 personal names, with a local context (ISO2 country of residence). (asynchronously)
+     * 
+     * @param batchFirstLastNamePhoneNumberGeoIn A list of personal names (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call phoneCodeGeoBatchAsync(BatchFirstLastNamePhoneNumberGeoIn batchFirstLastNamePhoneNumberGeoIn, final ApiCallback<BatchFirstLastNamePhoneCodedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = phoneCodeGeoBatchValidateBeforeCall(batchFirstLastNamePhoneNumberGeoIn, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<BatchFirstLastNamePhoneCodedOut>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

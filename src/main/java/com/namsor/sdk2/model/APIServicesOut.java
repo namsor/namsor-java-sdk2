@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * APIServicesOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-01-26T16:44:07.917+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-02T02:26:05.074+01:00[Europe/Berlin]")
 public class APIServicesOut {
   public static final String SERIALIZED_NAME_API_SERVICES = "apiServices";
   @SerializedName(SERIALIZED_NAME_API_SERVICES)

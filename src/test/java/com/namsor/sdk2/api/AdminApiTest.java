@@ -245,6 +245,23 @@ public class AdminApiTest {
     }
     
     /**
+     * Activate/deactivate learning from a source.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void learnableTest() throws ApiException {
+        String source = null;
+        Boolean learnable = null;
+        api.learnable(source, learnable);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Get the overall API counter
      *
      * 

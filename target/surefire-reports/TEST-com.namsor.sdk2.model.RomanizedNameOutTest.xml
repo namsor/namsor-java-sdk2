@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="com.namsor.sdk2.model.RomanizedNameOutTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="com.namsor.sdk2.model.RomanizedNameOutTest" time="0.003" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -62,12 +62,12 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="targetScriptTest" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="sourceScriptTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="sourceScriptTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="idTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="targetLanguageTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="originalNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="latinNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="testRomanizedNameOut" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="sourceLanguageTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="sourceLanguageTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.RomanizedNameOutTest" name="scoreTest" time="0"/>
 </testsuite>

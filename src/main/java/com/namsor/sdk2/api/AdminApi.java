@@ -1582,6 +1582,134 @@ public class AdminApi {
         return call;
     }
     /**
+     * Build call for learnable
+     * @param source  (required)
+     * @param learnable  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call learnableCall(String source, Boolean learnable, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/api2/json/learnable/{source}/{learnable}"
+            .replaceAll("\\{" + "source" + "\\}", apiClient.escapeString(source.toString()))
+            .replaceAll("\\{" + "learnable" + "\\}", apiClient.escapeString(learnable.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call learnableValidateBeforeCall(String source, Boolean learnable, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'source' is set
+        if (source == null) {
+            throw new ApiException("Missing the required parameter 'source' when calling learnable(Async)");
+        }
+        
+        // verify the required parameter 'learnable' is set
+        if (learnable == null) {
+            throw new ApiException("Missing the required parameter 'learnable' when calling learnable(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = learnableCall(source, learnable, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Activate/deactivate learning from a source.
+     * 
+     * @param source  (required)
+     * @param learnable  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public void learnable(String source, Boolean learnable) throws ApiException {
+        learnableWithHttpInfo(source, learnable);
+    }
+
+    /**
+     * Activate/deactivate learning from a source.
+     * 
+     * @param source  (required)
+     * @param learnable  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Void> learnableWithHttpInfo(String source, Boolean learnable) throws ApiException {
+        com.squareup.okhttp.Call call = learnableValidateBeforeCall(source, learnable, null, null);
+        return apiClient.execute(call);
+    }
+
+    /**
+     * Activate/deactivate learning from a source. (asynchronously)
+     * 
+     * @param source  (required)
+     * @param learnable  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call learnableAsync(String source, Boolean learnable, final ApiCallback<Void> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = learnableValidateBeforeCall(source, learnable, progressListener, progressRequestListener);
+        apiClient.executeAsync(call, callback);
+        return call;
+    }
+    /**
      * Build call for namsorCounter
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener

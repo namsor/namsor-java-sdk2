@@ -27,11 +27,13 @@ import com.namsor.sdk2.model.BatchPersonalNameGenderedOut;
 import com.namsor.sdk2.model.BatchPersonalNameGeoIn;
 import com.namsor.sdk2.model.BatchPersonalNameGeoOut;
 import com.namsor.sdk2.model.BatchPersonalNameIn;
+import com.namsor.sdk2.model.BatchPersonalNameParsedOut;
 import com.namsor.sdk2.model.FirstLastNameDiasporaedOut;
 import com.namsor.sdk2.model.FirstLastNameGenderedOut;
 import com.namsor.sdk2.model.FirstLastNameOriginedOut;
 import com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOut;
 import com.namsor.sdk2.model.PersonalNameGeoOut;
+import com.namsor.sdk2.model.PersonalNameParsedOut;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -281,6 +283,71 @@ public class PersonalApiTest {
     }
     
     /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void parseNameTest() throws ApiException {
+        String nameFull = null;
+        PersonalNameParsedOut response = api.parseName(nameFull);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void parseNameBatchTest() throws ApiException {
+        BatchPersonalNameIn batchPersonalNameIn = null;
+        BatchPersonalNameParsedOut response = api.parseNameBatch(batchPersonalNameIn);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void parseNameGeoTest() throws ApiException {
+        String nameFull = null;
+        String countryIso2 = null;
+        PersonalNameParsedOut response = api.parseNameGeo(nameFull, countryIso2);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. 
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void parseNameGeoBatchTest() throws ApiException {
+        BatchPersonalNameGeoIn batchPersonalNameGeoIn = null;
+        BatchPersonalNameParsedOut response = api.parseNameGeoBatch(batchPersonalNameGeoIn);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Infer the likely gender of up to 1000 fully parsed names, detecting automatically the cultural context.
      *
      * 
@@ -313,7 +380,7 @@ public class PersonalApiTest {
     }
     
     /**
-     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy.
+     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino).
      *
      * 
      *
@@ -346,7 +413,7 @@ public class PersonalApiTest {
     }
     
     /**
-     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info.
+     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino).
      *
      * 
      *

@@ -15,6 +15,7 @@ package com.namsor.sdk2.api;
 
 import com.namsor.sdk2.invoke.ApiException;
 import com.namsor.sdk2.model.BatchFirstLastNamePhoneCodedOut;
+import com.namsor.sdk2.model.BatchFirstLastNamePhoneNumberGeoIn;
 import com.namsor.sdk2.model.BatchFirstLastNamePhoneNumberIn;
 import com.namsor.sdk2.model.FirstLastNamePhoneCodedOut;
 import org.junit.Test;
@@ -43,11 +44,11 @@ public class SocialApiTest {
      *          if the Api call fails
      */
     @Test
-    public void phonePrefixTest() throws ApiException {
+    public void phoneCodeTest() throws ApiException {
         String firstName = null;
         String lastName = null;
         String phoneNumber = null;
-        FirstLastNamePhoneCodedOut response = api.phonePrefix(firstName, lastName, phoneNumber);
+        FirstLastNamePhoneCodedOut response = api.phoneCode(firstName, lastName, phoneNumber);
 
         // TODO: test validations
     }
@@ -61,9 +62,44 @@ public class SocialApiTest {
      *          if the Api call fails
      */
     @Test
-    public void phonePrefixBatchTest() throws ApiException {
+    public void phoneCodeBatchTest() throws ApiException {
         BatchFirstLastNamePhoneNumberIn batchFirstLastNamePhoneNumberIn = null;
-        BatchFirstLastNamePhoneCodedOut response = api.phonePrefixBatch(batchFirstLastNamePhoneNumberIn);
+        BatchFirstLastNamePhoneCodedOut response = api.phoneCodeBatch(batchFirstLastNamePhoneNumberIn);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * [USES 11 UNITS] Infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence).
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void phoneCodeGeoTest() throws ApiException {
+        String firstName = null;
+        String lastName = null;
+        String phoneNumber = null;
+        String countryIso2 = null;
+        FirstLastNamePhoneCodedOut response = api.phoneCodeGeo(firstName, lastName, phoneNumber, countryIso2);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * [USES 11 UNITS] Infer the likely country and phone prefix, of up to 1000 personal names, with a local context (ISO2 country of residence).
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void phoneCodeGeoBatchTest() throws ApiException {
+        BatchFirstLastNamePhoneNumberGeoIn batchFirstLastNamePhoneNumberGeoIn = null;
+        BatchFirstLastNamePhoneCodedOut response = api.phoneCodeGeoBatch(batchFirstLastNamePhoneNumberGeoIn);
 
         // TODO: test validations
     }

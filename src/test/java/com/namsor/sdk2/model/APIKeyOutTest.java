@@ -73,6 +73,14 @@ public class APIKeyOutTest {
     }
 
     /**
+     * Test the property 'learnable'
+     */
+    @Test
+    public void learnableTest() {
+        // TODO: test learnable
+    }
+
+    /**
      * Test the property 'partner'
      */
     @Test

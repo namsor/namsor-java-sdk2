@@ -40,11 +40,13 @@ import com.namsor.sdk2.model.BatchPersonalNameGenderedOut;
 import com.namsor.sdk2.model.BatchPersonalNameGeoIn;
 import com.namsor.sdk2.model.BatchPersonalNameGeoOut;
 import com.namsor.sdk2.model.BatchPersonalNameIn;
+import com.namsor.sdk2.model.BatchPersonalNameParsedOut;
 import com.namsor.sdk2.model.FirstLastNameDiasporaedOut;
 import com.namsor.sdk2.model.FirstLastNameGenderedOut;
 import com.namsor.sdk2.model.FirstLastNameOriginedOut;
 import com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOut;
 import com.namsor.sdk2.model.PersonalNameGeoOut;
+import com.namsor.sdk2.model.PersonalNameParsedOut;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -1808,6 +1810,492 @@ public class PersonalApi {
         return call;
     }
     /**
+     * Build call for parseName
+     * @param nameFull  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call parseNameCall(String nameFull, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/api2/json/parseName/{nameFull}"
+            .replaceAll("\\{" + "nameFull" + "\\}", apiClient.escapeString(nameFull.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call parseNameValidateBeforeCall(String nameFull, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nameFull' is set
+        if (nameFull == null) {
+            throw new ApiException("Missing the required parameter 'nameFull' when calling parseName(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = parseNameCall(nameFull, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. 
+     * 
+     * @param nameFull  (required)
+     * @return PersonalNameParsedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PersonalNameParsedOut parseName(String nameFull) throws ApiException {
+        ApiResponse<PersonalNameParsedOut> resp = parseNameWithHttpInfo(nameFull);
+        return resp.getData();
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. 
+     * 
+     * @param nameFull  (required)
+     * @return ApiResponse&lt;PersonalNameParsedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PersonalNameParsedOut> parseNameWithHttpInfo(String nameFull) throws ApiException {
+        com.squareup.okhttp.Call call = parseNameValidateBeforeCall(nameFull, null, null);
+        Type localVarReturnType = new TypeToken<PersonalNameParsedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.  (asynchronously)
+     * 
+     * @param nameFull  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call parseNameAsync(String nameFull, final ApiCallback<PersonalNameParsedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = parseNameValidateBeforeCall(nameFull, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PersonalNameParsedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for parseNameBatch
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call parseNameBatchCall(BatchPersonalNameIn batchPersonalNameIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = batchPersonalNameIn;
+
+        // create path and map variables
+        String localVarPath = "/api2/json/parseNameBatch";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call parseNameBatchValidateBeforeCall(BatchPersonalNameIn batchPersonalNameIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = parseNameBatchCall(batchPersonalNameIn, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.
+     * 
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @return BatchPersonalNameParsedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BatchPersonalNameParsedOut parseNameBatch(BatchPersonalNameIn batchPersonalNameIn) throws ApiException {
+        ApiResponse<BatchPersonalNameParsedOut> resp = parseNameBatchWithHttpInfo(batchPersonalNameIn);
+        return resp.getData();
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.
+     * 
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @return ApiResponse&lt;BatchPersonalNameParsedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BatchPersonalNameParsedOut> parseNameBatchWithHttpInfo(BatchPersonalNameIn batchPersonalNameIn) throws ApiException {
+        com.squareup.okhttp.Call call = parseNameBatchValidateBeforeCall(batchPersonalNameIn, null, null);
+        Type localVarReturnType = new TypeToken<BatchPersonalNameParsedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. (asynchronously)
+     * 
+     * @param batchPersonalNameIn A list of personal names (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call parseNameBatchAsync(BatchPersonalNameIn batchPersonalNameIn, final ApiCallback<BatchPersonalNameParsedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = parseNameBatchValidateBeforeCall(batchPersonalNameIn, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BatchPersonalNameParsedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for parseNameGeo
+     * @param nameFull  (required)
+     * @param countryIso2  (required)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call parseNameGeoCall(String nameFull, String countryIso2, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = new Object();
+
+        // create path and map variables
+        String localVarPath = "/api2/json/parseName/{nameFull}/{countryIso2}"
+            .replaceAll("\\{" + "nameFull" + "\\}", apiClient.escapeString(nameFull.toString()))
+            .replaceAll("\\{" + "countryIso2" + "\\}", apiClient.escapeString(countryIso2.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call parseNameGeoValidateBeforeCall(String nameFull, String countryIso2, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        // verify the required parameter 'nameFull' is set
+        if (nameFull == null) {
+            throw new ApiException("Missing the required parameter 'nameFull' when calling parseNameGeo(Async)");
+        }
+        
+        // verify the required parameter 'countryIso2' is set
+        if (countryIso2 == null) {
+            throw new ApiException("Missing the required parameter 'countryIso2' when calling parseNameGeo(Async)");
+        }
+        
+
+        com.squareup.okhttp.Call call = parseNameGeoCall(nameFull, countryIso2, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.
+     * 
+     * @param nameFull  (required)
+     * @param countryIso2  (required)
+     * @return PersonalNameParsedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public PersonalNameParsedOut parseNameGeo(String nameFull, String countryIso2) throws ApiException {
+        ApiResponse<PersonalNameParsedOut> resp = parseNameGeoWithHttpInfo(nameFull, countryIso2);
+        return resp.getData();
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.
+     * 
+     * @param nameFull  (required)
+     * @param countryIso2  (required)
+     * @return ApiResponse&lt;PersonalNameParsedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<PersonalNameParsedOut> parseNameGeoWithHttpInfo(String nameFull, String countryIso2) throws ApiException {
+        com.squareup.okhttp.Call call = parseNameGeoValidateBeforeCall(nameFull, countryIso2, null, null);
+        Type localVarReturnType = new TypeToken<PersonalNameParsedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context. (asynchronously)
+     * 
+     * @param nameFull  (required)
+     * @param countryIso2  (required)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call parseNameGeoAsync(String nameFull, String countryIso2, final ApiCallback<PersonalNameParsedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = parseNameGeoValidateBeforeCall(nameFull, countryIso2, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<PersonalNameParsedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for parseNameGeoBatch
+     * @param batchPersonalNameGeoIn A list of personal names (optional)
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call parseNameGeoBatchCall(BatchPersonalNameGeoIn batchPersonalNameGeoIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = batchPersonalNameGeoIn;
+
+        // create path and map variables
+        String localVarPath = "/api2/json/parseNameGeoBatch";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if (progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] { "api_key" };
+        return apiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call parseNameGeoBatchValidateBeforeCall(BatchPersonalNameGeoIn batchPersonalNameGeoIn, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = parseNameGeoBatchCall(batchPersonalNameGeoIn, progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. 
+     * 
+     * @param batchPersonalNameGeoIn A list of personal names (optional)
+     * @return BatchPersonalNameParsedOut
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public BatchPersonalNameParsedOut parseNameGeoBatch(BatchPersonalNameGeoIn batchPersonalNameGeoIn) throws ApiException {
+        ApiResponse<BatchPersonalNameParsedOut> resp = parseNameGeoBatchWithHttpInfo(batchPersonalNameGeoIn);
+        return resp.getData();
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. 
+     * 
+     * @param batchPersonalNameGeoIn A list of personal names (optional)
+     * @return ApiResponse&lt;BatchPersonalNameParsedOut&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<BatchPersonalNameParsedOut> parseNameGeoBatchWithHttpInfo(BatchPersonalNameGeoIn batchPersonalNameGeoIn) throws ApiException {
+        com.squareup.okhttp.Call call = parseNameGeoBatchValidateBeforeCall(batchPersonalNameGeoIn, null, null);
+        Type localVarReturnType = new TypeToken<BatchPersonalNameParsedOut>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision.  (asynchronously)
+     * 
+     * @param batchPersonalNameGeoIn A list of personal names (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call parseNameGeoBatchAsync(BatchPersonalNameGeoIn batchPersonalNameGeoIn, final ApiCallback<BatchPersonalNameParsedOut> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = parseNameGeoBatchValidateBeforeCall(batchPersonalNameGeoIn, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<BatchPersonalNameParsedOut>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
      * Build call for parsedGenderBatch
      * @param batchParsedFullNameIn A list of personal names (optional)
      * @param progressListener Progress listener
@@ -2110,7 +2598,7 @@ public class PersonalApi {
     }
 
     /**
-     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy.
+     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino).
      * 
      * @param firstName  (required)
      * @param lastName  (required)
@@ -2123,7 +2611,7 @@ public class PersonalApi {
     }
 
     /**
-     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy.
+     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino).
      * 
      * @param firstName  (required)
      * @param lastName  (required)
@@ -2137,7 +2625,7 @@ public class PersonalApi {
     }
 
     /**
-     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy. (asynchronously)
+     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). (asynchronously)
      * 
      * @param firstName  (required)
      * @param lastName  (required)
@@ -2365,7 +2853,7 @@ public class PersonalApi {
     }
 
     /**
-     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info.
+     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino).
      * 
      * @param firstName  (required)
      * @param lastName  (required)
@@ -2379,7 +2867,7 @@ public class PersonalApi {
     }
 
     /**
-     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info.
+     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino).
      * 
      * @param firstName  (required)
      * @param lastName  (required)
@@ -2394,7 +2882,7 @@ public class PersonalApi {
     }
 
     /**
-     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. (asynchronously)
+     * [USES 10 UNITS] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). (asynchronously)
      * 
      * @param firstName  (required)
      * @param lastName  (required)
