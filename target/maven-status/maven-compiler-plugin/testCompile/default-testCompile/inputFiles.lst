@@ -62,6 +62,7 @@
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/FirstLastNamePhoneNumberGeoInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/DeployUIOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/APIKeyOutTest.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/FeedbackLoopOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/StripeCardOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/FirstLastNamePhoneNumberInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/ParsedFullNameGeoInTest.java

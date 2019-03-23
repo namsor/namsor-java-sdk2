@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**charge**](AdminApi.md#charge) | **POST** /api2/json/charge | Create a Stripe Customer, based on a payment card token (from secure StripeJS) and email.
 [**corporateKey**](AdminApi.md#corporateKey) | **GET** /api2/json/corporateKey/{apiKey}/{corporate} | Setting an API Key to a corporate status.
 [**debugLevel**](AdminApi.md#debugLevel) | **GET** /api2/json/debugLevel/{logger}/{level} | Update debug level for a classifier
+[**flush**](AdminApi.md#flush) | **GET** /api2/json/flush | Flush counters.
 [**invalidateCache**](AdminApi.md#invalidateCache) | **GET** /api2/json/invalidateCache | Invalidate system caches.
 [**learnable**](AdminApi.md#learnable) | **GET** /api2/json/learnable/{source}/{learnable} | Activate/deactivate learning from a source.
 [**namsorCounter**](AdminApi.md#namsorCounter) | **GET** /api2/json/namsorCounter | Get the overall API counter
@@ -639,6 +640,54 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **logger** | **String**|  |
  **level** | **String**|  |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="flush"></a>
+# **flush**
+> flush()
+
+Flush counters.
+
+### Example
+```java
+// Import classes:
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    apiInstance.flush();
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#flush");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
 
 ### Return type
 

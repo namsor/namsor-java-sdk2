@@ -13,7 +13,7 @@
 
 package com.namsor.sdk2.invoke;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-02T02:26:05.074+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-23T08:48:45.717+01:00[Europe/Berlin]")
 public class StringUtil {
   /**
    * Check if the given array contains the given value (with case-insensitive comparison).

@@ -2,7 +2,7 @@
 
 NamSor API v2
 - API version: 2.0.2-beta
-  - Build date: 2019-03-02T02:26:05.074+01:00[Europe/Berlin]
+  - Build date: 2019-03-23T08:48:45.717+01:00[Europe/Berlin]
 
 NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 1000 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
 
@@ -123,6 +123,7 @@ Class | Method | HTTP request | Description
 *AdminApi* | [**charge**](docs/AdminApi.md#charge) | **POST** /api2/json/charge | Create a Stripe Customer, based on a payment card token (from secure StripeJS) and email.
 *AdminApi* | [**corporateKey**](docs/AdminApi.md#corporateKey) | **GET** /api2/json/corporateKey/{apiKey}/{corporate} | Setting an API Key to a corporate status.
 *AdminApi* | [**debugLevel**](docs/AdminApi.md#debugLevel) | **GET** /api2/json/debugLevel/{logger}/{level} | Update debug level for a classifier
+*AdminApi* | [**flush**](docs/AdminApi.md#flush) | **GET** /api2/json/flush | Flush counters.
 *AdminApi* | [**invalidateCache**](docs/AdminApi.md#invalidateCache) | **GET** /api2/json/invalidateCache | Invalidate system caches.
 *AdminApi* | [**learnable**](docs/AdminApi.md#learnable) | **GET** /api2/json/learnable/{source}/{learnable} | Activate/deactivate learning from a source.
 *AdminApi* | [**namsorCounter**](docs/AdminApi.md#namsorCounter) | **GET** /api2/json/namsorCounter | Get the overall API counter
@@ -176,6 +177,7 @@ Class | Method | HTTP request | Description
 *SocialApi* | [**phoneCodeBatch**](docs/SocialApi.md#phoneCodeBatch) | **POST** /api2/json/phoneCodeBatch | [USES 11 UNITS] Infer the likely country and phone prefix, of up to 1000 personal names, detecting automatically the local context given a name and formatted / unformatted phone number.
 *SocialApi* | [**phoneCodeGeo**](docs/SocialApi.md#phoneCodeGeo) | **GET** /api2/json/phoneCodeGeo/{firstName}/{lastName}/{phoneNumber}/{countryIso2} | [USES 11 UNITS] Infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence).
 *SocialApi* | [**phoneCodeGeoBatch**](docs/SocialApi.md#phoneCodeGeoBatch) | **POST** /api2/json/phoneCodeGeoBatch | [USES 11 UNITS] Infer the likely country and phone prefix, of up to 1000 personal names, with a local context (ISO2 country of residence).
+*SocialApi* | [**phoneCodeGeoFeedbackLoop**](docs/SocialApi.md#phoneCodeGeoFeedbackLoop) | **GET** /api2/json/phoneCodeGeoFeedbackLoop/{firstName}/{lastName}/{phoneNumber}/{phoneNumberE164}/{countryIso2} | [CREDITS 1 UNIT] Feedback loop to better infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence).
 
 
 ## Documentation for Models
@@ -215,6 +217,7 @@ Class | Method | HTTP request | Description
  - [CurrenciesOut](docs/CurrenciesOut.md)
  - [DeployUIOut](docs/DeployUIOut.md)
  - [ExpectedClassMetricsOut](docs/ExpectedClassMetricsOut.md)
+ - [FeedbackLoopOut](docs/FeedbackLoopOut.md)
  - [FirstLastNameDiasporaedOut](docs/FirstLastNameDiasporaedOut.md)
  - [FirstLastNameGenderIn](docs/FirstLastNameGenderIn.md)
  - [FirstLastNameGenderedOut](docs/FirstLastNameGenderedOut.md)

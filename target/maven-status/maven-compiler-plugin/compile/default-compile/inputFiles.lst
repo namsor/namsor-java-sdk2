@@ -82,6 +82,7 @@
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/RomanizedNameOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/BatchNameMatchCandidatesOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/APIPeriodUsageOut.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/FeedbackLoopOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/SoftwareVersionOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/FirstLastNamePhoneCodedOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/invoke/auth/Authentication.java

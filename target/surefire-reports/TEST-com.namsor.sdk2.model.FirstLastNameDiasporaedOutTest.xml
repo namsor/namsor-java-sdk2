@@ -62,10 +62,10 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="ethnicityTest" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="idTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="idTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="firstNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="lastNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="testFirstLastNameDiasporaedOut" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="testFirstLastNameDiasporaedOut" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="ethnicityAltTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="countryIso2Test" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameDiasporaedOutTest" name="scoreTest" time="0"/>

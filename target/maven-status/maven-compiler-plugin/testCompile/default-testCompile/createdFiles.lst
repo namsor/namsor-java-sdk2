@@ -16,6 +16,7 @@ com/namsor/sdk2/model/FirstLastNameGeoInTest.class
 com/namsor/sdk2/api/AdminApiTest.class
 com/namsor/sdk2/model/InlineObjectTest.class
 com/namsor/sdk2/model/FirstLastNamePhoneNumberGeoInTest.class
+com/namsor/sdk2/model/FeedbackLoopOutTest.class
 com/namsor/sdk2/model/RomanizedNameOutTest.class
 com/namsor/sdk2/model/CurrenciesOutTest.class
 com/namsor/sdk2/model/APIServicesOutTest.class

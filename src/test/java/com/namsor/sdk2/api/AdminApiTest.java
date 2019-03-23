@@ -230,6 +230,21 @@ public class AdminApiTest {
     }
     
     /**
+     * Flush counters.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void flushTest() throws ApiException {
+        api.flush();
+
+        // TODO: test validations
+    }
+    
+    /**
      * Invalidate system caches.
      *
      * 

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * BatchPersonalNameGeoIn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-02T02:26:05.074+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-23T08:48:45.717+01:00[Europe/Berlin]")
 public class BatchPersonalNameGeoIn {
   public static final String SERIALIZED_NAME_PERSONAL_NAMES = "personalNames";
   @SerializedName(SERIALIZED_NAME_PERSONAL_NAMES)

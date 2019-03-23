@@ -2,6 +2,7 @@ com/namsor/sdk2/api/PersonalApi$37.class
 com/namsor/sdk2/api/AdminApi$114.class
 com/namsor/sdk2/api/AdminApi$91.class
 com/namsor/sdk2/api/AdminApi$127.class
+com/namsor/sdk2/model/FeedbackLoopOut.class
 com/namsor/sdk2/api/AdminApi$101.class
 com/namsor/sdk2/api/ChineseApi$13.class
 com/namsor/sdk2/api/AdminApi$51.class
@@ -37,6 +38,7 @@ com/namsor/sdk2/api/AdminApi$106.class
 com/namsor/sdk2/api/AdminApi$119.class
 com/namsor/sdk2/api/PersonalApi$4.class
 com/namsor/sdk2/api/AdminApi$77.class
+com/namsor/sdk2/api/SocialApi$24.class
 com/namsor/sdk2/api/SocialApi$13.class
 com/namsor/sdk2/api/AdminApi$48.class
 com/namsor/sdk2/api/PersonalApi$77.class
@@ -62,6 +64,7 @@ com/namsor/sdk2/api/PersonalApi$18.class
 com/namsor/sdk2/api/SocialApi$11.class
 com/namsor/sdk2/api/PersonalApi$96.class
 com/namsor/sdk2/model/SoftwareVersionOut.class
+com/namsor/sdk2/api/AdminApi$148.class
 com/namsor/sdk2/model/StripeCustomerOut.class
 com/namsor/sdk2/model/FirstLastNameIn.class
 com/namsor/sdk2/api/AdminApi$32.class
@@ -120,6 +123,7 @@ com/namsor/sdk2/api/AdminApi$111.class
 com/namsor/sdk2/api/AdminApi$131.class
 com/namsor/sdk2/api/AdminApi$74.class
 com/namsor/sdk2/api/AdminApi$124.class
+com/namsor/sdk2/api/SocialApi$22.class
 com/namsor/sdk2/api/AdminApi$19.class
 com/namsor/sdk2/api/AdminApi$59.class
 com/namsor/sdk2/api/AdminApi$26.class
@@ -185,6 +189,7 @@ com/namsor/sdk2/api/AdminApi$72.class
 com/namsor/sdk2/api/PersonalApi$56.class
 com/namsor/sdk2/api/AdminApi$18.class
 com/namsor/sdk2/model/BatchFirstLastNamePhoneNumberGeoIn.class
+com/namsor/sdk2/api/SocialApi$23.class
 com/namsor/sdk2/api/PersonalApi$59.class
 com/namsor/sdk2/model/SourceDetailedMetricsOut.class
 com/namsor/sdk2/api/AdminApi$108.class
@@ -211,6 +216,7 @@ com/namsor/sdk2/api/AdminApi$69.class
 com/namsor/sdk2/api/AdminApi$16.class
 com/namsor/sdk2/api/SocialApi$16.class
 com/namsor/sdk2/api/PersonalApi$111.class
+com/namsor/sdk2/api/SocialApi$21.class
 com/namsor/sdk2/api/SocialApi$8.class
 com/namsor/sdk2/model/BatchFirstLastNameGenderedOut.class
 com/namsor/sdk2/api/PersonalApi$11.class
@@ -228,6 +234,7 @@ com/namsor/sdk2/api/PersonalApi$57.class
 com/namsor/sdk2/api/ChineseApi$20.class
 com/namsor/sdk2/api/AdminApi$147.class
 com/namsor/sdk2/model/BatchFirstLastNameUSRaceEthnicityOut.class
+com/namsor/sdk2/api/SocialApi$25.class
 com/namsor/sdk2/api/AdminApi$31.class
 com/namsor/sdk2/api/AdminApi$107.class
 com/namsor/sdk2/api/ChineseApi$4.class
@@ -312,6 +319,7 @@ com/namsor/sdk2/api/AdminApi$86.class
 com/namsor/sdk2/api/PersonalApi$68.class
 com/namsor/sdk2/model/FirstLastNameUSRaceEthnicityOut$RaceEthnicityAltEnum.class
 com/namsor/sdk2/model/BatchFirstLastNameIn.class
+com/namsor/sdk2/api/AdminApi$149.class
 com/namsor/sdk2/api/AdminApi$34.class
 com/namsor/sdk2/invoke/ProgressResponseBody$1.class
 com/namsor/sdk2/api/ChineseApi$14.class
@@ -393,6 +401,7 @@ com/namsor/sdk2/api/AdminApi$145.class
 com/namsor/sdk2/invoke/GzipRequestInterceptor.class
 com/namsor/sdk2/api/AdminApi$38.class
 com/namsor/sdk2/model/FirstLastNameOut.class
+com/namsor/sdk2/api/AdminApi$150.class
 com/namsor/sdk2/model/APIBillingPeriodUsageOut.class
 com/namsor/sdk2/api/AdminApi$142.class
 com/namsor/sdk2/model/FirstLastNamePhoneNumberGeoIn.class

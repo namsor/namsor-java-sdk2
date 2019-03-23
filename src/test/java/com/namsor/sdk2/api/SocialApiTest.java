@@ -104,4 +104,24 @@ public class SocialApiTest {
         // TODO: test validations
     }
     
+    /**
+     * [CREDITS 1 UNIT] Feedback loop to better infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence).
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void phoneCodeGeoFeedbackLoopTest() throws ApiException {
+        String firstName = null;
+        String lastName = null;
+        String phoneNumber = null;
+        String phoneNumberE164 = null;
+        String countryIso2 = null;
+        FirstLastNamePhoneCodedOut response = api.phoneCodeGeoFeedbackLoop(firstName, lastName, phoneNumber, phoneNumberE164, countryIso2);
+
+        // TODO: test validations
+    }
+    
 }
