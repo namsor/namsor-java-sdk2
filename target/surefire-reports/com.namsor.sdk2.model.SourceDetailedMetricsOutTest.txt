@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.namsor.sdk2.model.SourceDetailedMetricsOutTest
--------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
