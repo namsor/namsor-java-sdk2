@@ -28,7 +28,7 @@ import java.io.IOException;
  * Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence.
  */
 @ApiModel(description = "Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-23T08:48:45.717+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-18T01:11:00.312+02:00[Europe/Berlin]")
 public class FirstLastNameDiasporaedOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -53,6 +53,10 @@ public class FirstLastNameDiasporaedOut {
   public static final String SERIALIZED_NAME_ETHNICITY = "ethnicity";
   @SerializedName(SERIALIZED_NAME_ETHNICITY)
   private String ethnicity;
+
+  public static final String SERIALIZED_NAME_LIFTED = "lifted";
+  @SerializedName(SERIALIZED_NAME_LIFTED)
+  private Boolean lifted;
 
   public static final String SERIALIZED_NAME_COUNTRY_ISO2 = "countryIso2";
   @SerializedName(SERIALIZED_NAME_COUNTRY_ISO2)
@@ -166,6 +170,24 @@ public class FirstLastNameDiasporaedOut {
     this.ethnicity = ethnicity;
   }
 
+  public FirstLastNameDiasporaedOut lifted(Boolean lifted) {
+    this.lifted = lifted;
+    return this;
+  }
+
+   /**
+   * Get lifted
+   * @return lifted
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean getLifted() {
+    return lifted;
+  }
+
+  public void setLifted(Boolean lifted) {
+    this.lifted = lifted;
+  }
+
   public FirstLastNameDiasporaedOut countryIso2(String countryIso2) {
     this.countryIso2 = countryIso2;
     return this;
@@ -200,12 +222,13 @@ public class FirstLastNameDiasporaedOut {
         Objects.equals(this.score, firstLastNameDiasporaedOut.score) &&
         Objects.equals(this.ethnicityAlt, firstLastNameDiasporaedOut.ethnicityAlt) &&
         Objects.equals(this.ethnicity, firstLastNameDiasporaedOut.ethnicity) &&
+        Objects.equals(this.lifted, firstLastNameDiasporaedOut.lifted) &&
         Objects.equals(this.countryIso2, firstLastNameDiasporaedOut.countryIso2);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName, score, ethnicityAlt, ethnicity, countryIso2);
+    return Objects.hash(id, firstName, lastName, score, ethnicityAlt, ethnicity, lifted, countryIso2);
   }
 
 
@@ -219,6 +242,7 @@ public class FirstLastNameDiasporaedOut {
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    ethnicityAlt: ").append(toIndentedString(ethnicityAlt)).append("\n");
     sb.append("    ethnicity: ").append(toIndentedString(ethnicity)).append("\n");
+    sb.append("    lifted: ").append(toIndentedString(lifted)).append("\n");
     sb.append("    countryIso2: ").append(toIndentedString(countryIso2)).append("\n");
     sb.append("}");
     return sb.toString();

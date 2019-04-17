@@ -89,6 +89,14 @@ public class FirstLastNameDiasporaedOutTest {
     }
 
     /**
+     * Test the property 'lifted'
+     */
+    @Test
+    public void liftedTest() {
+        // TODO: test lifted
+    }
+
+    /**
      * Test the property 'countryIso2'
      */
     @Test

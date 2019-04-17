@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **score** | **Double** | Compatibility to NamSor_v1 Origin score value |  [optional]
 **ethnicityAlt** | **String** |  |  [optional]
 **ethnicity** | **String** |  |  [optional]
+**lifted** | **Boolean** |  |  [optional]
 **countryIso2** | **String** |  |  [optional]
 
 

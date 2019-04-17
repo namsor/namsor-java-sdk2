@@ -31,7 +31,7 @@ import java.util.List;
  * Represents the output of inferring the LIKELY origin from a list of personal names.
  */
 @ApiModel(description = "Represents the output of inferring the LIKELY origin from a list of personal names.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-03-23T08:48:45.717+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-18T01:11:00.312+02:00[Europe/Berlin]")
 public class BatchFirstLastNameOriginedOut {
   public static final String SERIALIZED_NAME_PERSONAL_NAMES = "personalNames";
   @SerializedName(SERIALIZED_NAME_PERSONAL_NAMES)
