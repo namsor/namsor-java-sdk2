@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **firstName** | **String** |  |  [optional]
 **lastName** | **String** |  |  [optional]
 **phoneNumber** | **String** |  |  [optional]
+**firstLastNameOriginedOut** | [**FirstLastNameOriginedOut**](FirstLastNameOriginedOut.md) |  |  [optional]
 
 
 

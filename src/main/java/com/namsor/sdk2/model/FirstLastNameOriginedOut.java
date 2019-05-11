@@ -28,7 +28,7 @@ import java.io.IOException;
  * Represents the output of inferring the LIKELY country of Origin from a personal name.
  */
 @ApiModel(description = "Represents the output of inferring the LIKELY country of Origin from a personal name.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-18T01:11:00.312+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-11T10:42:18.784+02:00[Europe/Berlin]")
 public class FirstLastNameOriginedOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

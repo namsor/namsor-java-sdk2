@@ -42,6 +42,24 @@ public class AdminApiTest {
 
     
     /**
+     * Add usage credits to an API Key.
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void addCreditsTest() throws ApiException {
+        String apiKey = null;
+        Long usageCredits = null;
+        String userMessage = null;
+        SystemMetricsOut response = api.addCredits(apiKey, usageCredits, userMessage);
+
+        // TODO: test validations
+    }
+    
+    /**
      * Print current API usage.
      *
      * 
@@ -87,21 +105,6 @@ public class AdminApiTest {
     }
     
     /**
-     * List all available plans in the default currency (usd).
-     *
-     * 
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void availablePlansTest() throws ApiException {
-        APIPlansOut response = api.availablePlans();
-
-        // TODO: test validations
-    }
-    
-    /**
      * List all available plans in the user&#39;s preferred currency.
      *
      * 
@@ -110,9 +113,24 @@ public class AdminApiTest {
      *          if the Api call fails
      */
     @Test
-    public void availablePlans1Test() throws ApiException {
+    public void availablePlansTest() throws ApiException {
         String token = null;
-        APIPlansOut response = api.availablePlans1(token);
+        APIPlansOut response = api.availablePlans(token);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List all available plans in the default currency (usd).
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void availablePlans1Test() throws ApiException {
+        APIPlansOut response = api.availablePlans1();
 
         // TODO: test validations
     }

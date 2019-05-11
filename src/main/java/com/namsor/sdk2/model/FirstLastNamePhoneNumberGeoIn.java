@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.namsor.sdk2.model.FirstLastNameOriginedOut;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,7 +28,7 @@ import java.io.IOException;
 /**
  * FirstLastNamePhoneNumberGeoIn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-18T01:11:00.312+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-11T10:42:18.784+02:00[Europe/Berlin]")
 public class FirstLastNamePhoneNumberGeoIn {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -44,6 +45,10 @@ public class FirstLastNamePhoneNumberGeoIn {
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
   private String phoneNumber;
+
+  public static final String SERIALIZED_NAME_FIRST_LAST_NAME_ORIGINED_OUT = "FirstLastNameOriginedOut";
+  @SerializedName(SERIALIZED_NAME_FIRST_LAST_NAME_ORIGINED_OUT)
+  private FirstLastNameOriginedOut firstLastNameOriginedOut = null;
 
   public static final String SERIALIZED_NAME_COUNTRY_ISO2 = "countryIso2";
   @SerializedName(SERIALIZED_NAME_COUNTRY_ISO2)
@@ -125,6 +130,24 @@ public class FirstLastNamePhoneNumberGeoIn {
     this.phoneNumber = phoneNumber;
   }
 
+  public FirstLastNamePhoneNumberGeoIn firstLastNameOriginedOut(FirstLastNameOriginedOut firstLastNameOriginedOut) {
+    this.firstLastNameOriginedOut = firstLastNameOriginedOut;
+    return this;
+  }
+
+   /**
+   * Get firstLastNameOriginedOut
+   * @return firstLastNameOriginedOut
+  **/
+  @ApiModelProperty(value = "")
+  public FirstLastNameOriginedOut getFirstLastNameOriginedOut() {
+    return firstLastNameOriginedOut;
+  }
+
+  public void setFirstLastNameOriginedOut(FirstLastNameOriginedOut firstLastNameOriginedOut) {
+    this.firstLastNameOriginedOut = firstLastNameOriginedOut;
+  }
+
   public FirstLastNamePhoneNumberGeoIn countryIso2(String countryIso2) {
     this.countryIso2 = countryIso2;
     return this;
@@ -175,13 +198,14 @@ public class FirstLastNamePhoneNumberGeoIn {
         Objects.equals(this.firstName, firstLastNamePhoneNumberGeoIn.firstName) &&
         Objects.equals(this.lastName, firstLastNamePhoneNumberGeoIn.lastName) &&
         Objects.equals(this.phoneNumber, firstLastNamePhoneNumberGeoIn.phoneNumber) &&
+        Objects.equals(this.firstLastNameOriginedOut, firstLastNamePhoneNumberGeoIn.firstLastNameOriginedOut) &&
         Objects.equals(this.countryIso2, firstLastNamePhoneNumberGeoIn.countryIso2) &&
         Objects.equals(this.countryIso2Alt, firstLastNamePhoneNumberGeoIn.countryIso2Alt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName, phoneNumber, countryIso2, countryIso2Alt);
+    return Objects.hash(id, firstName, lastName, phoneNumber, firstLastNameOriginedOut, countryIso2, countryIso2Alt);
   }
 
 
@@ -193,6 +217,7 @@ public class FirstLastNamePhoneNumberGeoIn {
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    firstLastNameOriginedOut: ").append(toIndentedString(firstLastNameOriginedOut)).append("\n");
     sb.append("    countryIso2: ").append(toIndentedString(countryIso2)).append("\n");
     sb.append("    countryIso2Alt: ").append(toIndentedString(countryIso2Alt)).append("\n");
     sb.append("}");

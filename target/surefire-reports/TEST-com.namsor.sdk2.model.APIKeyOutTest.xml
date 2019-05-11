@@ -61,11 +61,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="disabledTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="disabledTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="vettedTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="learnableTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="adminTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="stripedTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="stripedTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="corporateTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="partnerTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="apiKeyTest" time="0"/>

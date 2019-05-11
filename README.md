@@ -2,7 +2,7 @@
 
 NamSor API v2
 - API version: 2.0.2-beta
-  - Build date: 2019-04-18T01:11:00.312+02:00[Europe/Berlin]
+  - Build date: 2019-05-11T10:42:18.784+02:00[Europe/Berlin]
 
 NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 1000 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
 
@@ -93,11 +93,14 @@ public class AdminApiExample {
         //api_key.setApiKeyPrefix("Token");
 
         AdminApi apiInstance = new AdminApi();
+        String apiKey = "apiKey_example"; // String | 
+        Long usageCredits = 56L; // Long | 
+        String userMessage = "userMessage_example"; // String | 
         try {
-            APIPeriodUsageOut result = apiInstance.apiUsage();
+            SystemMetricsOut result = apiInstance.addCredits(apiKey, usageCredits, userMessage);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AdminApi#apiUsage");
+            System.err.println("Exception when calling AdminApi#addCredits");
             e.printStackTrace();
         }
     }
@@ -111,11 +114,12 @@ All URIs are relative to *https://v2.namsor.com/NamSorAPIv2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AdminApi* | [**addCredits**](docs/AdminApi.md#addCredits) | **GET** /api2/json/addCredits/{apiKey}/{usageCredits}/{userMessage} | Add usage credits to an API Key.
 *AdminApi* | [**apiUsage**](docs/AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage.
 *AdminApi* | [**apiUsageHistory**](docs/AdminApi.md#apiUsageHistory) | **GET** /api2/json/apiUsageHistory | Print historical API usage.
 *AdminApi* | [**apiUsageHistoryAggregate**](docs/AdminApi.md#apiUsageHistoryAggregate) | **GET** /api2/json/apiUsageHistoryAggregate | Print historical API usage (in an aggregated view, by service, by day/hour/min).
-*AdminApi* | [**availablePlans**](docs/AdminApi.md#availablePlans) | **GET** /api2/json/availablePlans | List all available plans in the default currency (usd).
-*AdminApi* | [**availablePlans1**](docs/AdminApi.md#availablePlans1) | **GET** /api2/json/availablePlans/{token} | List all available plans in the user&#39;s preferred currency.
+*AdminApi* | [**availablePlans**](docs/AdminApi.md#availablePlans) | **GET** /api2/json/availablePlans/{token} | List all available plans in the user&#39;s preferred currency.
+*AdminApi* | [**availablePlans1**](docs/AdminApi.md#availablePlans1) | **GET** /api2/json/availablePlans | List all available plans in the default currency (usd).
 *AdminApi* | [**availableServices**](docs/AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of API services and usage cost in Units (default is 1&#x3D;ONE Unit).
 *AdminApi* | [**billingCurrencies**](docs/AdminApi.md#billingCurrencies) | **GET** /api2/json/billingCurrencies | List possible currency options for billing (USD, EUR, GBP, ...)
 *AdminApi* | [**billingHistory**](docs/AdminApi.md#billingHistory) | **GET** /api2/json/billingHistory/{token} | Read the history billing information (invoices paid via Stripe or manually).

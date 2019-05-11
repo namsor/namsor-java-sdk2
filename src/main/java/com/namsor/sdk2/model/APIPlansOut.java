@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * APIPlansOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-18T01:11:00.312+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-11T10:42:18.784+02:00[Europe/Berlin]")
 public class APIPlansOut {
   public static final String SERIALIZED_NAME_USAGE_RATIO_FOR_DUPPLICATES = "usageRatioForDupplicates";
   @SerializedName(SERIALIZED_NAME_USAGE_RATIO_FOR_DUPPLICATES)

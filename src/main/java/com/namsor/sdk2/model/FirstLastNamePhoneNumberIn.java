@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.namsor.sdk2.model.FirstLastNameOriginedOut;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -27,7 +28,7 @@ import java.io.IOException;
 /**
  * FirstLastNamePhoneNumberIn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-18T01:11:00.312+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-11T10:42:18.784+02:00[Europe/Berlin]")
 public class FirstLastNamePhoneNumberIn {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -44,6 +45,10 @@ public class FirstLastNamePhoneNumberIn {
   public static final String SERIALIZED_NAME_PHONE_NUMBER = "phoneNumber";
   @SerializedName(SERIALIZED_NAME_PHONE_NUMBER)
   private String phoneNumber;
+
+  public static final String SERIALIZED_NAME_FIRST_LAST_NAME_ORIGINED_OUT = "FirstLastNameOriginedOut";
+  @SerializedName(SERIALIZED_NAME_FIRST_LAST_NAME_ORIGINED_OUT)
+  private FirstLastNameOriginedOut firstLastNameOriginedOut = null;
 
   public FirstLastNamePhoneNumberIn id(String id) {
     this.id = id;
@@ -117,6 +122,24 @@ public class FirstLastNamePhoneNumberIn {
     this.phoneNumber = phoneNumber;
   }
 
+  public FirstLastNamePhoneNumberIn firstLastNameOriginedOut(FirstLastNameOriginedOut firstLastNameOriginedOut) {
+    this.firstLastNameOriginedOut = firstLastNameOriginedOut;
+    return this;
+  }
+
+   /**
+   * Get firstLastNameOriginedOut
+   * @return firstLastNameOriginedOut
+  **/
+  @ApiModelProperty(value = "")
+  public FirstLastNameOriginedOut getFirstLastNameOriginedOut() {
+    return firstLastNameOriginedOut;
+  }
+
+  public void setFirstLastNameOriginedOut(FirstLastNameOriginedOut firstLastNameOriginedOut) {
+    this.firstLastNameOriginedOut = firstLastNameOriginedOut;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -130,12 +153,13 @@ public class FirstLastNamePhoneNumberIn {
     return Objects.equals(this.id, firstLastNamePhoneNumberIn.id) &&
         Objects.equals(this.firstName, firstLastNamePhoneNumberIn.firstName) &&
         Objects.equals(this.lastName, firstLastNamePhoneNumberIn.lastName) &&
-        Objects.equals(this.phoneNumber, firstLastNamePhoneNumberIn.phoneNumber);
+        Objects.equals(this.phoneNumber, firstLastNamePhoneNumberIn.phoneNumber) &&
+        Objects.equals(this.firstLastNameOriginedOut, firstLastNamePhoneNumberIn.firstLastNameOriginedOut);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, firstName, lastName, phoneNumber);
+    return Objects.hash(id, firstName, lastName, phoneNumber, firstLastNameOriginedOut);
   }
 
 
@@ -147,6 +171,7 @@ public class FirstLastNamePhoneNumberIn {
     sb.append("    firstName: ").append(toIndentedString(firstName)).append("\n");
     sb.append("    lastName: ").append(toIndentedString(lastName)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+    sb.append("    firstLastNameOriginedOut: ").append(toIndentedString(firstLastNameOriginedOut)).append("\n");
     sb.append("}");
     return sb.toString();
   }

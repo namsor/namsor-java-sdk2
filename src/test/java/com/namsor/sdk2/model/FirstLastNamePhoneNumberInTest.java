@@ -18,6 +18,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import com.namsor.sdk2.model.FirstLastNameOriginedOut;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -70,6 +71,14 @@ public class FirstLastNamePhoneNumberInTest {
     @Test
     public void phoneNumberTest() {
         // TODO: test phoneNumber
+    }
+
+    /**
+     * Test the property 'firstLastNameOriginedOut'
+     */
+    @Test
+    public void firstLastNameOriginedOutTest() {
+        // TODO: test firstLastNameOriginedOut
     }
 
 }

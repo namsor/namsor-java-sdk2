@@ -32,7 +32,7 @@ import java.util.List;
  * Simple metrics on source, with details by classifier.
  */
 @ApiModel(description = "Simple metrics on source, with details by classifier.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-04-18T01:11:00.312+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-05-11T10:42:18.784+02:00[Europe/Berlin]")
 public class SourceDetailedMetricsOut {
   public static final String SERIALIZED_NAME_CLASSIFIER_NAME = "classifierName";
   @SerializedName(SERIALIZED_NAME_CLASSIFIER_NAME)

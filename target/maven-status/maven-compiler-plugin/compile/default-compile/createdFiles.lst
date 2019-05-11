@@ -9,6 +9,7 @@ com/namsor/sdk2/api/AdminApi$51.class
 com/namsor/sdk2/api/AdminApi$29.class
 com/namsor/sdk2/api/AdminApi$64.class
 com/namsor/sdk2/api/AdminApi$11.class
+com/namsor/sdk2/api/AdminApi$154.class
 com/namsor/sdk2/model/BatchPersonalNameIn.class
 com/namsor/sdk2/api/PersonalApi$113.class
 com/namsor/sdk2/invoke/ApiClient$2.class
@@ -296,6 +297,7 @@ com/namsor/sdk2/invoke/auth/OAuth.class
 com/namsor/sdk2/api/AdminApi$128.class
 com/namsor/sdk2/invoke/ProgressResponseBody.class
 com/namsor/sdk2/api/PersonalApi$101.class
+com/namsor/sdk2/api/AdminApi$153.class
 com/namsor/sdk2/api/AdminApi$60.class
 com/namsor/sdk2/api/ChineseApi$12.class
 com/namsor/sdk2/api/AdminApi$12.class
@@ -326,6 +328,7 @@ com/namsor/sdk2/api/ChineseApi$14.class
 com/namsor/sdk2/api/PersonalApi$46.class
 com/namsor/sdk2/model/PersonalNameGenderedOut$LikelyGenderEnum.class
 com/namsor/sdk2/api/AdminApi$57.class
+com/namsor/sdk2/api/AdminApi$155.class
 com/namsor/sdk2/invoke/JSON$OffsetDateTimeTypeAdapter.class
 com/namsor/sdk2/api/AdminApi$28.class
 com/namsor/sdk2/api/AdminApi$90.class
@@ -358,6 +361,7 @@ com/namsor/sdk2/api/PersonalApi$6.class
 com/namsor/sdk2/api/PersonalApi$27.class
 com/namsor/sdk2/invoke/JSON.class
 com/namsor/sdk2/api/PersonalApi$95.class
+com/namsor/sdk2/api/AdminApi$152.class
 com/namsor/sdk2/api/AdminApi$53.class
 com/namsor/sdk2/api/PersonalApi$19.class
 com/namsor/sdk2/api/PersonalApi$42.class
@@ -371,6 +375,7 @@ com/namsor/sdk2/api/AdminApi$129.class
 com/namsor/sdk2/api/AdminApi$99.class
 com/namsor/sdk2/model/NameMatchCandidatesOut.class
 com/namsor/sdk2/api/AdminApi$54.class
+com/namsor/sdk2/api/AdminApi$151.class
 com/namsor/sdk2/api/PersonalApi$94.class
 com/namsor/sdk2/api/AdminApi$5.class
 com/namsor/sdk2/api/ChineseApi$8.class
