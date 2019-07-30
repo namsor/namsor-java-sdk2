@@ -61,9 +61,9 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.StripeCustomerOutTest" name="testStripeCustomerOut" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.StripeCustomerOutTest" name="testStripeCustomerOut" time="0.002"/>
   <testcase classname="com.namsor.sdk2.model.StripeCustomerOutTest" name="sourceCountryTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.StripeCustomerOutTest" name="sourceCurrencyTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.StripeCustomerOutTest" name="stripeCustomerIdTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.StripeCustomerOutTest" name="stripeCustomerIdTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.StripeCustomerOutTest" name="stripedCardsTest" time="0"/>
 </testsuite>

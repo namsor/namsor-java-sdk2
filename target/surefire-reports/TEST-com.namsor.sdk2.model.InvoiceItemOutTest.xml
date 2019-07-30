@@ -61,11 +61,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="amountTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="amountTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="planDescTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="subscriptionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="planNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="planNicknameTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="planNicknameTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="invoiceItemTypeTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="descriptionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.InvoiceItemOutTest" name="currencyTest" time="0"/>

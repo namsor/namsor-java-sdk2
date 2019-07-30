@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="12" failures="0" name="com.namsor.sdk2.model.BillingInfoInOutTest" time="0.002" errors="0" skipped="0">
+<testsuite tests="12" failures="0" name="com.namsor.sdk2.model.BillingInfoInOutTest" time="0.003" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -62,15 +62,15 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="addressCityTest" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="addressStateTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="addressStateTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="addressLine1Test" time="0"/>
   <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="addressLine2Test" time="0"/>
   <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="addressCountryTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="preferredCurrencyTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="testBillingInfoInOut" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="vatIDTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="vatIDTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="customerNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="customerPhoneTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="addressPostalCodeTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="billingEmailTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.BillingInfoInOutTest" name="billingEmailTest" time="0"/>
 </testsuite>

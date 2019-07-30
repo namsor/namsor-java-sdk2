@@ -65,9 +65,9 @@
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedEstimateTotalTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="factKeysSizeTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiVettedExpectedClassMetricsTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="classifyDurationsCurrentTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="classifyDurationsCurrentTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedEstimatePrecisionTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="learnDurationsCurrentTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="learnDurationsCurrentTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedExpectedClassMetricsTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiVettedEstimateRecallTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="featuresSizeTest" time="0"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="10" failures="0" name="com.namsor.sdk2.model.APIKeyOutTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="com.namsor.sdk2.model.APIKeyOutTest" time="0.001" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -61,14 +61,15 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="disabledTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="disabledTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="vettedTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="learnableTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="adminTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="stripedTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="stripedTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="corporateTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="partnerTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="apiKeyTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="userIdTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="testAPIKeyOut" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIKeyOutTest" name="anonymizedTest" time="0"/>
 </testsuite>

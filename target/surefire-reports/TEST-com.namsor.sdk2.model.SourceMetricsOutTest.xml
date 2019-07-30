@@ -64,11 +64,11 @@
   <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="testSourceMetricsOut" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="aiEstimateTotalTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="sourceTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="aiEstimateRecallTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="aiEstimateRecallTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="aiLearnTotalTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="classifierNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="aiEstimatePrecisionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="snapshotDateTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="aiStartTimeTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="metricTimeStampTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.SourceMetricsOutTest" name="metricTimeStampTest" time="0"/>
 </testsuite>

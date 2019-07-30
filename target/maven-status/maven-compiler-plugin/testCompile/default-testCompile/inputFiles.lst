@@ -21,6 +21,7 @@
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/PersonalNameInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/FirstLastNamePhoneCodedOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/APIServicesOutTest.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/NameMatchedOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/api/PersonalApiTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchFirstLastNameGeoInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/APIPlansOutTest.java
@@ -32,6 +33,7 @@
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/APIPeriodUsageOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchPersonalNameGeoInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/api/ChineseApiTest.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchNameMatchedOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/InlineObjectTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/FirstLastNameUSRaceEthnicityOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchFirstLastNameGenderedOutTest.java
@@ -55,12 +57,14 @@
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchFirstLastNameOriginedOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchFirstLastNamePhoneNumberGeoInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchPersonalNameGenderedOutTest.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchMatchPersonalFirstLastNameInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchFirstLastNamePhoneNumberInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/ParsedFullNameInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/BatchFirstLastNameGenderInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/PersonalNameGeoInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/FirstLastNamePhoneNumberGeoInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/DeployUIOutTest.java
+/home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/MatchPersonalFirstLastNameInTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/APIKeyOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/FeedbackLoopOutTest.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/test/java/com/namsor/sdk2/model/StripeCardOutTest.java

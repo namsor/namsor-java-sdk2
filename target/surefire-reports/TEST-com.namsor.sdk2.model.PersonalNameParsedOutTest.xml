@@ -66,6 +66,6 @@
   <testcase classname="com.namsor.sdk2.model.PersonalNameParsedOutTest" name="firstLastNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameParsedOutTest" name="nameParserTypeAltTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameParsedOutTest" name="nameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.PersonalNameParsedOutTest" name="testPersonalNameParsedOut" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.PersonalNameParsedOutTest" name="scoreTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.PersonalNameParsedOutTest" name="testPersonalNameParsedOut" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.PersonalNameParsedOutTest" name="scoreTest" time="0.001"/>
 </testsuite>
