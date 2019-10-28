@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **ethnicity** | **String** |  |  [optional]
 **lifted** | **Boolean** |  |  [optional]
 **countryIso2** | **String** |  |  [optional]
+**ethnicitiesTop** | **List&lt;String&gt;** | List ethnicities (top 10) |  [optional]
 
 
 

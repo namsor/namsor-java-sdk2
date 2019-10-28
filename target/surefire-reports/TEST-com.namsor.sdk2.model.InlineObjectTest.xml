@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.InlineObjectTest" name="stripeEmailTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.InlineObjectTest" name="stripeEmailTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.InlineObjectTest" name="stripeTokenTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.InlineObjectTest" name="testInlineObject" time="0"/>
 </testsuite>

@@ -67,8 +67,8 @@
   <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="expectedClassMetricsTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="aiLearnTotalTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="classifierNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="testSourceDetailedMetricsOut" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="aiEstimatePrecisionTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="testSourceDetailedMetricsOut" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="aiEstimatePrecisionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="snapshotDateTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="aiStartTimeTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SourceDetailedMetricsOutTest" name="metricTimeStampTest" time="0"/>

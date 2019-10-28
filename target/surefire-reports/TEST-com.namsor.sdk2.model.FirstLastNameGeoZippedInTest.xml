@@ -62,9 +62,9 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameGeoZippedInTest" name="idTest" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameGeoZippedInTest" name="testFirstLastNameGeoZippedIn" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameGeoZippedInTest" name="testFirstLastNameGeoZippedIn" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameGeoZippedInTest" name="zipCodeTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameGeoZippedInTest" name="firstNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameGeoZippedInTest" name="lastNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameGeoZippedInTest" name="countryIso2Test" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameGeoZippedInTest" name="countryIso2Test" time="0.001"/>
 </testsuite>

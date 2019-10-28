@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="com.namsor.sdk2.model.SystemMetricsOutTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="com.namsor.sdk2.model.SystemMetricsOutTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -64,7 +64,7 @@
   <testcase classname="com.namsor.sdk2.model.SystemMetricsOutTest" name="classifierMetricsTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.SystemMetricsOutTest" name="testSystemMetricsOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SystemMetricsOutTest" name="sourceMetricsTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.SystemMetricsOutTest" name="freeMemTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.SystemMetricsOutTest" name="freeMemTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.SystemMetricsOutTest" name="totalMemTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.SystemMetricsOutTest" name="maxMemTest" time="0"/>
 </testsuite>
