@@ -61,18 +61,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="phoneCountryIso2AltTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="phoneCountryIso2AltTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="phoneCountryCodeAltTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="verifiedTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="phoneCountryCodeTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="idTest" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="internationalPhoneNumberVerifiedTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="idTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="internationalPhoneNumberVerifiedTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="firstNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="testFirstLastNamePhoneCodedOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="phoneNumberTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="phoneCountryIso2Test" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="lastNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="originCountryIso2AltTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="originCountryIso2AltTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="originCountryIso2Test" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="countryIso2Test" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneCodedOutTest" name="phoneCountryIso2VerifiedTest" time="0"/>

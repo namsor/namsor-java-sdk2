@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.APIUsageAggregatedOutTest" name="testAPIUsageAggregatedOut" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIUsageAggregatedOutTest" name="testAPIUsageAggregatedOut" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.APIUsageAggregatedOutTest" name="colHeadersTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIUsageAggregatedOutTest" name="periodStartTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIUsageAggregatedOutTest" name="periodEndTest" time="0"/>

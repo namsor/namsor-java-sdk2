@@ -61,12 +61,12 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="idTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="idTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="firstNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="testFirstLastNameUSRaceEthnicityOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="raceEthnicityTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="lastNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="raceEthnicityAltTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="raceEthnicityAltTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="raceEthnicitiesTopTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="scoreTest" time="0"/>
 </testsuite>

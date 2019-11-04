@@ -64,9 +64,9 @@
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="idTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="countryIso2AltTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="firstNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="testFirstLastNamePhoneNumberGeoIn" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="testFirstLastNamePhoneNumberGeoIn" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="phoneNumberTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="lastNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="firstLastNameOriginedOutTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="countryIso2Test" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoInTest" name="countryIso2Test" time="0.001"/>
 </testsuite>

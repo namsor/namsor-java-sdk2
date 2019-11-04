@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedEstimateRecallTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedEstimateRecallTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiNonVettedEstimateTotalTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="factKeysSizeTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiVettedExpectedClassMetricsTest" time="0"/>
@@ -84,5 +84,5 @@
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiStartTimeTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="metricTimeStampTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="bufferSizeTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiVettedLearnTotalTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.ClassifierMetricsOutTest" name="aiVettedLearnTotalTest" time="0.001"/>
 </testsuite>

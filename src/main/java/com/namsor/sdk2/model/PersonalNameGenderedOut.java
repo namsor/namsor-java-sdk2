@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * PersonalNameGenderedOut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-28T19:07:05.363+01:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-11-04T11:52:46.102+01:00[Europe/Berlin]")
 public class PersonalNameGenderedOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
