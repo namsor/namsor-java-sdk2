@@ -6,11 +6,12 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addCredits**](AdminApi.md#addCredits) | **GET** /api2/json/addCredits/{apiKey}/{usageCredits}/{userMessage} | Add usage credits to an API Key.
 [**anonymize**](AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source.
+[**apiStatus**](AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers.
 [**apiUsage**](AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage.
 [**apiUsageHistory**](AdminApi.md#apiUsageHistory) | **GET** /api2/json/apiUsageHistory | Print historical API usage.
 [**apiUsageHistoryAggregate**](AdminApi.md#apiUsageHistoryAggregate) | **GET** /api2/json/apiUsageHistoryAggregate | Print historical API usage (in an aggregated view, by service, by day/hour/min).
-[**availablePlans**](AdminApi.md#availablePlans) | **GET** /api2/json/availablePlans | List all available plans in the default currency (usd).
-[**availablePlans1**](AdminApi.md#availablePlans1) | **GET** /api2/json/availablePlans/{token} | List all available plans in the user&#39;s preferred currency.
+[**availablePlans**](AdminApi.md#availablePlans) | **GET** /api2/json/availablePlans/{token} | List all available plans in the user&#39;s preferred currency.
+[**availablePlans1**](AdminApi.md#availablePlans1) | **GET** /api2/json/availablePlans | List all available plans in the default currency (usd).
 [**availableServices**](AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of API services and usage cost in Units (default is 1&#x3D;ONE Unit).
 [**billingCurrencies**](AdminApi.md#billingCurrencies) | **GET** /api2/json/billingCurrencies | List possible currency options for billing (USD, EUR, GBP, ...)
 [**billingHistory**](AdminApi.md#billingHistory) | **GET** /api2/json/billingHistory/{token} | Read the history billing information (invoices paid via Stripe or manually).
@@ -35,6 +36,7 @@ Method | HTTP request | Description
 [**stripeConnect**](AdminApi.md#stripeConnect) | **GET** /api2/json/stripeConnect | Connects a Stripe Account.
 [**subscribePlan**](AdminApi.md#subscribePlan) | **GET** /api2/json/subscribePlan/{planName}/{token} | Subscribe to a give API plan, using the user&#39;s preferred or default currency.
 [**subscribePlanOnBehalf**](AdminApi.md#subscribePlanOnBehalf) | **GET** /api2/json/subscribePlanOnBehalf/{planName}/{apiKey} | Subscribe to a give API plan, using the user&#39;s preferred or default currency (admin only).
+[**taxonomyClasses**](AdminApi.md#taxonomyClasses) | **GET** /api2/json/taxonomyClasses/{classifierName} | Print the taxonomy classes valid for the given classifier.
 [**updateBillingInfo**](AdminApi.md#updateBillingInfo) | **POST** /api2/json/updateBillingInfo/{token} | Sets or update the billing information (company name, address, phone, vat ID)
 [**updateLimit**](AdminApi.md#updateLimit) | **GET** /api2/json/updateLimit/{usageLimit}/{hardOrSoft}/{token} | Modifies the hard/soft limit on the API plan&#39;s overages (default is 0$ soft limit).
 [**updatePaymentDefault**](AdminApi.md#updatePaymentDefault) | **GET** /api2/json/updatePaymentDefault/{defautSourceId}/{token} | Update the default Stripe card associated with the current google auth session token.
@@ -154,6 +156,55 @@ null (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+<a name="apiStatus"></a>
+# **apiStatus**
+> APIPlansOut apiStatus()
+
+Prints the current status of the classifiers.
+
+### Example
+```java
+// Import classes:
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    APIPlansOut result = apiInstance.apiStatus();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#apiStatus");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**APIPlansOut**](APIPlansOut.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="apiUsage"></a>
 # **apiUsage**
@@ -304,56 +355,7 @@ This endpoint does not need any parameter.
 
 <a name="availablePlans"></a>
 # **availablePlans**
-> APIPlansOut availablePlans()
-
-List all available plans in the default currency (usd).
-
-### Example
-```java
-// Import classes:
-//import com.namsor.sdk2.invoke.ApiClient;
-//import com.namsor.sdk2.invoke.ApiException;
-//import com.namsor.sdk2.invoke.Configuration;
-//import com.namsor.sdk2.invoke.auth.*;
-//import com.namsor.sdk2.api.AdminApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-AdminApi apiInstance = new AdminApi();
-try {
-    APIPlansOut result = apiInstance.availablePlans();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#availablePlans");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**APIPlansOut**](APIPlansOut.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="availablePlans1"></a>
-# **availablePlans1**
-> APIPlansOut availablePlans1(token)
+> APIPlansOut availablePlans(token)
 
 List all available plans in the user&#39;s preferred currency.
 
@@ -377,10 +379,10 @@ api_key.setApiKey("YOUR API KEY");
 AdminApi apiInstance = new AdminApi();
 String token = "token_example"; // String | 
 try {
-    APIPlansOut result = apiInstance.availablePlans1(token);
+    APIPlansOut result = apiInstance.availablePlans(token);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#availablePlans1");
+    System.err.println("Exception when calling AdminApi#availablePlans");
     e.printStackTrace();
 }
 ```
@@ -390,6 +392,55 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **String**|  |
+
+### Return type
+
+[**APIPlansOut**](APIPlansOut.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="availablePlans1"></a>
+# **availablePlans1**
+> APIPlansOut availablePlans1()
+
+List all available plans in the default currency (usd).
+
+### Example
+```java
+// Import classes:
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    APIPlansOut result = apiInstance.availablePlans1();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#availablePlans1");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1637,6 +1688,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**APIPlanSubscriptionOut**](APIPlanSubscriptionOut.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="taxonomyClasses"></a>
+# **taxonomyClasses**
+> APIPlansOut taxonomyClasses(classifierName)
+
+Print the taxonomy classes valid for the given classifier.
+
+### Example
+```java
+// Import classes:
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+String classifierName = "classifierName_example"; // String | 
+try {
+    APIPlansOut result = apiInstance.taxonomyClasses(classifierName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#taxonomyClasses");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **classifierName** | **String**|  |
+
+### Return type
+
+[**APIPlansOut**](APIPlansOut.md)
 
 ### Authorization
 

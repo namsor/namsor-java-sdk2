@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **regionOrigin** | **String** | Most likely region of Origin (based on countryOrigin ISO2 code) |  [optional]
 **topRegionOrigin** | **String** | Most likely region of Origin (based on countryOrigin ISO2 code) |  [optional]
 **subRegionOrigin** | **String** | Most likely region of Origin (based on countryOrigin ISO2 code) |  [optional]
+**probabilityCalibrated** | **Double** |  |  [optional]
+**probabilityAltCalibrated** | **Double** |  |  [optional]
 
 
 

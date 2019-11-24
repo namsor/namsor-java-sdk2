@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **likelyGender** | [**LikelyGenderEnum**](#LikelyGenderEnum) | Most likely gender |  [optional]
 **genderScale** | **Double** | Compatibility to NamSor_v1 Gender Scale M[-1..U..+1]F value |  [optional]
 **score** | **Double** |  |  [optional]
+**probabilityCalibrated** | **Double** |  |  [optional]
 
 
 <a name="LikelyGenderEnum"></a>

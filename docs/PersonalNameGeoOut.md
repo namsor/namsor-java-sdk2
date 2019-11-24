@@ -12,6 +12,9 @@ Name | Type | Description | Notes
 **region** | **String** |  |  [optional]
 **topRegion** | **String** |  |  [optional]
 **subRegion** | **String** |  |  [optional]
+**countriesTop** | **List&lt;String&gt;** | List countries (top 10) |  [optional]
+**probabilityCalibrated** | **Double** |  |  [optional]
+**probabilityAltCalibrated** | **Double** |  |  [optional]
 
 
 

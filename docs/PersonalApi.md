@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 <a name="genderFull"></a>
 # **genderFull**
-> FirstLastNameGenderedOut genderFull(fullName)
+> PersonalNameGenderedOut genderFull(fullName)
 
 Infer the likely gender of a full name, ex. John H. Smith
 
@@ -380,7 +380,7 @@ api_key.setApiKey("YOUR API KEY");
 PersonalApi apiInstance = new PersonalApi();
 String fullName = "fullName_example"; // String | 
 try {
-    FirstLastNameGenderedOut result = apiInstance.genderFull(fullName);
+    PersonalNameGenderedOut result = apiInstance.genderFull(fullName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PersonalApi#genderFull");
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FirstLastNameGenderedOut**](FirstLastNameGenderedOut.md)
+[**PersonalNameGenderedOut**](PersonalNameGenderedOut.md)
 
 ### Authorization
 
@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 <a name="genderFullGeo"></a>
 # **genderFullGeo**
-> FirstLastNameGenderedOut genderFullGeo(fullName, countryIso2)
+> PersonalNameGenderedOut genderFullGeo(fullName, countryIso2)
 
 Infer the likely gender of a full name, given a local context (ISO2 country code).
 
@@ -487,7 +487,7 @@ PersonalApi apiInstance = new PersonalApi();
 String fullName = "fullName_example"; // String | 
 String countryIso2 = "countryIso2_example"; // String | 
 try {
-    FirstLastNameGenderedOut result = apiInstance.genderFullGeo(fullName, countryIso2);
+    PersonalNameGenderedOut result = apiInstance.genderFullGeo(fullName, countryIso2);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling PersonalApi#genderFullGeo");
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FirstLastNameGenderedOut**](FirstLastNameGenderedOut.md)
+[**PersonalNameGenderedOut**](PersonalNameGenderedOut.md)
 
 ### Authorization
 

@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **raceEthnicity** | [**RaceEthnicityEnum**](#RaceEthnicityEnum) | Most likely US &#39;race&#39;/ethnicity |  [optional]
 **score** | **Double** | Compatibility to NamSor_v1 Origin score value |  [optional]
 **raceEthnicitiesTop** | **List&lt;String&gt;** | List &#39;race&#39;/ethnicities |  [optional]
+**probabilityCalibrated** | **Double** |  |  [optional]
+**probabilityAltCalibrated** | **Double** |  |  [optional]
 
 
 <a name="RaceEthnicityAltEnum"></a>
