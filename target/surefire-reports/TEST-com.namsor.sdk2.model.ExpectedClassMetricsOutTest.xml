@@ -46,7 +46,7 @@
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_152\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package gpg:sign deploy"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package deploy"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="en"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -66,10 +66,10 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="com.namsor.sdk2.model.ExpectedClassMetricsOutTest" name="testExpectedClassMetricsOut" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.ExpectedClassMetricsOutTest" name="aiEstimateTotalTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.ExpectedClassMetricsOutTest" name="aiEstimateTotalTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ExpectedClassMetricsOutTest" name="aiEstimateRecallTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ExpectedClassMetricsOutTest" name="aiLearnTotalTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ExpectedClassMetricsOutTest" name="classifierNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ExpectedClassMetricsOutTest" name="aiEstimatePrecisionTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.ExpectedClassMetricsOutTest" name="aiEstimatePrecisionTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.ExpectedClassMetricsOutTest" name="expectedClassTest" time="0"/>
 </testsuite>
