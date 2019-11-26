@@ -72,38 +72,31 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
+// Import classes:
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.PersonalApi;
 
-import com.namsor.sdk2.invoke.*;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.model.*;
-import com.namsor.sdk2.api.AdminApi;
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-import java.io.File;
-import java.util.*;
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
 
-public class AdminApiExample {
-
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
-        // Configure API key authorization: api_key
-        ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-        api_key.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //api_key.setApiKeyPrefix("Token");
-
-        AdminApi apiInstance = new AdminApi();
-        String apiKey = "apiKey_example"; // String | 
-        Long usageCredits = 56L; // Long | 
-        String userMessage = "userMessage_example"; // String | 
-        try {
-            SystemMetricsOut result = apiInstance.addCredits(apiKey, usageCredits, userMessage);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AdminApi#addCredits");
-            e.printStackTrace();
-        }
-    }
+PersonalApi apiInstance = new PersonalApi();
+String firstName = "John"; // String | 
+String lastName = "Smith"; // String | 
+String countryIso2 = "US"; // String | 
+try {
+    FirstLastNameGenderedOut result = apiInstance.genderGeo(firstName, lastName, countryIso2);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling PersonalApi#genderGeo");
+    e.printStackTrace();
 }
 
 ```
