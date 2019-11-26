@@ -6,8 +6,9 @@
     <packaging>jar</packaging>
     <name>namsor-sdk2</name>
     <version>2.0.7</version>
-    <url>https://github.com/openapitools/openapi-generator</url>
-    <description>OpenAPI Java</description>
+    <!-- update NamSor -->
+    <url>https://github.com/namsor/namsor-java-sdk2/</url>
+    <description>NamSor OpenAPI Java Client SDK</description>
     <scm>
         <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
         <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
