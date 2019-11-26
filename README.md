@@ -73,11 +73,11 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 // Import classes:
-//import com.namsor.sdk2.invoke.ApiClient;
-//import com.namsor.sdk2.invoke.ApiException;
-//import com.namsor.sdk2.invoke.Configuration;
-//import com.namsor.sdk2.invoke.auth.*;
-//import com.namsor.sdk2.api.PersonalApi;
+import com.namsor.sdk2.invoke.ApiClient;
+import com.namsor.sdk2.invoke.ApiException;
+import com.namsor.sdk2.invoke.Configuration;
+import com.namsor.sdk2.invoke.auth.*;
+import com.namsor.sdk2.api.PersonalApi;
 
 ApiClient defaultClient = Configuration.getDefaultApiClient();
 
