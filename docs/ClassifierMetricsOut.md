@@ -4,6 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**softwareVersion** | **String** |  |  [optional]
+**hostAddress** | **String** |  |  [optional]
 **learnQueueSize** | **Integer** |  |  [optional]
 **bufferSize** | **Integer** |  |  [optional]
 **preClassifyQueueSize** | **Integer** |  |  [optional]
