@@ -1,8 +1,8 @@
 # namsor-sdk2
 
 NamSor API v2
-- API version: 2.0.8
-  - Build date: 2020-01-29T15:57:30.954+01:00[Europe/Berlin]
+- API version: 2.0.9
+  - Build date: 2020-03-15T12:23:01.598+01:00[Europe/Berlin]
 
 NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 100 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.namsor</groupId>
   <artifactId>namsor-sdk2</artifactId>
-  <version>2.0.8</version>
+  <version>2.0.9</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -51,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.namsor:namsor-sdk2:2.0.8"
+compile "com.namsor:namsor-sdk2:2.0.9"
 ```
 
 ### Others
@@ -64,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/namsor-sdk2-2.0.8.jar`
+* `target/namsor-sdk2-2.0.9.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
