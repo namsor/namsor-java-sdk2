@@ -72,40 +72,81 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
+package com.namsor.namsorsample;
 
 import com.namsor.sdk2.invoke.*;
 import com.namsor.sdk2.invoke.auth.*;
 import com.namsor.sdk2.model.*;
-import com.namsor.sdk2.api.AdminApi;
+import com.namsor.sdk2.api.PersonalApi;
 
-import java.io.File;
 import java.util.*;
 
-public class AdminApiExample {
+public class PersonalApiSample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
+
         // Configure API key authorization: api_key
         ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
         api_key.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //api_key.setApiKeyPrefix("Token");
 
-        AdminApi apiInstance = new AdminApi();
-        String apiKey = "apiKey_example"; // String | 
-        Long usageCredits = 56L; // Long | 
-        String userMessage = "userMessage_example"; // String | 
+        PersonalApi apiInstance = new PersonalApi();
+        
+        // should contain 10 to 100 names at a time, per API call
+        BatchFirstLastNameIn batchFirstLastNameIn = new BatchFirstLastNameIn(); // BatchFirstLastNameIn | A list of personal names
+        batchFirstLastNameIn.setPersonalNames(new ArrayList());
+        FirstLastNameIn name1 = new FirstLastNameIn();
+        name1.setId("123");
+        name1.setFirstName("Mary");
+        name1.setLastName("O'Neil");
+        batchFirstLastNameIn.getPersonalNames().add(name1);
+        FirstLastNameIn name2 = new FirstLastNameIn();
+        name2.setId("234");
+        name2.setFirstName("Roberto");
+        name2.setLastName("Rossini");
+        batchFirstLastNameIn.getPersonalNames().add(name2);
         try {
-            SystemMetricsOut result = apiInstance.addCredits(apiKey, usageCredits, userMessage);
+            BatchFirstLastNameOriginedOut result = apiInstance.originBatch(batchFirstLastNameIn);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AdminApi#addCredits");
+            System.err.println("Exception when calling PersonalApi#originBatch");
             e.printStackTrace();
         }
     }
 }
 
+```
+This will output the following : 
+```javascript
+class BatchFirstLastNameOriginedOut {
+    personalNames: [class FirstLastNameOriginedOut {
+        id: 123
+        firstName: Mary
+        lastName: O'Neil
+        countryOrigin: IE
+        countryOriginAlt: GB
+        countriesOriginTop: [IE, GB, KE, GH, LR, FR, TZ, NG, IL, EG]
+        score: 26.729154354675913
+        regionOrigin: Europe
+        topRegionOrigin: Europe
+        subRegionOrigin: Northern Europe
+        probabilityCalibrated: 0.9303604468868103
+        probabilityAltCalibrated: 0.9930598411485871
+    }, class FirstLastNameOriginedOut {
+        id: 123
+        firstName: Roberto
+        lastName: Rossini
+        countryOrigin: IT
+        countryOriginAlt: ES
+        countriesOriginTop: [IT, ES, CH, ID, PT, ZA, IL, AT, FI, FR]
+        score: 36.490714227516584
+        regionOrigin: Europe
+        topRegionOrigin: Europe
+        subRegionOrigin: Southern Europe
+        probabilityCalibrated: 0.9824811693994274
+        probabilityAltCalibrated: 0.9930598411485871
+    }]
+}
 ```
 
 ## Documentation for API Endpoints
