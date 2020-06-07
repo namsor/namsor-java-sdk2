@@ -10,8 +10,8 @@ Method | HTTP request | Description
 [**apiUsage**](AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage.
 [**apiUsageHistory**](AdminApi.md#apiUsageHistory) | **GET** /api2/json/apiUsageHistory | Print historical API usage.
 [**apiUsageHistoryAggregate**](AdminApi.md#apiUsageHistoryAggregate) | **GET** /api2/json/apiUsageHistoryAggregate | Print historical API usage (in an aggregated view, by service, by day/hour/min).
-[**availablePlans**](AdminApi.md#availablePlans) | **GET** /api2/json/availablePlans/{token} | List all available plans in the user&#39;s preferred currency.
-[**availablePlans1**](AdminApi.md#availablePlans1) | **GET** /api2/json/availablePlans | List all available plans in the default currency (usd).
+[**availablePlans**](AdminApi.md#availablePlans) | **GET** /api2/json/availablePlans | List all available plans in the default currency (usd).
+[**availablePlans1**](AdminApi.md#availablePlans1) | **GET** /api2/json/availablePlans/{token} | List all available plans in the user&#39;s preferred currency.
 [**availableServices**](AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of API services and usage cost in Units (default is 1&#x3D;ONE Unit).
 [**billingCurrencies**](AdminApi.md#billingCurrencies) | **GET** /api2/json/billingCurrencies | List possible currency options for billing (USD, EUR, GBP, ...)
 [**billingHistory**](AdminApi.md#billingHistory) | **GET** /api2/json/billingHistory/{token} | Read the history billing information (invoices paid via Stripe or manually).
@@ -25,8 +25,8 @@ Method | HTTP request | Description
 [**namsorCounter**](AdminApi.md#namsorCounter) | **GET** /api2/json/namsorCounter | Get the overall API counter
 [**paymentInfo**](AdminApi.md#paymentInfo) | **GET** /api2/json/paymentInfo/{token} | Get the Stripe payment information associated with the current google auth session token.
 [**procureKey**](AdminApi.md#procureKey) | **GET** /api2/json/procureKey/{token} | Procure an API Key (sent via Email), based on an auth token. Keep your API Key secret.
-[**redeployUI**](AdminApi.md#redeployUI) | **GET** /api2/json/redeployUI/{live} | Redeploy UI from current dev branch.
-[**redeployUI1**](AdminApi.md#redeployUI1) | **GET** /api2/json/redeployUI | Redeploy UI from current dev branch.
+[**redeployUI**](AdminApi.md#redeployUI) | **GET** /api2/json/redeployUI | Redeploy UI from current dev branch.
+[**redeployUI1**](AdminApi.md#redeployUI1) | **GET** /api2/json/redeployUI/{live} | Redeploy UI from current dev branch.
 [**removeUserAccount**](AdminApi.md#removeUserAccount) | **GET** /api2/json/removeUserAccount/{token} | Remove the user account.
 [**removeUserAccountOnBehalf**](AdminApi.md#removeUserAccountOnBehalf) | **GET** /api2/json/removeUserAccountOnBehalf/{apiKey} | Remove (on behalf) a user account.
 [**shutdown**](AdminApi.md#shutdown) | **GET** /api2/json/shutdown | Stop learning and shutdown system.
@@ -355,7 +355,56 @@ This endpoint does not need any parameter.
 
 <a name="availablePlans"></a>
 # **availablePlans**
-> APIPlansOut availablePlans(token)
+> APIPlansOut availablePlans()
+
+List all available plans in the default currency (usd).
+
+### Example
+```java
+// Import classes:
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    APIPlansOut result = apiInstance.availablePlans();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#availablePlans");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**APIPlansOut**](APIPlansOut.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="availablePlans1"></a>
+# **availablePlans1**
+> APIPlansOut availablePlans1(token)
 
 List all available plans in the user&#39;s preferred currency.
 
@@ -379,10 +428,10 @@ api_key.setApiKey("YOUR API KEY");
 AdminApi apiInstance = new AdminApi();
 String token = "token_example"; // String | 
 try {
-    APIPlansOut result = apiInstance.availablePlans(token);
+    APIPlansOut result = apiInstance.availablePlans1(token);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#availablePlans");
+    System.err.println("Exception when calling AdminApi#availablePlans1");
     e.printStackTrace();
 }
 ```
@@ -392,55 +441,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **String**|  |
-
-### Return type
-
-[**APIPlansOut**](APIPlansOut.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-<a name="availablePlans1"></a>
-# **availablePlans1**
-> APIPlansOut availablePlans1()
-
-List all available plans in the default currency (usd).
-
-### Example
-```java
-// Import classes:
-//import com.namsor.sdk2.invoke.ApiClient;
-//import com.namsor.sdk2.invoke.ApiException;
-//import com.namsor.sdk2.invoke.Configuration;
-//import com.namsor.sdk2.invoke.auth.*;
-//import com.namsor.sdk2.api.AdminApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-AdminApi apiInstance = new AdminApi();
-try {
-    APIPlansOut result = apiInstance.availablePlans1();
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#availablePlans1");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
 
 ### Return type
 
@@ -1127,7 +1127,55 @@ Name | Type | Description  | Notes
 
 <a name="redeployUI"></a>
 # **redeployUI**
-> redeployUI(live)
+> redeployUI()
+
+Redeploy UI from current dev branch.
+
+### Example
+```java
+// Import classes:
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    apiInstance.redeployUI();
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#redeployUI");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+<a name="redeployUI1"></a>
+# **redeployUI1**
+> redeployUI1(live)
 
 Redeploy UI from current dev branch.
 
@@ -1151,9 +1199,9 @@ api_key.setApiKey("YOUR API KEY");
 AdminApi apiInstance = new AdminApi();
 Boolean live = true; // Boolean | 
 try {
-    apiInstance.redeployUI(live);
+    apiInstance.redeployUI1(live);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#redeployUI");
+    System.err.println("Exception when calling AdminApi#redeployUI1");
     e.printStackTrace();
 }
 ```
@@ -1163,54 +1211,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **live** | **Boolean**|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="redeployUI1"></a>
-# **redeployUI1**
-> redeployUI1()
-
-Redeploy UI from current dev branch.
-
-### Example
-```java
-// Import classes:
-//import com.namsor.sdk2.invoke.ApiClient;
-//import com.namsor.sdk2.invoke.ApiException;
-//import com.namsor.sdk2.invoke.Configuration;
-//import com.namsor.sdk2.invoke.auth.*;
-//import com.namsor.sdk2.api.AdminApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-AdminApi apiInstance = new AdminApi();
-try {
-    apiInstance.redeployUI1();
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#redeployUI1");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
 
 ### Return type
 
