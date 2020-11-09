@@ -1,4 +1,4 @@
-# namsor-sdk2
+# namsor-sdk2 classifies personal names accurately by gender, country of origin, or ethnicity.
 
 NamSor API v2
 - API version: 2.0.11
