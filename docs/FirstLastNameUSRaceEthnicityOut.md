@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**script** | **String** |  |  [optional]
 **id** | **String** |  |  [optional]
 **firstName** | **String** |  |  [optional]
 **lastName** | **String** |  |  [optional]
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 **raceEthnicitiesTop** | **List&lt;String&gt;** | List &#39;race&#39;/ethnicities |  [optional]
 **probabilityCalibrated** | **Double** |  |  [optional]
 **probabilityAltCalibrated** | **Double** |  |  [optional]
+**category** | **String** |  |  [optional]
 
 
 <a name="RaceEthnicityAltEnum"></a>

@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**script** | **String** |  |  [optional]
 **id** | **String** |  |  [optional]
 **firstName** | **String** |  |  [optional]
 **lastName** | **String** |  |  [optional]
@@ -11,6 +12,7 @@ Name | Type | Description | Notes
 **genderScale** | **Double** | Compatibility to NamSor_v1 Gender Scale M[-1..U..+1]F value |  [optional]
 **score** | **Double** |  |  [optional]
 **probabilityCalibrated** | **Double** |  |  [optional]
+**category** | **String** |  |  [optional]
 
 
 <a name="LikelyGenderEnum"></a>

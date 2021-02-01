@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**script** | **String** |  |  [optional]
 **id** | **String** |  |  [optional]
 **firstName** | **String** |  |  [optional]
 **lastName** | **String** |  |  [optional]
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **subRegionOrigin** | **String** | Most likely region of Origin (based on countryOrigin ISO2 code) |  [optional]
 **probabilityCalibrated** | **Double** |  |  [optional]
 **probabilityAltCalibrated** | **Double** |  |  [optional]
+**category** | **String** |  |  [optional]
 
 
 

@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**script** | **String** |  |  [optional]
 **id** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
 **score** | **Double** |  |  [optional]
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **countriesTop** | **List&lt;String&gt;** | List countries (top 10) |  [optional]
 **probabilityCalibrated** | **Double** |  |  [optional]
 **probabilityAltCalibrated** | **Double** |  |  [optional]
+**category** | **String** |  |  [optional]
 
 
 

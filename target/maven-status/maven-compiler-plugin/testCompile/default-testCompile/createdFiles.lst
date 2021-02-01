@@ -1,3 +1,4 @@
+com/namsor/sdk2/model/BatchCorridorInTest.class
 com/namsor/sdk2/model/ParsedFullNameInTest.class
 com/namsor/sdk2/model/BatchFirstLastNameInTest.class
 com/namsor/sdk2/model/BatchFirstLastNameGenderedOutTest.class
@@ -40,20 +41,27 @@ com/namsor/sdk2/model/APIServiceOutTest.class
 com/namsor/sdk2/model/BillingInfoInOutTest.class
 com/namsor/sdk2/model/StripeCustomerOutTest.class
 com/namsor/sdk2/model/BatchParsedFullNameInTest.class
+com/namsor/sdk2/model/BatchProperNounCategorizedOutTest.class
 com/namsor/sdk2/model/APIPlanSubscriptionOutTest.class
+com/namsor/sdk2/model/NameInTest.class
 com/namsor/sdk2/model/PersonalNameInTest.class
 com/namsor/sdk2/model/FirstLastNameInTest.class
 com/namsor/sdk2/model/BatchPersonalNameParsedOutTest.class
 com/namsor/sdk2/model/ClassifierMetricsOutTest.class
 com/namsor/sdk2/api/JapaneseApiTest.class
+com/namsor/sdk2/model/BatchNameGeoInTest.class
 com/namsor/sdk2/model/MatchPersonalFirstLastNameInTest.class
 com/namsor/sdk2/model/ExpectedClassMetricsOutTest.class
+com/namsor/sdk2/model/BatchCorridorOutTest.class
 com/namsor/sdk2/model/APIClassifiersStatusOutTest.class
+com/namsor/sdk2/model/CorridorInTest.class
 com/namsor/sdk2/model/NamSorCounterOutTest.class
 com/namsor/sdk2/model/SystemMetricsOutTest.class
 com/namsor/sdk2/model/BatchFirstLastNameOriginedOutTest.class
 com/namsor/sdk2/model/SourceMetricsOutTest.class
+com/namsor/sdk2/model/BatchNameInTest.class
 com/namsor/sdk2/model/BatchFirstLastNamePhoneCodedOutTest.class
+com/namsor/sdk2/model/NameGeoInTest.class
 com/namsor/sdk2/model/BillingHistoryOutTest.class
 com/namsor/sdk2/model/PersonalNameGeoInTest.class
 com/namsor/sdk2/model/APIClassifierOutTest.class
@@ -74,7 +82,6 @@ com/namsor/sdk2/model/PersonalNameParsedOutTest.class
 com/namsor/sdk2/model/ParsedFullNameGeoInTest.class
 com/namsor/sdk2/model/APIPeriodUsageOutTest.class
 com/namsor/sdk2/model/APIUsageAggregatedOutTest.class
-com/namsor/sdk2/model/DeployUIOutTest.class
 com/namsor/sdk2/model/BatchFirstLastNamePhoneNumberInTest.class
 com/namsor/sdk2/model/StripeCardOutTest.class
 com/namsor/sdk2/model/PersonalNameGenderedOutTest.class
@@ -82,3 +89,4 @@ com/namsor/sdk2/model/BatchNameMatchedOutTest.class
 com/namsor/sdk2/model/SoftwareVersionOutTest.class
 com/namsor/sdk2/model/BatchPersonalNameGeoInTest.class
 com/namsor/sdk2/model/BatchFirstLastNameDiasporaedOutTest.class
+com/namsor/sdk2/model/CorridorOutTest.class

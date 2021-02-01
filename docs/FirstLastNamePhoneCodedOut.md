@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**script** | **String** |  |  [optional]
 **id** | **String** |  |  [optional]
 **firstName** | **String** |  |  [optional]
 **lastName** | **String** |  |  [optional]
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **verified** | **Boolean** |  |  [optional]
 **score** | **Double** |  |  [optional]
 **countryIso2** | **String** |  |  [optional]
+**category** | **String** |  |  [optional]
 
 
 
