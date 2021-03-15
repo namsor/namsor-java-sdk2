@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **id** | **String** |  |  [optional]
 **firstName** | **String** |  |  [optional]
 **lastName** | **String** |  |  [optional]
+**orderOption** | **String** |  |  [optional]
 **matchCandidates** | [**List&lt;NameMatchCandidateOut&gt;**](NameMatchCandidateOut.md) |  |  [optional]
 **category** | **String** |  |  [optional]
 
