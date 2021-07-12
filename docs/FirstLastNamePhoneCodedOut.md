@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **phoneNumber** | **String** |  |  [optional]
 **verified** | **Boolean** |  |  [optional]
 **score** | **Double** |  |  [optional]
-**countryIso2** | **String** |  |  [optional]
 **category** | **String** |  |  [optional]
+**countryIso2** | **String** |  |  [optional]
 
 
 

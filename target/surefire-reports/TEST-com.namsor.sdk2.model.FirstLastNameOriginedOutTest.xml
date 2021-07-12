@@ -65,14 +65,14 @@
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="probabilityCalibratedTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="testFirstLastNameOriginedOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="idTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="scriptTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="scriptTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="subRegionOriginTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="firstNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="regionOriginTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="countryOriginTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="lastNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="categoryTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="countriesOriginTopTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="countriesOriginTopTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="countryOriginAltTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="topRegionOriginTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOriginedOutTest" name="scoreTest" time="0"/>

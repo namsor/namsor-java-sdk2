@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="16" failures="0" name="com.namsor.sdk2.model.UserInfoOutTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="16" failures="0" name="com.namsor.sdk2.model.UserInfoOutTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -62,12 +62,12 @@
     <property name="sun.cpu.isalist" value=""/>
   </properties>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="disabledTest" time="0.001"/>
-  <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="emailVerifiedTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="emailVerifiedTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="uidTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="phoneNumberTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="firstKnownIpAddressTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="timeStampTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="stripeCustomerIdTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="stripeCustomerIdTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="displayNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="providerIdTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="verifyTokenTest" time="0"/>
@@ -76,5 +76,5 @@
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="apiKeyTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="photoUrlTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="otherInfosTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="emailTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.UserInfoOutTest" name="emailTest" time="0"/>
 </testsuite>

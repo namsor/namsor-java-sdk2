@@ -66,8 +66,8 @@
   <testcase classname="com.namsor.sdk2.model.PersonalNameGenderedOutTest" name="testPersonalNameGenderedOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGenderedOutTest" name="scriptTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGenderedOutTest" name="categoryTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.PersonalNameGenderedOutTest" name="genderScaleTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.PersonalNameGenderedOutTest" name="genderScaleTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGenderedOutTest" name="likelyGenderTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.PersonalNameGenderedOutTest" name="nameTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.PersonalNameGenderedOutTest" name="nameTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.PersonalNameGenderedOutTest" name="scoreTest" time="0"/>
 </testsuite>

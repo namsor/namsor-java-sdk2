@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameOutTest" name="idTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameOutTest" name="idTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOutTest" name="scriptTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOutTest" name="firstNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameOutTest" name="testFirstLastNameOut" time="0"/>

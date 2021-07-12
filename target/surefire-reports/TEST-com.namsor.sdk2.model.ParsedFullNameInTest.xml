@@ -63,9 +63,9 @@
   </properties>
   <testcase classname="com.namsor.sdk2.model.ParsedFullNameInTest" name="testParsedFullNameIn" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.ParsedFullNameInTest" name="suffixTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ParsedFullNameInTest" name="idTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.ParsedFullNameInTest" name="idTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.ParsedFullNameInTest" name="firstNameTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.ParsedFullNameInTest" name="lastNameTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.ParsedFullNameInTest" name="lastNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ParsedFullNameInTest" name="middleNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.ParsedFullNameInTest" name="prefixOrTitleTest" time="0"/>
 </testsuite>

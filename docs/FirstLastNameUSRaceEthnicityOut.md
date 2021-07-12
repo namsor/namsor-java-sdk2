@@ -25,6 +25,8 @@ W_NL | &quot;W_NL&quot;
 HL | &quot;HL&quot;
 A | &quot;A&quot;
 B_NL | &quot;B_NL&quot;
+AI_AN | &quot;AI_AN&quot;
+PI | &quot;PI&quot;
 
 
 <a name="RaceEthnicityEnum"></a>
@@ -35,6 +37,8 @@ W_NL | &quot;W_NL&quot;
 HL | &quot;HL&quot;
 A | &quot;A&quot;
 B_NL | &quot;B_NL&quot;
+AI_AN | &quot;AI_AN&quot;
+PI | &quot;PI&quot;
 
 
 
