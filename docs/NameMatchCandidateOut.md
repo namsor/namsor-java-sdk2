@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**candidateName** | **String** |  |  [optional]
-**probability** | **Double** |  |  [optional]
-**predScoreGivenName** | **Double** |  |  [optional]
-**predScoreFamilyName** | **Double** |  |  [optional]
+**candidateName** | **String** | The name matching candidate name |  [optional]
+**probability** | **Double** | The name matching estimated probability. |  [optional]
+**predScoreGivenName** | **Double** | The given name prediction score. |  [optional]
+**predScoreFamilyName** | **Double** | The family name prediction score. |  [optional]
 
 
 

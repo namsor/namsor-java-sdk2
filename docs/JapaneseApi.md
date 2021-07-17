@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 
 <a name="japaneseNameGenderKanjiCandidatesBatch"></a>
 # **japaneseNameGenderKanjiCandidatesBatch**
-> BatchNameMatchCandidatesOut japaneseNameGenderKanjiCandidatesBatch(batchFirstLastNameIn)
+> BatchNameMatchCandidatesOut japaneseNameGenderKanjiCandidatesBatch(batchFirstLastNameGenderIn)
 
 Identify japanese name candidates in KANJI, based on the romanized name (firstName &#x3D; japaneseGivenName; lastName&#x3D;japaneseSurname) with KNOWN gender, ex. Yamamoto Sanae
 
@@ -259,9 +259,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 JapaneseApi apiInstance = new JapaneseApi();
-BatchFirstLastNameIn batchFirstLastNameIn = new BatchFirstLastNameIn(); // BatchFirstLastNameIn | A list of personal japanese names in LATIN, firstName = japaneseGivenName; lastName=japaneseSurname and known gender
+BatchFirstLastNameGenderIn batchFirstLastNameGenderIn = new BatchFirstLastNameGenderIn(); // BatchFirstLastNameGenderIn | A list of personal japanese names in LATIN, firstName = japaneseGivenName; lastName=japaneseSurname and known gender
 try {
-    BatchNameMatchCandidatesOut result = apiInstance.japaneseNameGenderKanjiCandidatesBatch(batchFirstLastNameIn);
+    BatchNameMatchCandidatesOut result = apiInstance.japaneseNameGenderKanjiCandidatesBatch(batchFirstLastNameGenderIn);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JapaneseApi#japaneseNameGenderKanjiCandidatesBatch");
@@ -273,7 +273,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batchFirstLastNameIn** | [**BatchFirstLastNameIn**](BatchFirstLastNameIn.md)| A list of personal japanese names in LATIN, firstName &#x3D; japaneseGivenName; lastName&#x3D;japaneseSurname and known gender | [optional]
+ **batchFirstLastNameGenderIn** | [**BatchFirstLastNameGenderIn**](BatchFirstLastNameGenderIn.md)| A list of personal japanese names in LATIN, firstName &#x3D; japaneseGivenName; lastName&#x3D;japaneseSurname and known gender | [optional]
 
 ### Return type
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 <a name="japaneseNameKanjiCandidates"></a>
 # **japaneseNameKanjiCandidates**
-> RomanizedNameOut japaneseNameKanjiCandidates(japaneseSurnameLatin, japaneseGivenNameLatin, knownGender)
+> NameMatchCandidatesOut japaneseNameKanjiCandidates(japaneseSurnameLatin, japaneseGivenNameLatin, knownGender)
 
 Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae - and a known gender.
 
@@ -316,7 +316,7 @@ String japaneseSurnameLatin = "japaneseSurnameLatin_example"; // String |
 String japaneseGivenNameLatin = "japaneseGivenNameLatin_example"; // String | 
 String knownGender = "knownGender_example"; // String | 
 try {
-    RomanizedNameOut result = apiInstance.japaneseNameKanjiCandidates(japaneseSurnameLatin, japaneseGivenNameLatin, knownGender);
+    NameMatchCandidatesOut result = apiInstance.japaneseNameKanjiCandidates(japaneseSurnameLatin, japaneseGivenNameLatin, knownGender);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JapaneseApi#japaneseNameKanjiCandidates");
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RomanizedNameOut**](RomanizedNameOut.md)
+[**NameMatchCandidatesOut**](NameMatchCandidatesOut.md)
 
 ### Authorization
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 <a name="japaneseNameKanjiCandidates1"></a>
 # **japaneseNameKanjiCandidates1**
-> RomanizedNameOut japaneseNameKanjiCandidates1(japaneseSurnameLatin, japaneseGivenNameLatin)
+> NameMatchCandidatesOut japaneseNameKanjiCandidates1(japaneseSurnameLatin, japaneseGivenNameLatin)
 
 Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae
 
@@ -372,7 +372,7 @@ JapaneseApi apiInstance = new JapaneseApi();
 String japaneseSurnameLatin = "japaneseSurnameLatin_example"; // String | 
 String japaneseGivenNameLatin = "japaneseGivenNameLatin_example"; // String | 
 try {
-    RomanizedNameOut result = apiInstance.japaneseNameKanjiCandidates1(japaneseSurnameLatin, japaneseGivenNameLatin);
+    NameMatchCandidatesOut result = apiInstance.japaneseNameKanjiCandidates1(japaneseSurnameLatin, japaneseGivenNameLatin);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JapaneseApi#japaneseNameKanjiCandidates1");
@@ -389,7 +389,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RomanizedNameOut**](RomanizedNameOut.md)
+[**NameMatchCandidatesOut**](NameMatchCandidatesOut.md)
 
 ### Authorization
 
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
 
 <a name="japaneseNameLatinCandidates"></a>
 # **japaneseNameLatinCandidates**
-> RomanizedNameOut japaneseNameLatinCandidates(japaneseSurnameKanji, japaneseGivenNameKanji)
+> NameMatchCandidatesOut japaneseNameLatinCandidates(japaneseSurnameKanji, japaneseGivenNameKanji)
 
 Romanize japanese name, based on the name in Kanji.
 
@@ -480,7 +480,7 @@ JapaneseApi apiInstance = new JapaneseApi();
 String japaneseSurnameKanji = "japaneseSurnameKanji_example"; // String | 
 String japaneseGivenNameKanji = "japaneseGivenNameKanji_example"; // String | 
 try {
-    RomanizedNameOut result = apiInstance.japaneseNameLatinCandidates(japaneseSurnameKanji, japaneseGivenNameKanji);
+    NameMatchCandidatesOut result = apiInstance.japaneseNameLatinCandidates(japaneseSurnameKanji, japaneseGivenNameKanji);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JapaneseApi#japaneseNameLatinCandidates");
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RomanizedNameOut**](RomanizedNameOut.md)
+[**NameMatchCandidatesOut**](NameMatchCandidatesOut.md)
 
 ### Authorization
 
@@ -563,7 +563,7 @@ Name | Type | Description  | Notes
 
 <a name="japaneseNameMatch"></a>
 # **japaneseNameMatch**
-> RomanizedNameOut japaneseNameMatch(japaneseSurnameLatin, japaneseGivenNameLatin, japaneseName)
+> NameMatchedOut japaneseNameMatch(japaneseSurnameLatin, japaneseGivenNameLatin, japaneseName)
 
 Return a score for matching Japanese name in KANJI ex. 山本 早苗 with a romanized name ex. Yamamoto Sanae
 
@@ -589,7 +589,7 @@ String japaneseSurnameLatin = "japaneseSurnameLatin_example"; // String |
 String japaneseGivenNameLatin = "japaneseGivenNameLatin_example"; // String | 
 String japaneseName = "japaneseName_example"; // String | 
 try {
-    RomanizedNameOut result = apiInstance.japaneseNameMatch(japaneseSurnameLatin, japaneseGivenNameLatin, japaneseName);
+    NameMatchedOut result = apiInstance.japaneseNameMatch(japaneseSurnameLatin, japaneseGivenNameLatin, japaneseName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JapaneseApi#japaneseNameMatch");
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RomanizedNameOut**](RomanizedNameOut.md)
+[**NameMatchedOut**](NameMatchedOut.md)
 
 ### Authorization
 
@@ -620,7 +620,7 @@ Name | Type | Description  | Notes
 
 <a name="japaneseNameMatchBatch"></a>
 # **japaneseNameMatchBatch**
-> BatchNameMatchCandidatesOut japaneseNameMatchBatch(batchFirstLastNameIn)
+> BatchNameMatchedOut japaneseNameMatchBatch(batchMatchPersonalFirstLastNameIn)
 
 Return a score for matching a list of Japanese names in KANJI ex. 山本 早苗 with romanized names ex. Yamamoto Sanae
 
@@ -642,9 +642,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 JapaneseApi apiInstance = new JapaneseApi();
-BatchFirstLastNameIn batchFirstLastNameIn = new BatchFirstLastNameIn(); // BatchFirstLastNameIn | A list of personal Japanese names in LATIN, firstName = japaneseGivenName; lastName=japaneseSurname
+BatchMatchPersonalFirstLastNameIn batchMatchPersonalFirstLastNameIn = new BatchMatchPersonalFirstLastNameIn(); // BatchMatchPersonalFirstLastNameIn | A list of personal Japanese names in LATIN, firstName = japaneseGivenName; lastName=japaneseSurname
 try {
-    BatchNameMatchCandidatesOut result = apiInstance.japaneseNameMatchBatch(batchFirstLastNameIn);
+    BatchNameMatchedOut result = apiInstance.japaneseNameMatchBatch(batchMatchPersonalFirstLastNameIn);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JapaneseApi#japaneseNameMatchBatch");
@@ -656,11 +656,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batchFirstLastNameIn** | [**BatchFirstLastNameIn**](BatchFirstLastNameIn.md)| A list of personal Japanese names in LATIN, firstName &#x3D; japaneseGivenName; lastName&#x3D;japaneseSurname | [optional]
+ **batchMatchPersonalFirstLastNameIn** | [**BatchMatchPersonalFirstLastNameIn**](BatchMatchPersonalFirstLastNameIn.md)| A list of personal Japanese names in LATIN, firstName &#x3D; japaneseGivenName; lastName&#x3D;japaneseSurname | [optional]
 
 ### Return type
 
-[**BatchNameMatchCandidatesOut**](BatchNameMatchCandidatesOut.md)
+[**BatchNameMatchedOut**](BatchNameMatchedOut.md)
 
 ### Authorization
 
@@ -673,7 +673,7 @@ Name | Type | Description  | Notes
 
 <a name="japaneseNameMatchFeedbackLoop"></a>
 # **japaneseNameMatchFeedbackLoop**
-> RomanizedNameOut japaneseNameMatchFeedbackLoop(japaneseSurnameLatin, japaneseGivenNameLatin, japaneseName)
+> FeedbackLoopOut japaneseNameMatchFeedbackLoop(japaneseSurnameLatin, japaneseGivenNameLatin, japaneseName)
 
 [CREDITS 1 UNIT] Feedback loop to better perform matching Japanese name in KANJI ex. 山本 早苗 with a romanized name ex. Yamamoto Sanae
 
@@ -699,7 +699,7 @@ String japaneseSurnameLatin = "japaneseSurnameLatin_example"; // String |
 String japaneseGivenNameLatin = "japaneseGivenNameLatin_example"; // String | 
 String japaneseName = "japaneseName_example"; // String | 
 try {
-    RomanizedNameOut result = apiInstance.japaneseNameMatchFeedbackLoop(japaneseSurnameLatin, japaneseGivenNameLatin, japaneseName);
+    FeedbackLoopOut result = apiInstance.japaneseNameMatchFeedbackLoop(japaneseSurnameLatin, japaneseGivenNameLatin, japaneseName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling JapaneseApi#japaneseNameMatchFeedbackLoop");
@@ -717,7 +717,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RomanizedNameOut**](RomanizedNameOut.md)
+[**FeedbackLoopOut**](FeedbackLoopOut.md)
 
 ### Authorization
 

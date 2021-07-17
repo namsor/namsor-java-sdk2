@@ -5,12 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **apiKey** | [**APIKeyOut**](APIKeyOut.md) |  |  [optional]
-**apiService** | **String** |  |  [optional]
-**createdDateTime** | **Long** |  |  [optional]
-**totalUsage** | **Long** |  |  [optional]
-**lastFlushedDateTime** | **Long** |  |  [optional]
-**lastUsedDateTime** | **Long** |  |  [optional]
-**serviceFeaturesUsage** | **Map&lt;String, Long&gt;** |  |  [optional]
+**apiService** | **String** | The apiService corresponds to the classifier name. |  [optional]
+**createdDateTime** | **Long** | The create datetime of the counter. |  [optional]
+**totalUsage** | **Long** | The usage of the counter. |  [optional]
+**lastFlushedDateTime** | **Long** | The flush datetime of the counter. |  [optional]
+**lastUsedDateTime** | **Long** | The last usage datetime of the counter. |  [optional]
+**serviceFeaturesUsage** | **Map&lt;String, Long&gt;** | Usage of special features, such as Chinese, Japanese. |  [optional]
 
 
 

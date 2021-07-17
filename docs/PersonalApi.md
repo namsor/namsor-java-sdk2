@@ -24,8 +24,6 @@ Method | HTTP request | Description
 [**parseNameBatch**](PersonalApi.md#parseNameBatch) | **POST** /api2/json/parseNameBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.
 [**parseNameGeo**](PersonalApi.md#parseNameGeo) | **GET** /api2/json/parseName/{nameFull}/{countryIso2} | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.
 [**parseNameGeoBatch**](PersonalApi.md#parseNameGeoBatch) | **POST** /api2/json/parseNameGeoBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. 
-[**parsedGenderBatch**](PersonalApi.md#parsedGenderBatch) | **POST** /api2/json/parsedGenderBatch | Infer the likely gender of up to 100 fully parsed names, detecting automatically the cultural context.
-[**parsedGenderGeoBatch**](PersonalApi.md#parsedGenderGeoBatch) | **POST** /api2/json/parsedGenderGeoBatch | Infer the likely gender of up to 100 fully parsed names, detecting automatically the cultural context.
 [**usRaceEthnicity**](PersonalApi.md#usRaceEthnicity) | **GET** /api2/json/usRaceEthnicity/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
 [**usRaceEthnicityBatch**](PersonalApi.md#usRaceEthnicityBatch) | **POST** /api2/json/usRaceEthnicityBatch | [USES 10 UNITS PER NAME] Infer up-to 100 US resident&#39;s likely race/ethnicity according to US Census taxonomy. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
 [**usRaceEthnicityZIP5**](PersonalApi.md#usRaceEthnicityZIP5) | **GET** /api2/json/usRaceEthnicityZIP5/{firstName}/{lastName}/{zip5Code} | [USES 10 UNITS PER NAME] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
@@ -1108,112 +1106,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BatchPersonalNameParsedOut**](BatchPersonalNameParsedOut.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="parsedGenderBatch"></a>
-# **parsedGenderBatch**
-> BatchFirstLastNameGenderedOut parsedGenderBatch(batchParsedFullNameIn)
-
-Infer the likely gender of up to 100 fully parsed names, detecting automatically the cultural context.
-
-### Example
-```java
-// Import classes:
-//import com.namsor.sdk2.invoke.ApiClient;
-//import com.namsor.sdk2.invoke.ApiException;
-//import com.namsor.sdk2.invoke.Configuration;
-//import com.namsor.sdk2.invoke.auth.*;
-//import com.namsor.sdk2.api.PersonalApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-PersonalApi apiInstance = new PersonalApi();
-BatchParsedFullNameIn batchParsedFullNameIn = new BatchParsedFullNameIn(); // BatchParsedFullNameIn | A list of personal names
-try {
-    BatchFirstLastNameGenderedOut result = apiInstance.parsedGenderBatch(batchParsedFullNameIn);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PersonalApi#parsedGenderBatch");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **batchParsedFullNameIn** | [**BatchParsedFullNameIn**](BatchParsedFullNameIn.md)| A list of personal names | [optional]
-
-### Return type
-
-[**BatchFirstLastNameGenderedOut**](BatchFirstLastNameGenderedOut.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="parsedGenderGeoBatch"></a>
-# **parsedGenderGeoBatch**
-> BatchFirstLastNameGenderedOut parsedGenderGeoBatch(batchParsedFullNameGeoIn)
-
-Infer the likely gender of up to 100 fully parsed names, detecting automatically the cultural context.
-
-### Example
-```java
-// Import classes:
-//import com.namsor.sdk2.invoke.ApiClient;
-//import com.namsor.sdk2.invoke.ApiException;
-//import com.namsor.sdk2.invoke.Configuration;
-//import com.namsor.sdk2.invoke.auth.*;
-//import com.namsor.sdk2.api.PersonalApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-PersonalApi apiInstance = new PersonalApi();
-BatchParsedFullNameGeoIn batchParsedFullNameGeoIn = new BatchParsedFullNameGeoIn(); // BatchParsedFullNameGeoIn | A list of personal names
-try {
-    BatchFirstLastNameGenderedOut result = apiInstance.parsedGenderGeoBatch(batchParsedFullNameGeoIn);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling PersonalApi#parsedGenderGeoBatch");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **batchParsedFullNameGeoIn** | [**BatchParsedFullNameGeoIn**](BatchParsedFullNameGeoIn.md)| A list of personal names | [optional]
-
-### Return type
-
-[**BatchFirstLastNameGenderedOut**](BatchFirstLastNameGenderedOut.md)
 
 ### Authorization
 

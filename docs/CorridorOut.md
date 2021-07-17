@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **firstLastNameOriginedOut** | [**FirstLastNameOriginedOut**](FirstLastNameOriginedOut.md) |  |  [optional]
 **firstLastNameDiasporaedOut** | [**FirstLastNameDiasporaedOut**](FirstLastNameDiasporaedOut.md) |  |  [optional]
 **script** | **String** |  |  [optional]
-**category** | **String** |  |  [optional]
 
 
 

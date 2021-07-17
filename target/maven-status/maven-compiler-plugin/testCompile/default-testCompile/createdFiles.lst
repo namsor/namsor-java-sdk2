@@ -70,6 +70,7 @@ com/namsor/sdk2/model/FirstLastNameDiasporaedOutTest.class
 com/namsor/sdk2/model/BatchPersonalNameGeoOutTest.class
 com/namsor/sdk2/model/SourceDetailedMetricsOutTest.class
 com/namsor/sdk2/model/NameMatchCandidateOutTest.class
+com/namsor/sdk2/model/APIUsageHistoryOutTest.class
 com/namsor/sdk2/model/APIKeyOutTest.class
 com/namsor/sdk2/api/SocialApiTest.class
 com/namsor/sdk2/api/ChineseApiTest.class

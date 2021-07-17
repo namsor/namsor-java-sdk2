@@ -1,8 +1,8 @@
 # namsor-sdk2
 
 NamSor API v2
-- API version: 2.0.14
-  - Build date: 2021-07-12T18:00:09.597+02:00[Europe/Berlin]
+- API version: 2.0.15
+  - Build date: 2021-07-17T18:27:27.141+02:00[Europe/Berlin]
 
 NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. By default, enpoints use 1 unit per name (ex. Gender), but Ethnicity classification uses 10 to 20 units per name depending on taxonomy. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 100 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.namsor</groupId>
   <artifactId>namsor-sdk2</artifactId>
-  <version>2.0.14</version>
+  <version>2.0.15</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -51,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.namsor:namsor-sdk2:2.0.14"
+compile "com.namsor:namsor-sdk2:2.0.15"
 ```
 
 ### Others
@@ -64,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/namsor-sdk2-2.0.14.jar`
+* `target/namsor-sdk2-2.0.15.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -93,14 +93,12 @@ public class AdminApiExample {
         //api_key.setApiKeyPrefix("Token");
 
         AdminApi apiInstance = new AdminApi();
-        String apiKey = "apiKey_example"; // String | 
-        Long usageCredits = 56L; // Long | 
-        String userMessage = "userMessage_example"; // String | 
+        String source = "source_example"; // String | 
+        Boolean anonymized = true; // Boolean | 
         try {
-            SystemMetricsOut result = apiInstance.addCredits(apiKey, usageCredits, userMessage);
-            System.out.println(result);
+            apiInstance.anonymize(source, anonymized);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AdminApi#addCredits");
+            System.err.println("Exception when calling AdminApi#anonymize");
             e.printStackTrace();
         }
     }
@@ -114,44 +112,16 @@ All URIs are relative to *https://v2.namsor.com/NamSorAPIv2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AdminApi* | [**addCredits**](docs/AdminApi.md#addCredits) | **GET** /api2/json/addCredits/{apiKey}/{usageCredits}/{userMessage} | Add usage credits to an API Key.
 *AdminApi* | [**anonymize**](docs/AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source.
-*AdminApi* | [**apiStatus**](docs/AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers.
+*AdminApi* | [**apiStatus**](docs/AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices.
 *AdminApi* | [**apiUsage**](docs/AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage.
 *AdminApi* | [**apiUsageHistory**](docs/AdminApi.md#apiUsageHistory) | **GET** /api2/json/apiUsageHistory | Print historical API usage.
 *AdminApi* | [**apiUsageHistoryAggregate**](docs/AdminApi.md#apiUsageHistoryAggregate) | **GET** /api2/json/apiUsageHistoryAggregate | Print historical API usage (in an aggregated view, by service, by day/hour/min).
-*AdminApi* | [**availablePlans**](docs/AdminApi.md#availablePlans) | **GET** /api2/json/availablePlans/{token} | List all available plans in the user&#39;s preferred currency.
-*AdminApi* | [**availablePlans1**](docs/AdminApi.md#availablePlans1) | **GET** /api2/json/availablePlans | List all available plans in the default currency (usd).
-*AdminApi* | [**availableServices**](docs/AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of API services and usage cost in Units (default is 1&#x3D;ONE Unit).
-*AdminApi* | [**billingCurrencies**](docs/AdminApi.md#billingCurrencies) | **GET** /api2/json/billingCurrencies | List possible currency options for billing (USD, EUR, GBP, ...)
-*AdminApi* | [**billingHistory**](docs/AdminApi.md#billingHistory) | **GET** /api2/json/billingHistory/{token} | Read the history billing information (invoices paid via Stripe or manually).
-*AdminApi* | [**billingInfo**](docs/AdminApi.md#billingInfo) | **GET** /api2/json/billingInfo/{token} | Read the billing information (company name, address, phone, vat ID)
-*AdminApi* | [**charge**](docs/AdminApi.md#charge) | **POST** /api2/json/charge | Create a Stripe Customer, based on a payment card token (from secure StripeJS) and email.
-*AdminApi* | [**corporateKey**](docs/AdminApi.md#corporateKey) | **GET** /api2/json/corporateKey/{apiKey}/{corporate} | Setting an API Key to a corporate status.
-*AdminApi* | [**debugLevel**](docs/AdminApi.md#debugLevel) | **GET** /api2/json/debugLevel/{logger}/{level} | Update debug level for a classifier
-*AdminApi* | [**flush**](docs/AdminApi.md#flush) | **GET** /api2/json/flush | Flush counters.
-*AdminApi* | [**invalidateCache**](docs/AdminApi.md#invalidateCache) | **GET** /api2/json/invalidateCache | Invalidate system caches.
+*AdminApi* | [**availableServices**](docs/AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of classification services and usage cost in Units per classification (default is 1&#x3D;ONE Unit). Some API endpoints (ex. Corridor) combine multiple classifiers.
+*AdminApi* | [**disable**](docs/AdminApi.md#disable) | **GET** /api2/json/disable/{source}/{disabled} | Activate/deactivate an API Key.
 *AdminApi* | [**learnable**](docs/AdminApi.md#learnable) | **GET** /api2/json/learnable/{source}/{learnable} | Activate/deactivate learning from a source.
-*AdminApi* | [**namsorCounter**](docs/AdminApi.md#namsorCounter) | **GET** /api2/json/namsorCounter | Get the overall API counter
-*AdminApi* | [**paymentInfo**](docs/AdminApi.md#paymentInfo) | **GET** /api2/json/paymentInfo/{token} | Get the Stripe payment information associated with the current google auth session token.
-*AdminApi* | [**procureKey**](docs/AdminApi.md#procureKey) | **GET** /api2/json/procureKey/{token} | Procure an API Key (sent via Email), based on an auth token. Keep your API Key secret.
-*AdminApi* | [**removeUserAccount**](docs/AdminApi.md#removeUserAccount) | **GET** /api2/json/removeUserAccount/{token} | Remove the user account.
-*AdminApi* | [**removeUserAccountOnBehalf**](docs/AdminApi.md#removeUserAccountOnBehalf) | **GET** /api2/json/removeUserAccountOnBehalf/{apiKey} | Remove (on behalf) a user account.
-*AdminApi* | [**shutdown**](docs/AdminApi.md#shutdown) | **GET** /api2/json/shutdown | Stop learning and shutdown system.
 *AdminApi* | [**softwareVersion**](docs/AdminApi.md#softwareVersion) | **GET** /api2/json/softwareVersion | Get the current software version
-*AdminApi* | [**sourceStats**](docs/AdminApi.md#sourceStats) | **GET** /api2/json/sourceStats/{source} | Print basic source statistics.
-*AdminApi* | [**stats**](docs/AdminApi.md#stats) | **GET** /api2/json/stats | Print basic system statistics.
-*AdminApi* | [**stripeConnect**](docs/AdminApi.md#stripeConnect) | **GET** /api2/json/stripeConnect | Connects a Stripe Account.
-*AdminApi* | [**subscribePlan**](docs/AdminApi.md#subscribePlan) | **GET** /api2/json/subscribePlan/{planName}/{token} | Subscribe to a give API plan, using the user&#39;s preferred or default currency.
-*AdminApi* | [**subscribePlanOnBehalf**](docs/AdminApi.md#subscribePlanOnBehalf) | **GET** /api2/json/subscribePlanOnBehalf/{planName}/{apiKey} | Subscribe to a give API plan, using the user&#39;s preferred or default currency (admin only).
 *AdminApi* | [**taxonomyClasses**](docs/AdminApi.md#taxonomyClasses) | **GET** /api2/json/taxonomyClasses/{classifierName} | Print the taxonomy classes valid for the given classifier.
-*AdminApi* | [**updateBillingInfo**](docs/AdminApi.md#updateBillingInfo) | **POST** /api2/json/updateBillingInfo/{token} | Sets or update the billing information (company name, address, phone, vat ID)
-*AdminApi* | [**updateLimit**](docs/AdminApi.md#updateLimit) | **GET** /api2/json/updateLimit/{usageLimit}/{hardOrSoft}/{token} | Modifies the hard/soft limit on the API plan&#39;s overages (default is 0$ soft limit).
-*AdminApi* | [**updatePaymentDefault**](docs/AdminApi.md#updatePaymentDefault) | **GET** /api2/json/updatePaymentDefault/{defautSourceId}/{token} | Update the default Stripe card associated with the current google auth session token.
-*AdminApi* | [**userInfo**](docs/AdminApi.md#userInfo) | **GET** /api2/json/userInfo/{token} | Get the user profile associated with the current google auth session token.
-*AdminApi* | [**verifyEmail**](docs/AdminApi.md#verifyEmail) | **GET** /api2/json/verifyEmail/{emailToken} | Verifies an email, based on token sent to that email
-*AdminApi* | [**verifyRemoveEmail**](docs/AdminApi.md#verifyRemoveEmail) | **GET** /api2/json/verifyRemoveEmail/{emailToken} | Verifies an email, based on token sent to that email
-*AdminApi* | [**vet**](docs/AdminApi.md#vet) | **GET** /api2/json/vetting/{source}/{vetted} | Vetting of a source.
 *ChineseApi* | [**chineseNameCandidates**](docs/ChineseApi.md#chineseNameCandidates) | **GET** /api2/json/chineseNameCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin} | Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming
 *ChineseApi* | [**chineseNameCandidatesBatch**](docs/ChineseApi.md#chineseNameCandidatesBatch) | **POST** /api2/json/chineseNameCandidatesBatch | Identify Chinese name candidates, based on the romanized name (firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname), ex. Wang Xiaoming
 *ChineseApi* | [**chineseNameCandidatesGenderBatch**](docs/ChineseApi.md#chineseNameCandidatesGenderBatch) | **POST** /api2/json/chineseNameCandidatesGenderBatch | Identify Chinese name candidates, based on the romanized name (firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname) ex. Wang Xiaoming.
@@ -205,8 +175,6 @@ Class | Method | HTTP request | Description
 *PersonalApi* | [**parseNameBatch**](docs/PersonalApi.md#parseNameBatch) | **POST** /api2/json/parseNameBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.
 *PersonalApi* | [**parseNameGeo**](docs/PersonalApi.md#parseNameGeo) | **GET** /api2/json/parseName/{nameFull}/{countryIso2} | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.
 *PersonalApi* | [**parseNameGeoBatch**](docs/PersonalApi.md#parseNameGeoBatch) | **POST** /api2/json/parseNameGeoBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. 
-*PersonalApi* | [**parsedGenderBatch**](docs/PersonalApi.md#parsedGenderBatch) | **POST** /api2/json/parsedGenderBatch | Infer the likely gender of up to 100 fully parsed names, detecting automatically the cultural context.
-*PersonalApi* | [**parsedGenderGeoBatch**](docs/PersonalApi.md#parsedGenderGeoBatch) | **POST** /api2/json/parsedGenderGeoBatch | Infer the likely gender of up to 100 fully parsed names, detecting automatically the cultural context.
 *PersonalApi* | [**usRaceEthnicity**](docs/PersonalApi.md#usRaceEthnicity) | **GET** /api2/json/usRaceEthnicity/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
 *PersonalApi* | [**usRaceEthnicityBatch**](docs/PersonalApi.md#usRaceEthnicityBatch) | **POST** /api2/json/usRaceEthnicityBatch | [USES 10 UNITS PER NAME] Infer up-to 100 US resident&#39;s likely race/ethnicity according to US Census taxonomy. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
 *PersonalApi* | [**usRaceEthnicityZIP5**](docs/PersonalApi.md#usRaceEthnicityZIP5) | **GET** /api2/json/usRaceEthnicityZIP5/{firstName}/{lastName}/{zip5Code} | [USES 10 UNITS PER NAME] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
@@ -227,12 +195,11 @@ Class | Method | HTTP request | Description
  - [APICounterV2Out](docs/APICounterV2Out.md)
  - [APIKeyOut](docs/APIKeyOut.md)
  - [APIPeriodUsageOut](docs/APIPeriodUsageOut.md)
- - [APIPlanOut](docs/APIPlanOut.md)
  - [APIPlanSubscriptionOut](docs/APIPlanSubscriptionOut.md)
- - [APIPlansOut](docs/APIPlansOut.md)
  - [APIServiceOut](docs/APIServiceOut.md)
  - [APIServicesOut](docs/APIServicesOut.md)
  - [APIUsageAggregatedOut](docs/APIUsageAggregatedOut.md)
+ - [APIUsageHistoryOut](docs/APIUsageHistoryOut.md)
  - [BatchCorridorIn](docs/BatchCorridorIn.md)
  - [BatchCorridorOut](docs/BatchCorridorOut.md)
  - [BatchFirstLastNameDiasporaedOut](docs/BatchFirstLastNameDiasporaedOut.md)
@@ -251,22 +218,14 @@ Class | Method | HTTP request | Description
  - [BatchNameIn](docs/BatchNameIn.md)
  - [BatchNameMatchCandidatesOut](docs/BatchNameMatchCandidatesOut.md)
  - [BatchNameMatchedOut](docs/BatchNameMatchedOut.md)
- - [BatchParsedFullNameGeoIn](docs/BatchParsedFullNameGeoIn.md)
- - [BatchParsedFullNameIn](docs/BatchParsedFullNameIn.md)
  - [BatchPersonalNameGenderedOut](docs/BatchPersonalNameGenderedOut.md)
  - [BatchPersonalNameGeoIn](docs/BatchPersonalNameGeoIn.md)
  - [BatchPersonalNameGeoOut](docs/BatchPersonalNameGeoOut.md)
  - [BatchPersonalNameIn](docs/BatchPersonalNameIn.md)
  - [BatchPersonalNameParsedOut](docs/BatchPersonalNameParsedOut.md)
  - [BatchProperNounCategorizedOut](docs/BatchProperNounCategorizedOut.md)
- - [BillingHistoryOut](docs/BillingHistoryOut.md)
- - [BillingInfoInOut](docs/BillingInfoInOut.md)
- - [CacheMetricsOut](docs/CacheMetricsOut.md)
- - [ClassifierMetricsOut](docs/ClassifierMetricsOut.md)
  - [CorridorIn](docs/CorridorIn.md)
  - [CorridorOut](docs/CorridorOut.md)
- - [CurrenciesOut](docs/CurrenciesOut.md)
- - [ExpectedClassMetricsOut](docs/ExpectedClassMetricsOut.md)
  - [FeedbackLoopOut](docs/FeedbackLoopOut.md)
  - [FirstLastNameDiasporaedOut](docs/FirstLastNameDiasporaedOut.md)
  - [FirstLastNameGenderIn](docs/FirstLastNameGenderIn.md)
@@ -280,32 +239,19 @@ Class | Method | HTTP request | Description
  - [FirstLastNamePhoneNumberGeoIn](docs/FirstLastNamePhoneNumberGeoIn.md)
  - [FirstLastNamePhoneNumberIn](docs/FirstLastNamePhoneNumberIn.md)
  - [FirstLastNameUSRaceEthnicityOut](docs/FirstLastNameUSRaceEthnicityOut.md)
- - [InlineObject](docs/InlineObject.md)
- - [InvoiceItemOut](docs/InvoiceItemOut.md)
- - [InvoiceOut](docs/InvoiceOut.md)
  - [MatchPersonalFirstLastNameIn](docs/MatchPersonalFirstLastNameIn.md)
- - [NamSorCounterOut](docs/NamSorCounterOut.md)
  - [NameGeoIn](docs/NameGeoIn.md)
  - [NameIn](docs/NameIn.md)
  - [NameMatchCandidateOut](docs/NameMatchCandidateOut.md)
  - [NameMatchCandidatesOut](docs/NameMatchCandidatesOut.md)
  - [NameMatchedOut](docs/NameMatchedOut.md)
- - [ParsedFullNameGeoIn](docs/ParsedFullNameGeoIn.md)
- - [ParsedFullNameIn](docs/ParsedFullNameIn.md)
  - [PersonalNameGenderedOut](docs/PersonalNameGenderedOut.md)
  - [PersonalNameGeoIn](docs/PersonalNameGeoIn.md)
  - [PersonalNameGeoOut](docs/PersonalNameGeoOut.md)
  - [PersonalNameIn](docs/PersonalNameIn.md)
  - [PersonalNameParsedOut](docs/PersonalNameParsedOut.md)
  - [ProperNounCategorizedOut](docs/ProperNounCategorizedOut.md)
- - [RomanizedNameOut](docs/RomanizedNameOut.md)
  - [SoftwareVersionOut](docs/SoftwareVersionOut.md)
- - [SourceDetailedMetricsOut](docs/SourceDetailedMetricsOut.md)
- - [SourceMetricsOut](docs/SourceMetricsOut.md)
- - [StripeCardOut](docs/StripeCardOut.md)
- - [StripeCustomerOut](docs/StripeCustomerOut.md)
- - [SystemMetricsOut](docs/SystemMetricsOut.md)
- - [UserInfoOut](docs/UserInfoOut.md)
 
 
 ## Documentation for Authorization

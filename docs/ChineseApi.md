@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 <a name="chineseNameCandidates"></a>
 # **chineseNameCandidates**
-> RomanizedNameOut chineseNameCandidates(chineseSurnameLatin, chineseGivenNameLatin)
+> NameMatchCandidatesOut chineseNameCandidates(chineseSurnameLatin, chineseGivenNameLatin)
 
 Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming
 
@@ -47,7 +47,7 @@ ChineseApi apiInstance = new ChineseApi();
 String chineseSurnameLatin = "chineseSurnameLatin_example"; // String | 
 String chineseGivenNameLatin = "chineseGivenNameLatin_example"; // String | 
 try {
-    RomanizedNameOut result = apiInstance.chineseNameCandidates(chineseSurnameLatin, chineseGivenNameLatin);
+    NameMatchCandidatesOut result = apiInstance.chineseNameCandidates(chineseSurnameLatin, chineseGivenNameLatin);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChineseApi#chineseNameCandidates");
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RomanizedNameOut**](RomanizedNameOut.md)
+[**NameMatchCandidatesOut**](NameMatchCandidatesOut.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 <a name="chineseNameCandidatesGenderBatch"></a>
 # **chineseNameCandidatesGenderBatch**
-> BatchNameMatchCandidatesOut chineseNameCandidatesGenderBatch(batchFirstLastNameIn)
+> BatchNameMatchCandidatesOut chineseNameCandidatesGenderBatch(batchFirstLastNameGenderIn)
 
 Identify Chinese name candidates, based on the romanized name (firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname) ex. Wang Xiaoming.
 
@@ -152,9 +152,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 ChineseApi apiInstance = new ChineseApi();
-BatchFirstLastNameIn batchFirstLastNameIn = new BatchFirstLastNameIn(); // BatchFirstLastNameIn | A list of personal Chinese names in LATIN, firstName = chineseGivenName; lastName=chineseSurname
+BatchFirstLastNameGenderIn batchFirstLastNameGenderIn = new BatchFirstLastNameGenderIn(); // BatchFirstLastNameGenderIn | A list of personal Chinese names in LATIN, firstName = chineseGivenName; lastName=chineseSurname
 try {
-    BatchNameMatchCandidatesOut result = apiInstance.chineseNameCandidatesGenderBatch(batchFirstLastNameIn);
+    BatchNameMatchCandidatesOut result = apiInstance.chineseNameCandidatesGenderBatch(batchFirstLastNameGenderIn);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChineseApi#chineseNameCandidatesGenderBatch");
@@ -166,7 +166,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batchFirstLastNameIn** | [**BatchFirstLastNameIn**](BatchFirstLastNameIn.md)| A list of personal Chinese names in LATIN, firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname | [optional]
+ **batchFirstLastNameGenderIn** | [**BatchFirstLastNameGenderIn**](BatchFirstLastNameGenderIn.md)| A list of personal Chinese names in LATIN, firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname | [optional]
 
 ### Return type
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 <a name="chineseNameGenderCandidates"></a>
 # **chineseNameGenderCandidates**
-> RomanizedNameOut chineseNameGenderCandidates(chineseSurnameLatin, chineseGivenNameLatin, knownGender)
+> NameMatchCandidatesOut chineseNameGenderCandidates(chineseSurnameLatin, chineseGivenNameLatin, knownGender)
 
 Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming - having a known gender (&#39;male&#39; or &#39;female&#39;)
 
@@ -209,7 +209,7 @@ String chineseSurnameLatin = "chineseSurnameLatin_example"; // String |
 String chineseGivenNameLatin = "chineseGivenNameLatin_example"; // String | 
 String knownGender = "knownGender_example"; // String | 
 try {
-    RomanizedNameOut result = apiInstance.chineseNameGenderCandidates(chineseSurnameLatin, chineseGivenNameLatin, knownGender);
+    NameMatchCandidatesOut result = apiInstance.chineseNameGenderCandidates(chineseSurnameLatin, chineseGivenNameLatin, knownGender);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChineseApi#chineseNameGenderCandidates");
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RomanizedNameOut**](RomanizedNameOut.md)
+[**NameMatchCandidatesOut**](NameMatchCandidatesOut.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 <a name="chineseNameMatch"></a>
 # **chineseNameMatch**
-> RomanizedNameOut chineseNameMatch(chineseSurnameLatin, chineseGivenNameLatin, chineseName)
+> NameMatchedOut chineseNameMatch(chineseSurnameLatin, chineseGivenNameLatin, chineseName)
 
 Return a score for matching Chinese name ex. 王晓明 with a romanized name ex. Wang Xiaoming
 
@@ -266,7 +266,7 @@ String chineseSurnameLatin = "chineseSurnameLatin_example"; // String |
 String chineseGivenNameLatin = "chineseGivenNameLatin_example"; // String | 
 String chineseName = "chineseName_example"; // String | 
 try {
-    RomanizedNameOut result = apiInstance.chineseNameMatch(chineseSurnameLatin, chineseGivenNameLatin, chineseName);
+    NameMatchedOut result = apiInstance.chineseNameMatch(chineseSurnameLatin, chineseGivenNameLatin, chineseName);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChineseApi#chineseNameMatch");
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RomanizedNameOut**](RomanizedNameOut.md)
+[**NameMatchedOut**](NameMatchedOut.md)
 
 ### Authorization
 
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 <a name="chineseNameMatchBatch"></a>
 # **chineseNameMatchBatch**
-> BatchNameMatchCandidatesOut chineseNameMatchBatch(batchFirstLastNameIn)
+> BatchNameMatchedOut chineseNameMatchBatch(batchMatchPersonalFirstLastNameIn)
 
 Identify Chinese name candidates, based on the romanized name (firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname), ex. Wang Xiaoming
 
@@ -319,9 +319,9 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 ChineseApi apiInstance = new ChineseApi();
-BatchFirstLastNameIn batchFirstLastNameIn = new BatchFirstLastNameIn(); // BatchFirstLastNameIn | A list of personal Chinese names in LATIN, firstName = chineseGivenName; lastName=chineseSurname
+BatchMatchPersonalFirstLastNameIn batchMatchPersonalFirstLastNameIn = new BatchMatchPersonalFirstLastNameIn(); // BatchMatchPersonalFirstLastNameIn | A list of personal Chinese names in LATIN, firstName = chineseGivenName; lastName=chineseSurname
 try {
-    BatchNameMatchCandidatesOut result = apiInstance.chineseNameMatchBatch(batchFirstLastNameIn);
+    BatchNameMatchedOut result = apiInstance.chineseNameMatchBatch(batchMatchPersonalFirstLastNameIn);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ChineseApi#chineseNameMatchBatch");
@@ -333,11 +333,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **batchFirstLastNameIn** | [**BatchFirstLastNameIn**](BatchFirstLastNameIn.md)| A list of personal Chinese names in LATIN, firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname | [optional]
+ **batchMatchPersonalFirstLastNameIn** | [**BatchMatchPersonalFirstLastNameIn**](BatchMatchPersonalFirstLastNameIn.md)| A list of personal Chinese names in LATIN, firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname | [optional]
 
 ### Return type
 
-[**BatchNameMatchCandidatesOut**](BatchNameMatchCandidatesOut.md)
+[**BatchNameMatchedOut**](BatchNameMatchedOut.md)
 
 ### Authorization
 
