@@ -1,17 +1,10 @@
-# namsor-sdk2 Java SDK classifies personal names by gender, country of origin, or ethnicity.
-
-NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 100 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it!
+# namsor-sdk2
 
 NamSor API v2
-- API version: 2.0.15
-  - Build date: 2021-07-17T18:27:27.141+02:00[Europe/Berlin]
+- API version: 2.0.14
+  - Build date: 2021-04-08T17:08:50.528620+02:00[Europe/Paris]
 
-NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. By default, enpoints use 1 unit per name (ex. Gender), but Ethnicity classification uses 10 to 20 units per name depending on taxonomy. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 100 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
-
-
-Refer to the [NamSor API Doc](https://v2.namsor.com/NamSorAPIv2/apidoc.html) for detailed API documentation.
-
-Also, have a look at the Wiki [NamSor Wiki Doc](https://github.com/namsor/namsor-tools-v2/wiki/NamSor-Tools-V2) for release notes and taxonomies. 
+NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 100 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
 
   For more information, please visit [http://www.namsor.com/](http://www.namsor.com/)
 
@@ -48,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.namsor</groupId>
   <artifactId>namsor-sdk2</artifactId>
-  <version>2.0.15</version>
+  <version>2.0.14</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.namsor:namsor-sdk2:2.0.15"
+compile "com.namsor:namsor-sdk2:2.0.14"
 ```
 
 ### Others
@@ -71,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/namsor-sdk2-2.0.15.jar`
+* `target/namsor-sdk2-2.0.14.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -79,95 +72,44 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-package com.namsor.namsorsample;
 
-import com.namsor.sdk2.invoke.*;
+// Import classes:
+import com.namsor.sdk2.invoke.ApiClient;
+import com.namsor.sdk2.invoke.ApiException;
+import com.namsor.sdk2.invoke.Configuration;
 import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.model.*;
-import com.namsor.sdk2.api.PersonalApi;
+import com.namsor.sdk2.invoke.models.*;
+import com.namsor.sdk2.api.AdminApi;
 
-import java.io.File;
-import java.util.*;
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
+    
+    // Configure API key authorization: api_key
+    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+    api_key.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //api_key.setApiKeyPrefix("Token");
 
-public class PersonalApiSample {
-
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
-        // Configure API key authorization: api_key
-        ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-        api_key.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //api_key.setApiKeyPrefix("Token");
-
-        PersonalApi apiInstance = new PersonalApi();
-        
-        // should contain 10 to 100 names at a time, per API call
-        BatchFirstLastNameIn batchFirstLastNameIn = new BatchFirstLastNameIn(); // BatchFirstLastNameIn | A list of personal names
-        batchFirstLastNameIn.setPersonalNames(new ArrayList());
-        FirstLastNameIn name1 = new FirstLastNameIn();
-        name1.setId("123");
-        name1.setFirstName("Mary");
-        name1.setLastName("O'Neil");
-        batchFirstLastNameIn.getPersonalNames().add(name1);
-        FirstLastNameIn name2 = new FirstLastNameIn();
-        name2.setId("234");
-        name2.setFirstName("Roberto");
-        name2.setLastName("Rossini");
-        batchFirstLastNameIn.getPersonalNames().add(name2);
-        try {
-            BatchFirstLastNameOriginedOut result = apiInstance.originBatch(batchFirstLastNameIn);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling PersonalApi#originBatch");
-            e.printStackTrace();
-        }
+    AdminApi apiInstance = new AdminApi(defaultClient);
+    String apiKey = "apiKey_example"; // String | 
+    Long usageCredits = 56L; // Long | 
+    String userMessage = "userMessage_example"; // String | 
+    try {
+      SystemMetricsOut result = apiInstance.addCredits(apiKey, usageCredits, userMessage);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AdminApi#addCredits");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
-
+  }
 }
 
-This will output the following : 
-```javascript
-class BatchFirstLastNameOriginedOut {
-    personalNames: [class FirstLastNameOriginedOut {
-        id: 123
-        firstName: Mary
-        lastName: O'Neil
-        countryOrigin: IE
-        countryOriginAlt: GB
-        countriesOriginTop: [IE, GB, KE, GH, LR, FR, TZ, NG, IL, EG]
-        score: 26.729154354675913
-        regionOrigin: Europe
-        topRegionOrigin: Europe
-        subRegionOrigin: Northern Europe
-        probabilityCalibrated: 0.9303604468868103
-        probabilityAltCalibrated: 0.9930598411485871
-    }, class FirstLastNameOriginedOut {
-        id: 123
-        firstName: Roberto
-        lastName: Rossini
-        countryOrigin: IT
-        countryOriginAlt: ES
-        countriesOriginTop: [IT, ES, CH, ID, PT, ZA, IL, AT, FI, FR]
-        score: 36.490714227516584
-        regionOrigin: Europe
-        topRegionOrigin: Europe
-        subRegionOrigin: Southern Europe
-        probabilityCalibrated: 0.9824811693994274
-        probabilityAltCalibrated: 0.9930598411485871
-    }]
-}
 ```
-
-## Documentation for Authorization
-
-Authentication schemes defined for the API:
-### api_key
-
-- **Type**: API key
-- **API key parameter name**: X-API-KEY
-- **Location**: HTTP header
-
 
 ## Documentation for API Endpoints
 
@@ -175,40 +117,44 @@ All URIs are relative to *https://v2.namsor.com/NamSorAPIv2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*PersonalApi* | [**gender**](docs/PersonalApi.md#gender) | **GET** /api2/json/gender/{firstName}/{lastName} | Infer the likely gender of a name.
-*PersonalApi* | [**genderBatch**](docs/PersonalApi.md#genderBatch) | **POST** /api2/json/genderBatch | Infer the likely gender of up to 100 names, detecting automatically the cultural context.
-*PersonalApi* | [**genderFull**](docs/PersonalApi.md#genderFull) | **GET** /api2/json/genderFull/{fullName} | Infer the likely gender of a full name, ex. John H. Smith
-*PersonalApi* | [**genderFullBatch**](docs/PersonalApi.md#genderFullBatch) | **POST** /api2/json/genderFullBatch | Infer the likely gender of up to 100 full names, detecting automatically the cultural context.
-*PersonalApi* | [**genderFullGeo**](docs/PersonalApi.md#genderFullGeo) | **GET** /api2/json/genderFullGeo/{fullName}/{countryIso2} | Infer the likely gender of a full name, given a local context (ISO2 country code).
-*PersonalApi* | [**genderFullGeoBatch**](docs/PersonalApi.md#genderFullGeoBatch) | **POST** /api2/json/genderFullGeoBatch | Infer the likely gender of up to 100 full names, with a given cultural context (country ISO2 code).
-*PersonalApi* | [**genderGeo**](docs/PersonalApi.md#genderGeo) | **GET** /api2/json/genderGeo/{firstName}/{lastName}/{countryIso2} | Infer the likely gender of a name, given a local context (ISO2 country code).
-*PersonalApi* | [**genderGeoBatch**](docs/PersonalApi.md#genderGeoBatch) | **POST** /api2/json/genderGeoBatch | Infer the likely gender of up to 100 names, each given a local context (ISO2 country code).
-*PersonalApi* | [**origin**](docs/PersonalApi.md#origin) | **GET** /api2/json/origin/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer the likely country of origin of a personal name. Assumes names as they are in the country of origin. For US, CA, AU, NZ and other melting-pots : use &#39;diaspora&#39; instead.
-*PersonalApi* | [**originBatch**](docs/PersonalApi.md#originBatch) | **POST** /api2/json/originBatch | [USES 10 UNITS PER NAME] Infer the likely country of origin of up to 100 names, detecting automatically the cultural context.
-*PersonalApi* | [**country**](docs/PersonalApi.md#country) | **GET** /api2/json/country/{personalNameFull} | [USES 10 UNITS PER NAME] Infer the likely country of residence of a personal full name, or one surname. Assumes names as they are in the country of residence OR the country of origin.
-*PersonalApi* | [**countryBatch**](docs/PersonalApi.md#countryBatch) | **POST** /api2/json/countryBatch | [USES 10 UNITS PER NAME] Infer the likely country of residence of up to 100 personal full names, or surnames. Assumes names as they are in the country of residence OR the country of origin.
-*PersonalApi* | [**diaspora**](docs/PersonalApi.md#diaspora) | **GET** /api2/json/diaspora/{countryIso2}/{firstName}/{lastName} | [USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of a personal name, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
-*PersonalApi* | [**diasporaBatch**](docs/PersonalApi.md#diasporaBatch) | **POST** /api2/json/diasporaBatch | [USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of up to 100 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
-*PersonalApi* | [**parseName**](docs/PersonalApi.md#parseName) | **GET** /api2/json/parseName/{nameFull} | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. 
-*PersonalApi* | [**parseNameBatch**](docs/PersonalApi.md#parseNameBatch) | **POST** /api2/json/parseNameBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.
-*PersonalApi* | [**parseNameGeo**](docs/PersonalApi.md#parseNameGeo) | **GET** /api2/json/parseName/{nameFull}/{countryIso2} | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.
-*PersonalApi* | [**parseNameGeoBatch**](docs/PersonalApi.md#parseNameGeoBatch) | **POST** /api2/json/parseNameGeoBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. 
-*PersonalApi* | [**usRaceEthnicity**](docs/PersonalApi.md#usRaceEthnicity) | **GET** /api2/json/usRaceEthnicity/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
-*PersonalApi* | [**usRaceEthnicityBatch**](docs/PersonalApi.md#usRaceEthnicityBatch) | **POST** /api2/json/usRaceEthnicityBatch | [USES 10 UNITS PER NAME] Infer up-to 100 US resident&#39;s likely race/ethnicity according to US Census taxonomy. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
-*PersonalApi* | [**usRaceEthnicityZIP5**](docs/PersonalApi.md#usRaceEthnicityZIP5) | **GET** /api2/json/usRaceEthnicityZIP5/{firstName}/{lastName}/{zip5Code} | [USES 10 UNITS PER NAME] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
-*PersonalApi* | [**usZipRaceEthnicityBatch**](docs/PersonalApi.md#usZipRaceEthnicityBatch) | **POST** /api2/json/usZipRaceEthnicityBatch | [USES 10 UNITS PER NAME] Infer up-to 100 US resident&#39;s likely race/ethnicity according to US Census taxonomy, with (optional) ZIP code. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino). Optionally add header X-OPTION-USRACEETHNICITY-TAXONOMY: USRACEETHNICITY-6CLASSES for two additional classes, AI_AN (American Indian or Alaskan Native) and PI (Pacific Islander).
-*PersonalApi* | [**corridor**](docs/PersonalApi.md#corridor) | **GET** /api2/json/corridor/{countryIso2From}/{firstNameFrom}/{lastNameFrom}/{countryIso2To}/{firstNameTo}/{lastNameTo} | [USES 20 UNITS PER NAME COUPLE] Infer several classifications for a cross border interaction between names (ex. remit, travel, intl com)
-*PersonalApi* | [**corridorBatch**](docs/PersonalApi.md#corridorBatch) | **POST** /api2/json/corridorBatch | [USES 20 UNITS PER NAME PAIR] Infer several classifications for up to 100 cross border interaction between names (ex. remit, travel, intl com)
-*AdminApi* | [**apiStatus**](docs/AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices.
+*AdminApi* | [**addCredits**](docs/AdminApi.md#addCredits) | **GET** /api2/json/addCredits/{apiKey}/{usageCredits}/{userMessage} | Add usage credits to an API Key.
+*AdminApi* | [**anonymize**](docs/AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source.
+*AdminApi* | [**apiStatus**](docs/AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers.
 *AdminApi* | [**apiUsage**](docs/AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage.
 *AdminApi* | [**apiUsageHistory**](docs/AdminApi.md#apiUsageHistory) | **GET** /api2/json/apiUsageHistory | Print historical API usage.
 *AdminApi* | [**apiUsageHistoryAggregate**](docs/AdminApi.md#apiUsageHistoryAggregate) | **GET** /api2/json/apiUsageHistoryAggregate | Print historical API usage (in an aggregated view, by service, by day/hour/min).
-*AdminApi* | [**availableServices**](docs/AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of classification services and usage cost in Units per classification (default is 1&#x3D;ONE Unit). Some API endpoints (ex. Corridor) combine multiple classifiers.
-*AdminApi* | [**disable**](docs/AdminApi.md#disable) | **GET** /api2/json/disable/{source}/{disabled} | Activate/deactivate an API Key.
+*AdminApi* | [**availablePlans**](docs/AdminApi.md#availablePlans) | **GET** /api2/json/availablePlans | List all available plans in the default currency (usd).
+*AdminApi* | [**availablePlans1**](docs/AdminApi.md#availablePlans1) | **GET** /api2/json/availablePlans/{token} | List all available plans in the user&#39;s preferred currency.
+*AdminApi* | [**availableServices**](docs/AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of API services and usage cost in Units (default is 1&#x3D;ONE Unit).
+*AdminApi* | [**billingCurrencies**](docs/AdminApi.md#billingCurrencies) | **GET** /api2/json/billingCurrencies | List possible currency options for billing (USD, EUR, GBP, ...)
+*AdminApi* | [**billingHistory**](docs/AdminApi.md#billingHistory) | **GET** /api2/json/billingHistory/{token} | Read the history billing information (invoices paid via Stripe or manually).
+*AdminApi* | [**billingInfo**](docs/AdminApi.md#billingInfo) | **GET** /api2/json/billingInfo/{token} | Read the billing information (company name, address, phone, vat ID)
+*AdminApi* | [**charge**](docs/AdminApi.md#charge) | **POST** /api2/json/charge | Create a Stripe Customer, based on a payment card token (from secure StripeJS) and email.
+*AdminApi* | [**corporateKey**](docs/AdminApi.md#corporateKey) | **GET** /api2/json/corporateKey/{apiKey}/{corporate} | Setting an API Key to a corporate status.
+*AdminApi* | [**debugLevel**](docs/AdminApi.md#debugLevel) | **GET** /api2/json/debugLevel/{logger}/{level} | Update debug level for a classifier
+*AdminApi* | [**flush**](docs/AdminApi.md#flush) | **GET** /api2/json/flush | Flush counters.
+*AdminApi* | [**invalidateCache**](docs/AdminApi.md#invalidateCache) | **GET** /api2/json/invalidateCache | Invalidate system caches.
 *AdminApi* | [**learnable**](docs/AdminApi.md#learnable) | **GET** /api2/json/learnable/{source}/{learnable} | Activate/deactivate learning from a source.
-*AdminApi* | [**anonymize**](docs/AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source.
+*AdminApi* | [**namsorCounter**](docs/AdminApi.md#namsorCounter) | **GET** /api2/json/namsorCounter | Get the overall API counter
+*AdminApi* | [**paymentInfo**](docs/AdminApi.md#paymentInfo) | **GET** /api2/json/paymentInfo/{token} | Get the Stripe payment information associated with the current google auth session token.
+*AdminApi* | [**procureKey**](docs/AdminApi.md#procureKey) | **GET** /api2/json/procureKey/{token} | Procure an API Key (sent via Email), based on an auth token. Keep your API Key secret.
+*AdminApi* | [**removeUserAccount**](docs/AdminApi.md#removeUserAccount) | **GET** /api2/json/removeUserAccount/{token} | Remove the user account.
+*AdminApi* | [**removeUserAccountOnBehalf**](docs/AdminApi.md#removeUserAccountOnBehalf) | **GET** /api2/json/removeUserAccountOnBehalf/{apiKey} | Remove (on behalf) a user account.
+*AdminApi* | [**shutdown**](docs/AdminApi.md#shutdown) | **GET** /api2/json/shutdown | Stop learning and shutdown system.
 *AdminApi* | [**softwareVersion**](docs/AdminApi.md#softwareVersion) | **GET** /api2/json/softwareVersion | Get the current software version
+*AdminApi* | [**sourceStats**](docs/AdminApi.md#sourceStats) | **GET** /api2/json/sourceStats/{source} | Print basic source statistics.
+*AdminApi* | [**stats**](docs/AdminApi.md#stats) | **GET** /api2/json/stats | Print basic system statistics.
+*AdminApi* | [**stripeConnect**](docs/AdminApi.md#stripeConnect) | **GET** /api2/json/stripeConnect | Connects a Stripe Account.
+*AdminApi* | [**subscribePlan**](docs/AdminApi.md#subscribePlan) | **GET** /api2/json/subscribePlan/{planName}/{token} | Subscribe to a give API plan, using the user&#39;s preferred or default currency.
+*AdminApi* | [**subscribePlanOnBehalf**](docs/AdminApi.md#subscribePlanOnBehalf) | **GET** /api2/json/subscribePlanOnBehalf/{planName}/{apiKey} | Subscribe to a give API plan, using the user&#39;s preferred or default currency (admin only).
 *AdminApi* | [**taxonomyClasses**](docs/AdminApi.md#taxonomyClasses) | **GET** /api2/json/taxonomyClasses/{classifierName} | Print the taxonomy classes valid for the given classifier.
+*AdminApi* | [**updateBillingInfo**](docs/AdminApi.md#updateBillingInfo) | **POST** /api2/json/updateBillingInfo/{token} | Sets or update the billing information (company name, address, phone, vat ID)
+*AdminApi* | [**updateLimit**](docs/AdminApi.md#updateLimit) | **GET** /api2/json/updateLimit/{usageLimit}/{hardOrSoft}/{token} | Modifies the hard/soft limit on the API plan&#39;s overages (default is 0$ soft limit).
+*AdminApi* | [**updatePaymentDefault**](docs/AdminApi.md#updatePaymentDefault) | **GET** /api2/json/updatePaymentDefault/{defautSourceId}/{token} | Update the default Stripe card associated with the current google auth session token.
+*AdminApi* | [**userInfo**](docs/AdminApi.md#userInfo) | **GET** /api2/json/userInfo/{token} | Get the user profile associated with the current google auth session token.
+*AdminApi* | [**verifyEmail**](docs/AdminApi.md#verifyEmail) | **GET** /api2/json/verifyEmail/{emailToken} | Verifies an email, based on token sent to that email
+*AdminApi* | [**verifyRemoveEmail**](docs/AdminApi.md#verifyRemoveEmail) | **GET** /api2/json/verifyRemoveEmail/{emailToken} | Verifies an email, based on token sent to that email
+*AdminApi* | [**vet**](docs/AdminApi.md#vet) | **GET** /api2/json/vetting/{source}/{vetted} | Vetting of a source.
 *ChineseApi* | [**chineseNameCandidates**](docs/ChineseApi.md#chineseNameCandidates) | **GET** /api2/json/chineseNameCandidates/{chineseSurnameLatin}/{chineseGivenNameLatin} | Identify Chinese name candidates, based on the romanized name ex. Wang Xiaoming
 *ChineseApi* | [**chineseNameCandidatesBatch**](docs/ChineseApi.md#chineseNameCandidatesBatch) | **POST** /api2/json/chineseNameCandidatesBatch | Identify Chinese name candidates, based on the romanized name (firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname), ex. Wang Xiaoming
 *ChineseApi* | [**chineseNameCandidatesGenderBatch**](docs/ChineseApi.md#chineseNameCandidatesGenderBatch) | **POST** /api2/json/chineseNameCandidatesGenderBatch | Identify Chinese name candidates, based on the romanized name (firstName &#x3D; chineseGivenName; lastName&#x3D;chineseSurname) ex. Wang Xiaoming.
@@ -242,6 +188,32 @@ Class | Method | HTTP request | Description
 *JapaneseApi* | [**japaneseNameMatchFeedbackLoop**](docs/JapaneseApi.md#japaneseNameMatchFeedbackLoop) | **GET** /api2/json/japaneseNameMatchFeedbackLoop/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{japaneseName} | [CREDITS 1 UNIT] Feedback loop to better perform matching Japanese name in KANJI ex. 山本 早苗 with a romanized name ex. Yamamoto Sanae
 *JapaneseApi* | [**parseJapaneseName**](docs/JapaneseApi.md#parseJapaneseName) | **GET** /api2/json/parseJapaneseName/{japaneseName} | Infer the likely first/last name structure of a name, ex. 山本 早苗 or Yamamoto Sanae
 *JapaneseApi* | [**parseJapaneseNameBatch**](docs/JapaneseApi.md#parseJapaneseNameBatch) | **POST** /api2/json/parseJapaneseNameBatch | Infer the likely first/last name structure of a name, ex. 山本 早苗 or Yamamoto Sanae 
+*PersonalApi* | [**corridor**](docs/PersonalApi.md#corridor) | **GET** /api2/json/corridor/{countryIso2From}/{firstNameFrom}/{lastNameFrom}/{countryIso2To}/{firstNameTo}/{lastNameTo} | [USES 20 UNITS PER NAME COUPLE] Infer several classifications for a cross border interaction between names (ex. remit, travel, intl com)
+*PersonalApi* | [**corridorBatch**](docs/PersonalApi.md#corridorBatch) | **POST** /api2/json/corridorBatch | [USES 20 UNITS PER NAME PAIR] Infer several classifications for up to 100 cross border interaction between names (ex. remit, travel, intl com)
+*PersonalApi* | [**country**](docs/PersonalApi.md#country) | **GET** /api2/json/country/{personalNameFull} | [USES 10 UNITS PER NAME] Infer the likely country of residence of a personal full name, or one surname. Assumes names as they are in the country of residence OR the country of origin.
+*PersonalApi* | [**countryBatch**](docs/PersonalApi.md#countryBatch) | **POST** /api2/json/countryBatch | [USES 10 UNITS PER NAME] Infer the likely country of residence of up to 100 personal full names, or surnames. Assumes names as they are in the country of residence OR the country of origin.
+*PersonalApi* | [**diaspora**](docs/PersonalApi.md#diaspora) | **GET** /api2/json/diaspora/{countryIso2}/{firstName}/{lastName} | [USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of a personal name, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
+*PersonalApi* | [**diasporaBatch**](docs/PersonalApi.md#diasporaBatch) | **POST** /api2/json/diasporaBatch | [USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of up to 100 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
+*PersonalApi* | [**gender**](docs/PersonalApi.md#gender) | **GET** /api2/json/gender/{firstName}/{lastName} | Infer the likely gender of a name.
+*PersonalApi* | [**genderBatch**](docs/PersonalApi.md#genderBatch) | **POST** /api2/json/genderBatch | Infer the likely gender of up to 100 names, detecting automatically the cultural context.
+*PersonalApi* | [**genderFull**](docs/PersonalApi.md#genderFull) | **GET** /api2/json/genderFull/{fullName} | Infer the likely gender of a full name, ex. John H. Smith
+*PersonalApi* | [**genderFullBatch**](docs/PersonalApi.md#genderFullBatch) | **POST** /api2/json/genderFullBatch | Infer the likely gender of up to 100 full names, detecting automatically the cultural context.
+*PersonalApi* | [**genderFullGeo**](docs/PersonalApi.md#genderFullGeo) | **GET** /api2/json/genderFullGeo/{fullName}/{countryIso2} | Infer the likely gender of a full name, given a local context (ISO2 country code).
+*PersonalApi* | [**genderFullGeoBatch**](docs/PersonalApi.md#genderFullGeoBatch) | **POST** /api2/json/genderFullGeoBatch | Infer the likely gender of up to 100 full names, with a given cultural context (country ISO2 code).
+*PersonalApi* | [**genderGeo**](docs/PersonalApi.md#genderGeo) | **GET** /api2/json/genderGeo/{firstName}/{lastName}/{countryIso2} | Infer the likely gender of a name, given a local context (ISO2 country code).
+*PersonalApi* | [**genderGeoBatch**](docs/PersonalApi.md#genderGeoBatch) | **POST** /api2/json/genderGeoBatch | Infer the likely gender of up to 100 names, each given a local context (ISO2 country code).
+*PersonalApi* | [**origin**](docs/PersonalApi.md#origin) | **GET** /api2/json/origin/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer the likely country of origin of a personal name. Assumes names as they are in the country of origin. For US, CA, AU, NZ and other melting-pots : use &#39;diaspora&#39; instead.
+*PersonalApi* | [**originBatch**](docs/PersonalApi.md#originBatch) | **POST** /api2/json/originBatch | [USES 10 UNITS PER NAME] Infer the likely country of origin of up to 100 names, detecting automatically the cultural context.
+*PersonalApi* | [**parseName**](docs/PersonalApi.md#parseName) | **GET** /api2/json/parseName/{nameFull} | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. 
+*PersonalApi* | [**parseNameBatch**](docs/PersonalApi.md#parseNameBatch) | **POST** /api2/json/parseNameBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.
+*PersonalApi* | [**parseNameGeo**](docs/PersonalApi.md#parseNameGeo) | **GET** /api2/json/parseName/{nameFull}/{countryIso2} | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.
+*PersonalApi* | [**parseNameGeoBatch**](docs/PersonalApi.md#parseNameGeoBatch) | **POST** /api2/json/parseNameGeoBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. 
+*PersonalApi* | [**parsedGenderBatch**](docs/PersonalApi.md#parsedGenderBatch) | **POST** /api2/json/parsedGenderBatch | Infer the likely gender of up to 100 fully parsed names, detecting automatically the cultural context.
+*PersonalApi* | [**parsedGenderGeoBatch**](docs/PersonalApi.md#parsedGenderGeoBatch) | **POST** /api2/json/parsedGenderGeoBatch | Infer the likely gender of up to 100 fully parsed names, detecting automatically the cultural context.
+*PersonalApi* | [**usRaceEthnicity**](docs/PersonalApi.md#usRaceEthnicity) | **GET** /api2/json/usRaceEthnicity/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino).
+*PersonalApi* | [**usRaceEthnicityBatch**](docs/PersonalApi.md#usRaceEthnicityBatch) | **POST** /api2/json/usRaceEthnicityBatch | [USES 10 UNITS PER NAME] Infer up-to 100 US resident&#39;s likely race/ethnicity according to US Census taxonomy.
+*PersonalApi* | [**usRaceEthnicityZIP5**](docs/PersonalApi.md#usRaceEthnicityZIP5) | **GET** /api2/json/usRaceEthnicityZIP5/{firstName}/{lastName}/{zip5Code} | [USES 10 UNITS PER NAME] Infer a US resident&#39;s likely race/ethnicity according to US Census taxonomy, using (optional) ZIP5 code info. Output is W_NL (white, non latino), HL (hispano latino),  A (asian, non latino), B_NL (black, non latino).
+*PersonalApi* | [**usZipRaceEthnicityBatch**](docs/PersonalApi.md#usZipRaceEthnicityBatch) | **POST** /api2/json/usZipRaceEthnicityBatch | [USES 10 UNITS PER NAME] Infer up-to 100 US resident&#39;s likely race/ethnicity according to US Census taxonomy, with (optional) ZIP code.
 *SocialApi* | [**phoneCode**](docs/SocialApi.md#phoneCode) | **GET** /api2/json/phoneCode/{firstName}/{lastName}/{phoneNumber} | [USES 11 UNITS PER NAME] Infer the likely country and phone prefix, given a personal name and formatted / unformatted phone number.
 *SocialApi* | [**phoneCodeBatch**](docs/SocialApi.md#phoneCodeBatch) | **POST** /api2/json/phoneCodeBatch | [USES 11 UNITS PER NAME] Infer the likely country and phone prefix, of up to 100 personal names, detecting automatically the local context given a name and formatted / unformatted phone number.
 *SocialApi* | [**phoneCodeGeo**](docs/SocialApi.md#phoneCodeGeo) | **GET** /api2/json/phoneCodeGeo/{firstName}/{lastName}/{phoneNumber}/{countryIso2} | [USES 11 UNITS PER NAME] Infer the likely phone prefix, given a personal name and formatted / unformatted phone number, with a local context (ISO2 country of residence).
@@ -258,11 +230,12 @@ Class | Method | HTTP request | Description
  - [APICounterV2Out](docs/APICounterV2Out.md)
  - [APIKeyOut](docs/APIKeyOut.md)
  - [APIPeriodUsageOut](docs/APIPeriodUsageOut.md)
+ - [APIPlanOut](docs/APIPlanOut.md)
  - [APIPlanSubscriptionOut](docs/APIPlanSubscriptionOut.md)
+ - [APIPlansOut](docs/APIPlansOut.md)
  - [APIServiceOut](docs/APIServiceOut.md)
  - [APIServicesOut](docs/APIServicesOut.md)
  - [APIUsageAggregatedOut](docs/APIUsageAggregatedOut.md)
- - [APIUsageHistoryOut](docs/APIUsageHistoryOut.md)
  - [BatchCorridorIn](docs/BatchCorridorIn.md)
  - [BatchCorridorOut](docs/BatchCorridorOut.md)
  - [BatchFirstLastNameDiasporaedOut](docs/BatchFirstLastNameDiasporaedOut.md)
@@ -281,14 +254,22 @@ Class | Method | HTTP request | Description
  - [BatchNameIn](docs/BatchNameIn.md)
  - [BatchNameMatchCandidatesOut](docs/BatchNameMatchCandidatesOut.md)
  - [BatchNameMatchedOut](docs/BatchNameMatchedOut.md)
+ - [BatchParsedFullNameGeoIn](docs/BatchParsedFullNameGeoIn.md)
+ - [BatchParsedFullNameIn](docs/BatchParsedFullNameIn.md)
  - [BatchPersonalNameGenderedOut](docs/BatchPersonalNameGenderedOut.md)
  - [BatchPersonalNameGeoIn](docs/BatchPersonalNameGeoIn.md)
  - [BatchPersonalNameGeoOut](docs/BatchPersonalNameGeoOut.md)
  - [BatchPersonalNameIn](docs/BatchPersonalNameIn.md)
  - [BatchPersonalNameParsedOut](docs/BatchPersonalNameParsedOut.md)
  - [BatchProperNounCategorizedOut](docs/BatchProperNounCategorizedOut.md)
+ - [BillingHistoryOut](docs/BillingHistoryOut.md)
+ - [BillingInfoInOut](docs/BillingInfoInOut.md)
+ - [CacheMetricsOut](docs/CacheMetricsOut.md)
+ - [ClassifierMetricsOut](docs/ClassifierMetricsOut.md)
  - [CorridorIn](docs/CorridorIn.md)
  - [CorridorOut](docs/CorridorOut.md)
+ - [CurrenciesOut](docs/CurrenciesOut.md)
+ - [ExpectedClassMetricsOut](docs/ExpectedClassMetricsOut.md)
  - [FeedbackLoopOut](docs/FeedbackLoopOut.md)
  - [FirstLastNameDiasporaedOut](docs/FirstLastNameDiasporaedOut.md)
  - [FirstLastNameGenderIn](docs/FirstLastNameGenderIn.md)
@@ -302,19 +283,32 @@ Class | Method | HTTP request | Description
  - [FirstLastNamePhoneNumberGeoIn](docs/FirstLastNamePhoneNumberGeoIn.md)
  - [FirstLastNamePhoneNumberIn](docs/FirstLastNamePhoneNumberIn.md)
  - [FirstLastNameUSRaceEthnicityOut](docs/FirstLastNameUSRaceEthnicityOut.md)
+ - [InlineObject](docs/InlineObject.md)
+ - [InvoiceItemOut](docs/InvoiceItemOut.md)
+ - [InvoiceOut](docs/InvoiceOut.md)
  - [MatchPersonalFirstLastNameIn](docs/MatchPersonalFirstLastNameIn.md)
+ - [NamSorCounterOut](docs/NamSorCounterOut.md)
  - [NameGeoIn](docs/NameGeoIn.md)
  - [NameIn](docs/NameIn.md)
  - [NameMatchCandidateOut](docs/NameMatchCandidateOut.md)
  - [NameMatchCandidatesOut](docs/NameMatchCandidatesOut.md)
  - [NameMatchedOut](docs/NameMatchedOut.md)
+ - [ParsedFullNameGeoIn](docs/ParsedFullNameGeoIn.md)
+ - [ParsedFullNameIn](docs/ParsedFullNameIn.md)
  - [PersonalNameGenderedOut](docs/PersonalNameGenderedOut.md)
  - [PersonalNameGeoIn](docs/PersonalNameGeoIn.md)
  - [PersonalNameGeoOut](docs/PersonalNameGeoOut.md)
  - [PersonalNameIn](docs/PersonalNameIn.md)
  - [PersonalNameParsedOut](docs/PersonalNameParsedOut.md)
  - [ProperNounCategorizedOut](docs/ProperNounCategorizedOut.md)
+ - [RomanizedNameOut](docs/RomanizedNameOut.md)
  - [SoftwareVersionOut](docs/SoftwareVersionOut.md)
+ - [SourceDetailedMetricsOut](docs/SourceDetailedMetricsOut.md)
+ - [SourceMetricsOut](docs/SourceMetricsOut.md)
+ - [StripeCardOut](docs/StripeCardOut.md)
+ - [StripeCustomerOut](docs/StripeCustomerOut.md)
+ - [SystemMetricsOut](docs/SystemMetricsOut.md)
+ - [UserInfoOut](docs/UserInfoOut.md)
 
 
 ## Documentation for Authorization
