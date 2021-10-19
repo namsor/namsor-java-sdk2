@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **regionOrigin** | **String** | Most likely region of Origin (based on countryOrigin ISO2 code) |  [optional]
 **topRegionOrigin** | **String** | Most likely top region of Origin (based on countryOrigin ISO2 code) |  [optional]
 **subRegionOrigin** | **String** | Most likely sub region of Origin (based on countryOrigin ISO2 code) |  [optional]
-**probabilityCalibrated** | **Double** | The calibrated probability for countryOrigin to have been guessed correctly. |  [optional]
-**probabilityAltCalibrated** | **Double** | The calibrated probability for countryOrigin OR countryOriginAlt to have been guessed correctly. |  [optional]
+**probabilityCalibrated** | **Double** | The calibrated probability for countryOrigin to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
+**probabilityAltCalibrated** | **Double** | The calibrated probability for countryOrigin OR countryOriginAlt to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
 
 
 

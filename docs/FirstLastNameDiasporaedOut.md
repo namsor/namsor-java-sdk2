@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **lifted** | **Boolean** | Indicates if the output ethnicity is based on machine learning only, or further lifted as a known fact by a country-specific rule. Let us know if you believe ethnicity is incorrect on a specific case where lifted is true. |  [optional]
 **countryIso2** | **String** | From input data, the countryIso2 of geographic context (US,CA etc.) |  [optional]
 **ethnicitiesTop** | **List&lt;String&gt;** | List most likely ethnicities (top 10) |  [optional]
+**probabilityCalibrated** | **Double** | The calibrated probability for ethnicity to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
+**probabilityAltCalibrated** | **Double** | The calibrated probability for ethnicity OR ethnicityAlt to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
 
 
 

@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **topRegion** | **String** | Most likely top region (based on country ISO2 code) |  [optional]
 **subRegion** | **String** | Most likely sub region (based on country ISO2 code) |  [optional]
 **countriesTop** | **List&lt;String&gt;** | List countries (top 10) |  [optional]
-**probabilityCalibrated** | **Double** | The calibrated probability for country to have been guessed correctly. |  [optional]
-**probabilityAltCalibrated** | **Double** | The calibrated probability for country OR countryAlt to have been guessed correctly. |  [optional]
+**probabilityCalibrated** | **Double** | The calibrated probability for country to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
+**probabilityAltCalibrated** | **Double** | The calibrated probability for country OR countryAlt to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
 
 
 

@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **raceEthnicity** | [**RaceEthnicityEnum**](#RaceEthnicityEnum) | Most likely US &#39;race&#39;/ethnicity |  [optional]
 **score** | **Double** | Higher score is better, but score is not normalized. Use calibratedProbability if available.  |  [optional]
 **raceEthnicitiesTop** | **List&lt;String&gt;** | List &#39;race&#39;/ethnicities |  [optional]
-**probabilityCalibrated** | **Double** | The calibrated probability for raceEthnicity to have been guessed correctly. |  [optional]
-**probabilityAltCalibrated** | **Double** | The calibrated probability for raceEthnicity OR raceEthnicityAlt to have been guessed correctly. |  [optional]
+**probabilityCalibrated** | **Double** | The calibrated probability for raceEthnicity to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
+**probabilityAltCalibrated** | **Double** | The calibrated probability for raceEthnicity OR raceEthnicityAlt to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
 
 
 <a name="RaceEthnicityAltEnum"></a>
