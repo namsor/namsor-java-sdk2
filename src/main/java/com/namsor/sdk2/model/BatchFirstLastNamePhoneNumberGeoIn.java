@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.namsor.sdk2.model.FactIn;
 import com.namsor.sdk2.model.FirstLastNamePhoneNumberGeoIn;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,15 +30,11 @@ import java.util.List;
 /**
  * BatchFirstLastNamePhoneNumberGeoIn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T10:33:14.621+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T20:11:11.018+02:00[Europe/Berlin]")
 public class BatchFirstLastNamePhoneNumberGeoIn {
   public static final String SERIALIZED_NAME_PERSONAL_NAMES_WITH_PHONE_NUMBERS = "personalNamesWithPhoneNumbers";
   @SerializedName(SERIALIZED_NAME_PERSONAL_NAMES_WITH_PHONE_NUMBERS)
   private List<FirstLastNamePhoneNumberGeoIn> personalNamesWithPhoneNumbers = new ArrayList<FirstLastNamePhoneNumberGeoIn>();
-
-  public static final String SERIALIZED_NAME_FACTS = "facts";
-  @SerializedName(SERIALIZED_NAME_FACTS)
-  private List<FactIn> facts = new ArrayList<FactIn>();
 
   public BatchFirstLastNamePhoneNumberGeoIn personalNamesWithPhoneNumbers(List<FirstLastNamePhoneNumberGeoIn> personalNamesWithPhoneNumbers) {
     this.personalNamesWithPhoneNumbers = personalNamesWithPhoneNumbers;
@@ -67,32 +62,6 @@ public class BatchFirstLastNamePhoneNumberGeoIn {
     this.personalNamesWithPhoneNumbers = personalNamesWithPhoneNumbers;
   }
 
-  public BatchFirstLastNamePhoneNumberGeoIn facts(List<FactIn> facts) {
-    this.facts = facts;
-    return this;
-  }
-
-  public BatchFirstLastNamePhoneNumberGeoIn addFactsItem(FactIn factsItem) {
-    if (this.facts == null) {
-      this.facts = new ArrayList<FactIn>();
-    }
-    this.facts.add(factsItem);
-    return this;
-  }
-
-   /**
-   * Get facts
-   * @return facts
-  **/
-  @ApiModelProperty(value = "")
-  public List<FactIn> getFacts() {
-    return facts;
-  }
-
-  public void setFacts(List<FactIn> facts) {
-    this.facts = facts;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,13 +72,12 @@ public class BatchFirstLastNamePhoneNumberGeoIn {
       return false;
     }
     BatchFirstLastNamePhoneNumberGeoIn batchFirstLastNamePhoneNumberGeoIn = (BatchFirstLastNamePhoneNumberGeoIn) o;
-    return Objects.equals(this.personalNamesWithPhoneNumbers, batchFirstLastNamePhoneNumberGeoIn.personalNamesWithPhoneNumbers) &&
-        Objects.equals(this.facts, batchFirstLastNamePhoneNumberGeoIn.facts);
+    return Objects.equals(this.personalNamesWithPhoneNumbers, batchFirstLastNamePhoneNumberGeoIn.personalNamesWithPhoneNumbers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(personalNamesWithPhoneNumbers, facts);
+    return Objects.hash(personalNamesWithPhoneNumbers);
   }
 
 
@@ -118,7 +86,6 @@ public class BatchFirstLastNamePhoneNumberGeoIn {
     StringBuilder sb = new StringBuilder();
     sb.append("class BatchFirstLastNamePhoneNumberGeoIn {\n");
     sb.append("    personalNamesWithPhoneNumbers: ").append(toIndentedString(personalNamesWithPhoneNumbers)).append("\n");
-    sb.append("    facts: ").append(toIndentedString(facts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

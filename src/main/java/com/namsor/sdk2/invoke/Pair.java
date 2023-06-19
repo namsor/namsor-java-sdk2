@@ -13,7 +13,7 @@
 
 package com.namsor.sdk2.invoke;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T10:33:14.621+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T20:11:11.018+02:00[Europe/Berlin]")
 public class Pair {
     private String name = "";
     private String value = "";

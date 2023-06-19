@@ -61,7 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.APIServiceOutTest" name="serviceGroupTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.APIServiceOutTest" name="serviceGroupTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.APIServiceOutTest" name="serviceNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIServiceOutTest" name="testAPIServiceOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.APIServiceOutTest" name="costInUnitsTest" time="0"/>

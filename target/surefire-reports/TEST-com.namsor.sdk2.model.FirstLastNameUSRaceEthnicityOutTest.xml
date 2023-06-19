@@ -63,8 +63,8 @@
   </properties>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="probabilityAltCalibratedTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="probabilityCalibratedTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="idTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="scriptTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="idTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="scriptTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="firstNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="testFirstLastNameUSRaceEthnicityOut" time="0"/>
   <testcase classname="com.namsor.sdk2.model.FirstLastNameUSRaceEthnicityOutTest" name="raceEthnicityTest" time="0"/>

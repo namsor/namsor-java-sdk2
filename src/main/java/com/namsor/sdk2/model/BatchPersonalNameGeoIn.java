@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.namsor.sdk2.model.FactIn;
 import com.namsor.sdk2.model.PersonalNameGeoIn;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,15 +30,11 @@ import java.util.List;
 /**
  * BatchPersonalNameGeoIn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T10:33:14.621+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T20:11:11.018+02:00[Europe/Berlin]")
 public class BatchPersonalNameGeoIn {
   public static final String SERIALIZED_NAME_PERSONAL_NAMES = "personalNames";
   @SerializedName(SERIALIZED_NAME_PERSONAL_NAMES)
   private List<PersonalNameGeoIn> personalNames = new ArrayList<PersonalNameGeoIn>();
-
-  public static final String SERIALIZED_NAME_FACTS = "facts";
-  @SerializedName(SERIALIZED_NAME_FACTS)
-  private List<FactIn> facts = new ArrayList<FactIn>();
 
   public BatchPersonalNameGeoIn personalNames(List<PersonalNameGeoIn> personalNames) {
     this.personalNames = personalNames;
@@ -67,32 +62,6 @@ public class BatchPersonalNameGeoIn {
     this.personalNames = personalNames;
   }
 
-  public BatchPersonalNameGeoIn facts(List<FactIn> facts) {
-    this.facts = facts;
-    return this;
-  }
-
-  public BatchPersonalNameGeoIn addFactsItem(FactIn factsItem) {
-    if (this.facts == null) {
-      this.facts = new ArrayList<FactIn>();
-    }
-    this.facts.add(factsItem);
-    return this;
-  }
-
-   /**
-   * Get facts
-   * @return facts
-  **/
-  @ApiModelProperty(value = "")
-  public List<FactIn> getFacts() {
-    return facts;
-  }
-
-  public void setFacts(List<FactIn> facts) {
-    this.facts = facts;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,13 +72,12 @@ public class BatchPersonalNameGeoIn {
       return false;
     }
     BatchPersonalNameGeoIn batchPersonalNameGeoIn = (BatchPersonalNameGeoIn) o;
-    return Objects.equals(this.personalNames, batchPersonalNameGeoIn.personalNames) &&
-        Objects.equals(this.facts, batchPersonalNameGeoIn.facts);
+    return Objects.equals(this.personalNames, batchPersonalNameGeoIn.personalNames);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(personalNames, facts);
+    return Objects.hash(personalNames);
   }
 
 
@@ -118,7 +86,6 @@ public class BatchPersonalNameGeoIn {
     StringBuilder sb = new StringBuilder();
     sb.append("class BatchPersonalNameGeoIn {\n");
     sb.append("    personalNames: ").append(toIndentedString(personalNames)).append("\n");
-    sb.append("    facts: ").append(toIndentedString(facts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

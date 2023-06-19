@@ -30,7 +30,7 @@ import java.util.List;
  * The software version.
  */
 @ApiModel(description = "The software version.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T10:33:14.621+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T20:11:11.018+02:00[Europe/Berlin]")
 public class SoftwareVersionOut {
   public static final String SERIALIZED_NAME_SOFTWARE_NAME_AND_VERSION = "softwareNameAndVersion";
   @SerializedName(SERIALIZED_NAME_SOFTWARE_NAME_AND_VERSION)

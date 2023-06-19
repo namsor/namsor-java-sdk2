@@ -43,7 +43,6 @@ com/namsor/sdk2/model/BatchPersonalNameParsedOutTest.class
 com/namsor/sdk2/model/BatchPersonalNameReligionedOutTest.class
 com/namsor/sdk2/api/JapaneseApiTest.class
 com/namsor/sdk2/model/BatchNameGeoInTest.class
-com/namsor/sdk2/model/FactInTest.class
 com/namsor/sdk2/model/MatchPersonalFirstLastNameInTest.class
 com/namsor/sdk2/model/BatchCorridorOutTest.class
 com/namsor/sdk2/model/APIClassifiersStatusOutTest.class

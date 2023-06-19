@@ -21,7 +21,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.namsor.sdk2.model.CorridorIn;
-import com.namsor.sdk2.model.FactIn;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -31,15 +30,11 @@ import java.util.List;
 /**
  * BatchCorridorIn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T10:33:14.621+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T20:11:11.018+02:00[Europe/Berlin]")
 public class BatchCorridorIn {
   public static final String SERIALIZED_NAME_CORRIDOR_FROM_TO = "corridorFromTo";
   @SerializedName(SERIALIZED_NAME_CORRIDOR_FROM_TO)
   private List<CorridorIn> corridorFromTo = new ArrayList<CorridorIn>();
-
-  public static final String SERIALIZED_NAME_FACTS = "facts";
-  @SerializedName(SERIALIZED_NAME_FACTS)
-  private List<FactIn> facts = new ArrayList<FactIn>();
 
   public BatchCorridorIn corridorFromTo(List<CorridorIn> corridorFromTo) {
     this.corridorFromTo = corridorFromTo;
@@ -67,32 +62,6 @@ public class BatchCorridorIn {
     this.corridorFromTo = corridorFromTo;
   }
 
-  public BatchCorridorIn facts(List<FactIn> facts) {
-    this.facts = facts;
-    return this;
-  }
-
-  public BatchCorridorIn addFactsItem(FactIn factsItem) {
-    if (this.facts == null) {
-      this.facts = new ArrayList<FactIn>();
-    }
-    this.facts.add(factsItem);
-    return this;
-  }
-
-   /**
-   * Get facts
-   * @return facts
-  **/
-  @ApiModelProperty(value = "")
-  public List<FactIn> getFacts() {
-    return facts;
-  }
-
-  public void setFacts(List<FactIn> facts) {
-    this.facts = facts;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,13 +72,12 @@ public class BatchCorridorIn {
       return false;
     }
     BatchCorridorIn batchCorridorIn = (BatchCorridorIn) o;
-    return Objects.equals(this.corridorFromTo, batchCorridorIn.corridorFromTo) &&
-        Objects.equals(this.facts, batchCorridorIn.facts);
+    return Objects.equals(this.corridorFromTo, batchCorridorIn.corridorFromTo);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(corridorFromTo, facts);
+    return Objects.hash(corridorFromTo);
   }
 
 
@@ -118,7 +86,6 @@ public class BatchCorridorIn {
     StringBuilder sb = new StringBuilder();
     sb.append("class BatchCorridorIn {\n");
     sb.append("    corridorFromTo: ").append(toIndentedString(corridorFromTo)).append("\n");
-    sb.append("    facts: ").append(toIndentedString(facts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -50,7 +50,6 @@
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/APIPeriodUsageOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/FeedbackLoopOut.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/BatchFirstLastNameGeoSubclassificationOut.java
-/home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/FactIn.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/invoke/auth/Authentication.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/api/JapaneseApi.java
 /home/namsor/codegen/openapi-generator/namsor/client/java/src/main/java/com/namsor/sdk2/model/FirstLastNameGeoSubclassificationOut.java

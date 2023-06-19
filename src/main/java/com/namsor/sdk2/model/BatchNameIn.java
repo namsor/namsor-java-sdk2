@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.namsor.sdk2.model.FactIn;
 import com.namsor.sdk2.model.NameIn;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,15 +30,11 @@ import java.util.List;
 /**
  * BatchNameIn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T10:33:14.621+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T20:11:11.018+02:00[Europe/Berlin]")
 public class BatchNameIn {
   public static final String SERIALIZED_NAME_PROPER_NOUNS = "properNouns";
   @SerializedName(SERIALIZED_NAME_PROPER_NOUNS)
   private List<NameIn> properNouns = new ArrayList<NameIn>();
-
-  public static final String SERIALIZED_NAME_FACTS = "facts";
-  @SerializedName(SERIALIZED_NAME_FACTS)
-  private List<FactIn> facts = new ArrayList<FactIn>();
 
   public BatchNameIn properNouns(List<NameIn> properNouns) {
     this.properNouns = properNouns;
@@ -67,32 +62,6 @@ public class BatchNameIn {
     this.properNouns = properNouns;
   }
 
-  public BatchNameIn facts(List<FactIn> facts) {
-    this.facts = facts;
-    return this;
-  }
-
-  public BatchNameIn addFactsItem(FactIn factsItem) {
-    if (this.facts == null) {
-      this.facts = new ArrayList<FactIn>();
-    }
-    this.facts.add(factsItem);
-    return this;
-  }
-
-   /**
-   * Get facts
-   * @return facts
-  **/
-  @ApiModelProperty(value = "")
-  public List<FactIn> getFacts() {
-    return facts;
-  }
-
-  public void setFacts(List<FactIn> facts) {
-    this.facts = facts;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,13 +72,12 @@ public class BatchNameIn {
       return false;
     }
     BatchNameIn batchNameIn = (BatchNameIn) o;
-    return Objects.equals(this.properNouns, batchNameIn.properNouns) &&
-        Objects.equals(this.facts, batchNameIn.facts);
+    return Objects.equals(this.properNouns, batchNameIn.properNouns);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(properNouns, facts);
+    return Objects.hash(properNouns);
   }
 
 
@@ -118,7 +86,6 @@ public class BatchNameIn {
     StringBuilder sb = new StringBuilder();
     sb.append("class BatchNameIn {\n");
     sb.append("    properNouns: ").append(toIndentedString(properNouns)).append("\n");
-    sb.append("    facts: ").append(toIndentedString(facts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,7 +19,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.namsor.sdk2.model.CorridorIn;
-import com.namsor.sdk2.model.FactIn;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -50,14 +49,6 @@ public class BatchCorridorInTest {
     @Test
     public void corridorFromToTest() {
         // TODO: test corridorFromTo
-    }
-
-    /**
-     * Test the property 'facts'
-     */
-    @Test
-    public void factsTest() {
-        // TODO: test facts
     }
 
 }

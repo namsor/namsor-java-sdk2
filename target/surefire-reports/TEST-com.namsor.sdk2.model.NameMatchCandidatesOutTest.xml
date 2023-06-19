@@ -63,10 +63,10 @@
   </properties>
   <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="testNameMatchCandidatesOut" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="idTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="scriptTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="scriptTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="orderOptionTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="firstNameTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="explanationTest" time="0"/>
-  <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="lastNameTest" time="0"/>
+  <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="lastNameTest" time="0.001"/>
   <testcase classname="com.namsor.sdk2.model.NameMatchCandidatesOutTest" name="matchCandidatesTest" time="0"/>
 </testsuite>

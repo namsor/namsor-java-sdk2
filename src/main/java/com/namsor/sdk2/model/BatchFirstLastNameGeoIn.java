@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import com.namsor.sdk2.model.FactIn;
 import com.namsor.sdk2.model.FirstLastNameGeoIn;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,15 +30,11 @@ import java.util.List;
 /**
  * BatchFirstLastNameGeoIn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T10:33:14.621+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T20:11:11.018+02:00[Europe/Berlin]")
 public class BatchFirstLastNameGeoIn {
   public static final String SERIALIZED_NAME_PERSONAL_NAMES = "personalNames";
   @SerializedName(SERIALIZED_NAME_PERSONAL_NAMES)
   private List<FirstLastNameGeoIn> personalNames = new ArrayList<FirstLastNameGeoIn>();
-
-  public static final String SERIALIZED_NAME_FACTS = "facts";
-  @SerializedName(SERIALIZED_NAME_FACTS)
-  private List<FactIn> facts = new ArrayList<FactIn>();
 
   public BatchFirstLastNameGeoIn personalNames(List<FirstLastNameGeoIn> personalNames) {
     this.personalNames = personalNames;
@@ -67,32 +62,6 @@ public class BatchFirstLastNameGeoIn {
     this.personalNames = personalNames;
   }
 
-  public BatchFirstLastNameGeoIn facts(List<FactIn> facts) {
-    this.facts = facts;
-    return this;
-  }
-
-  public BatchFirstLastNameGeoIn addFactsItem(FactIn factsItem) {
-    if (this.facts == null) {
-      this.facts = new ArrayList<FactIn>();
-    }
-    this.facts.add(factsItem);
-    return this;
-  }
-
-   /**
-   * Get facts
-   * @return facts
-  **/
-  @ApiModelProperty(value = "")
-  public List<FactIn> getFacts() {
-    return facts;
-  }
-
-  public void setFacts(List<FactIn> facts) {
-    this.facts = facts;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,13 +72,12 @@ public class BatchFirstLastNameGeoIn {
       return false;
     }
     BatchFirstLastNameGeoIn batchFirstLastNameGeoIn = (BatchFirstLastNameGeoIn) o;
-    return Objects.equals(this.personalNames, batchFirstLastNameGeoIn.personalNames) &&
-        Objects.equals(this.facts, batchFirstLastNameGeoIn.facts);
+    return Objects.equals(this.personalNames, batchFirstLastNameGeoIn.personalNames);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(personalNames, facts);
+    return Objects.hash(personalNames);
   }
 
 
@@ -118,7 +86,6 @@ public class BatchFirstLastNameGeoIn {
     StringBuilder sb = new StringBuilder();
     sb.append("class BatchFirstLastNameGeoIn {\n");
     sb.append("    personalNames: ").append(toIndentedString(personalNames)).append("\n");
-    sb.append("    facts: ").append(toIndentedString(facts)).append("\n");
     sb.append("}");
     return sb.toString();
   }

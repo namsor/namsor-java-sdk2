@@ -31,7 +31,7 @@ import java.io.IOException;
  * Represent multiple classifications for corridor sender and receiver (gender, country, origin, diaspora)
  */
 @ApiModel(description = "Represent multiple classifications for corridor sender and receiver (gender, country, origin, diaspora)")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T10:33:14.621+02:00[Europe/Berlin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-19T20:11:11.018+02:00[Europe/Berlin]")
 public class CorridorOut {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
