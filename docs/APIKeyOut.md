@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **striped** | **Boolean** | The API Key is associated to a valid Stripe account. |  [optional]
 **corporate** | **Boolean** | The API Key has role corporate (ex SWIFT payments instead of Stripe payments). |  [optional]
 **disabled** | **Boolean** | The API Key is temporarily or permanently disabled. |  [optional]
+**explainable** | **Boolean** | The API Key supports the AI explainability option (may require a specific license). |  [optional]
+**ipAddress** | **String** |  |  [optional]
 
 
 

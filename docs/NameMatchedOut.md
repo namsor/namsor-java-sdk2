@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **script** | **String** |  |  [optional]
 **id** | **String** |  |  [optional]
+**explanation** | **String** |  |  [optional]
 **matchStatus** | [**MatchStatusEnum**](#MatchStatusEnum) | The name matching status. |  [optional]
 **score** | **Double** |  |  [optional]
 

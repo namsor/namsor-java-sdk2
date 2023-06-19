@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.namsor.sdk2.model.BatchPersonalNameGeoInTest" time="0.001" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="com.namsor.sdk2.model.BatchPersonalNameGeoInTest" time="0.001" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="os.version" value="5.4.0-86-generic"/>
+    <property name="os.version" value="5.4.0-152-generic"/>
     <property name="library.jansi.path" value="/usr/share/maven/lib/jansi-native"/>
     <property name="user.home" value="/home/namsor"/>
     <property name="user.timezone" value="Europe/Berlin"/>
@@ -61,6 +61,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.namsor.sdk2.model.BatchPersonalNameGeoInTest" name="personalNamesTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.BatchPersonalNameGeoInTest" name="factsTest" time="0.001"/>
+  <testcase classname="com.namsor.sdk2.model.BatchPersonalNameGeoInTest" name="personalNamesTest" time="0"/>
   <testcase classname="com.namsor.sdk2.model.BatchPersonalNameGeoInTest" name="testBatchPersonalNameGeoIn" time="0"/>
 </testsuite>

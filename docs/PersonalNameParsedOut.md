@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **script** | **String** |  |  [optional]
 **id** | **String** |  |  [optional]
+**explanation** | **String** |  |  [optional]
 **name** | **String** | The input name |  [optional]
 **nameParserType** | [**NameParserTypeEnum**](#NameParserTypeEnum) | Name parsing is addressed as a classification problem, for example FN1LN1 means a first then last name order. |  [optional]
 **nameParserTypeAlt** | [**NameParserTypeAltEnum**](#NameParserTypeAltEnum) | Second best alternative parsing. Name parsing is addressed as a classification problem, for example FN1LN1 means a first then last name order. |  [optional]

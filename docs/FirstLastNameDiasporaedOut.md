@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **script** | **String** |  |  [optional]
 **id** | **String** |  |  [optional]
+**explanation** | **String** |  |  [optional]
 **firstName** | **String** | The first name (also known as given name) |  [optional]
 **lastName** | **String** | The last name (also known as family name, or surname) |  [optional]
 **score** | **Double** | Compatibility to NamSor_v1 Diaspora score value. Higher score is better, but score is not normalized. Use calibratedProbability if available.  |  [optional]
@@ -16,6 +17,8 @@ Name | Type | Description | Notes
 **ethnicitiesTop** | **List&lt;String&gt;** | List most likely ethnicities (top 10) |  [optional]
 **probabilityCalibrated** | **Double** | The calibrated probability for ethnicity to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
 **probabilityAltCalibrated** | **Double** | The calibrated probability for ethnicity OR ethnicityAlt to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional]
+**religionStats** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, assuming ethnicity is correctly predicted. |  [optional]
+**religionStatsAlt** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, assuming ethnicity OR best alternative is correctly predicted. |  [optional]
 
 
 

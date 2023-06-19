@@ -5,22 +5,21 @@ All URIs are relative to *https://v2.namsor.com/NamSorAPIv2*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**anonymize**](AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized}/{token} | Activate/deactivate anonymization for a source.
-[**anonymize1**](AdminApi.md#anonymize1) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source.
+[**apiKeyInfo**](AdminApi.md#apiKeyInfo) | **GET** /api2/json/apiKeyInfo | Read API Key info.
 [**apiStatus**](AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices.
 [**apiUsage**](AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage.
 [**apiUsageHistory**](AdminApi.md#apiUsageHistory) | **GET** /api2/json/apiUsageHistory | Print historical API usage.
 [**apiUsageHistoryAggregate**](AdminApi.md#apiUsageHistoryAggregate) | **GET** /api2/json/apiUsageHistoryAggregate | Print historical API usage (in an aggregated view, by service, by day/hour/min).
 [**availableServices**](AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of classification services and usage cost in Units per classification (default is 1&#x3D;ONE Unit). Some API endpoints (ex. Corridor) combine multiple classifiers.
-[**disable**](AdminApi.md#disable) | **GET** /api2/json/disable/{source}/{disabled} | Activate/deactivate an API Key.
-[**learnable**](AdminApi.md#learnable) | **GET** /api2/json/learnable/{source}/{learnable} | Activate/deactivate learning from a source.
-[**learnable1**](AdminApi.md#learnable1) | **GET** /api2/json/learnable/{source}/{learnable}/{token} | Activate/deactivate learning from a source.
+[**learnable**](AdminApi.md#learnable) | **GET** /api2/json/learnable/{source}/{learnable}/{token} | Activate/deactivate learning from a source.
+[**regions**](AdminApi.md#regions) | **GET** /api2/json/regions | Print basic source statistics.
 [**softwareVersion**](AdminApi.md#softwareVersion) | **GET** /api2/json/softwareVersion | Get the current software version
 [**taxonomyClasses**](AdminApi.md#taxonomyClasses) | **GET** /api2/json/taxonomyClasses/{classifierName} | Print the taxonomy classes valid for the given classifier.
 
 
 <a name="anonymize"></a>
 # **anonymize**
-> anonymize(source, anonymized, token)
+> APIKeyOut anonymize(source, anonymized, token)
 
 Activate/deactivate anonymization for a source.
 
@@ -46,7 +45,8 @@ String source = "source_example"; // String |
 Boolean anonymized = true; // Boolean | 
 String token = "token_example"; // String | 
 try {
-    apiInstance.anonymize(source, anonymized, token);
+    APIKeyOut result = apiInstance.anonymize(source, anonymized, token);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AdminApi#anonymize");
     e.printStackTrace();
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**APIKeyOut**](APIKeyOut.md)
 
 ### Authorization
 
@@ -72,13 +72,13 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
-<a name="anonymize1"></a>
-# **anonymize1**
-> anonymize1(source, anonymized)
+<a name="apiKeyInfo"></a>
+# **apiKeyInfo**
+> APIKeyOut apiKeyInfo()
 
-Activate/deactivate anonymization for a source.
+Read API Key info.
 
 ### Example
 ```java
@@ -98,26 +98,21 @@ api_key.setApiKey("YOUR API KEY");
 //api_key.setApiKeyPrefix("Token");
 
 AdminApi apiInstance = new AdminApi();
-String source = "source_example"; // String | 
-Boolean anonymized = true; // Boolean | 
 try {
-    apiInstance.anonymize1(source, anonymized);
+    APIKeyOut result = apiInstance.apiKeyInfo();
+    System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#anonymize1");
+    System.err.println("Exception when calling AdminApi#apiKeyInfo");
     e.printStackTrace();
 }
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **source** | **String**|  |
- **anonymized** | **Boolean**|  |
+This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**APIKeyOut**](APIKeyOut.md)
 
 ### Authorization
 
@@ -126,7 +121,7 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 <a name="apiStatus"></a>
 # **apiStatus**
@@ -373,117 +368,9 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="disable"></a>
-# **disable**
-> disable(source, disabled)
-
-Activate/deactivate an API Key.
-
-### Example
-```java
-// Import classes:
-//import com.namsor.sdk2.invoke.ApiClient;
-//import com.namsor.sdk2.invoke.ApiException;
-//import com.namsor.sdk2.invoke.Configuration;
-//import com.namsor.sdk2.invoke.auth.*;
-//import com.namsor.sdk2.api.AdminApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-AdminApi apiInstance = new AdminApi();
-String source = "source_example"; // String | The API Key to set as enabled/disabled.
-Boolean disabled = true; // Boolean | 
-try {
-    apiInstance.disable(source, disabled);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#disable");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **source** | **String**| The API Key to set as enabled/disabled. |
- **disabled** | **Boolean**|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
 <a name="learnable"></a>
 # **learnable**
-> learnable(source, learnable)
-
-Activate/deactivate learning from a source.
-
-### Example
-```java
-// Import classes:
-//import com.namsor.sdk2.invoke.ApiClient;
-//import com.namsor.sdk2.invoke.ApiException;
-//import com.namsor.sdk2.invoke.Configuration;
-//import com.namsor.sdk2.invoke.auth.*;
-//import com.namsor.sdk2.api.AdminApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: api_key
-ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-api_key.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//api_key.setApiKeyPrefix("Token");
-
-AdminApi apiInstance = new AdminApi();
-String source = "source_example"; // String | The API Key to set as learnable/non learnable.
-Boolean learnable = true; // Boolean | 
-try {
-    apiInstance.learnable(source, learnable);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#learnable");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **source** | **String**| The API Key to set as learnable/non learnable. |
- **learnable** | **Boolean**|  |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-<a name="learnable1"></a>
-# **learnable1**
-> learnable1(source, learnable, token)
+> APIKeyOut learnable(source, learnable, token)
 
 Activate/deactivate learning from a source.
 
@@ -509,9 +396,10 @@ String source = "source_example"; // String | The API Key to set as learnable/no
 Boolean learnable = true; // Boolean | 
 String token = "token_example"; // String | 
 try {
-    apiInstance.learnable1(source, learnable, token);
+    APIKeyOut result = apiInstance.learnable(source, learnable, token);
+    System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AdminApi#learnable1");
+    System.err.println("Exception when calling AdminApi#learnable");
     e.printStackTrace();
 }
 ```
@@ -526,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**APIKeyOut**](APIKeyOut.md)
 
 ### Authorization
 
@@ -535,7 +423,56 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
+
+<a name="regions"></a>
+# **regions**
+> RegionOut regions()
+
+Print basic source statistics.
+
+### Example
+```java
+// Import classes:
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    RegionOut result = apiInstance.regions();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#regions");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**RegionOut**](RegionOut.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="softwareVersion"></a>
 # **softwareVersion**
