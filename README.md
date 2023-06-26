@@ -77,32 +77,36 @@ import com.namsor.sdk2.invoke.*;
 import com.namsor.sdk2.invoke.auth.*;
 import com.namsor.sdk2.model.*;
 import com.namsor.sdk2.api.AdminApi;
-
+import com.namsor.sdk2.invoke.ApiClient;
+import com.namsor.sdk2.invoke.ApiException;
+import com.namsor.sdk2.invoke.Configuration;
+import com.namsor.sdk2.invoke.auth.*;
+import com.namsor.sdk2.api.PersonalApi;
 import java.io.File;
 import java.util.*;
 
 public class AdminApiExample {
 
     public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
-        // Configure API key authorization: api_key
-        ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-        api_key.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //api_key.setApiKeyPrefix("Token");
-
-        AdminApi apiInstance = new AdminApi();
-        String source = "source_example"; // String | 
-        Boolean anonymized = true; // Boolean | 
-        String token = "token_example"; // String | 
-        try {
-            APIKeyOut result = apiInstance.anonymize(source, anonymized, token);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AdminApi#anonymize");
-            e.printStackTrace();
-        }
+      ApiClient defaultClient = Configuration.getDefaultApiClient();
+      
+      // Configure API key authorization: api_key
+      ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+      api_key.setApiKey("YOUR API KEY");
+      // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+      //api_key.setApiKeyPrefix("Token");
+      
+      PersonalApi apiInstance = new PersonalApi();
+      String firstName = "John"; // String | 
+      String lastName = "Smith"; // String | 
+      String countryIso2 = "US"; // String | 
+      try {
+          FirstLastNameGenderedOut result = apiInstance.genderGeo(firstName, lastName, countryIso2);
+          System.out.println(result);
+      } catch (ApiException e) {
+          System.err.println("Exception when calling PersonalApi#genderGeo");
+          e.printStackTrace();
+      }
     }
 }
 
