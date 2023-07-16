@@ -1,8 +1,8 @@
 # namsor-sdk2
 
 NamSor API v2
-- API version: 2.0.26
-  - Build date: 2023-06-19T20:11:11.018+02:00[Europe/Berlin]
+- API version: 2.0.27
+  - Build date: 2023-07-16T08:45:49.006+02:00[Europe/Berlin]
 
 NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. By default, enpoints use 1 unit per name (ex. Gender), but Ethnicity classification uses 10 to 20 units per name depending on taxonomy. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 100 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
 
@@ -14,8 +14,8 @@ NamSor API v2 : enpoints to process personal names (gender, cultural origin or e
 ## Requirements
 
 Building the API client library requires:
-1. Java 1.7+
-2. Maven/Gradle
+1. Java 1.8+
+2. Maven (3.8.3+)/Gradle (7.2+)
 
 ## Installation
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.namsor</groupId>
   <artifactId>namsor-sdk2</artifactId>
-  <version>2.0.26</version>
+  <version>2.0.27</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -51,7 +51,14 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.namsor:namsor-sdk2:2.0.26"
+  repositories {
+    mavenCentral()     // Needed if the 'namsor-sdk2' jar has been published to maven central.
+    mavenLocal()       // Needed if the 'namsor-sdk2' jar has been published to the local maven repo.
+  }
+
+  dependencies {
+     implementation "com.namsor:namsor-sdk2:2.0.27"
+  }
 ```
 
 ### Others
@@ -64,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/namsor-sdk2-2.0.26.jar`
+* `target/namsor-sdk2-2.0.27.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -73,37 +80,40 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import com.namsor.sdk2.invoke.*;
+// Import classes:
+import com.namsor.sdk2.invoke.ApiClient;
+import com.namsor.sdk2.invoke.ApiException;
+import com.namsor.sdk2.invoke.Configuration;
 import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.model.*;
+import com.namsor.sdk2.invoke.models.*;
 import com.namsor.sdk2.api.AdminApi;
 
-import java.io.File;
-import java.util.*;
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
+    
+    // Configure API key authorization: api_key
+    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+    api_key.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //api_key.setApiKeyPrefix("Token");
 
-public class AdminApiExample {
-
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
-        // Configure API key authorization: api_key
-        ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-        api_key.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //api_key.setApiKeyPrefix("Token");
-
-        AdminApi apiInstance = new AdminApi();
-        String source = "source_example"; // String | 
-        Boolean anonymized = true; // Boolean | 
-        String token = "token_example"; // String | 
-        try {
-            APIKeyOut result = apiInstance.anonymize(source, anonymized, token);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling AdminApi#anonymize");
-            e.printStackTrace();
-        }
+    AdminApi apiInstance = new AdminApi(defaultClient);
+    String source = "source_example"; // String | 
+    Boolean anonymized = true; // Boolean | 
+    String token = "token_example"; // String | 
+    try {
+      APIKeyOut result = apiInstance.anonymize(source, anonymized, token);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AdminApi#anonymize");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
     }
+  }
 }
 
 ```
@@ -115,13 +125,16 @@ All URIs are relative to *https://v2.namsor.com/NamSorAPIv2*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AdminApi* | [**anonymize**](docs/AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized}/{token} | Activate/deactivate anonymization for a source.
+*AdminApi* | [**anonymize1**](docs/AdminApi.md#anonymize1) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source.
 *AdminApi* | [**apiKeyInfo**](docs/AdminApi.md#apiKeyInfo) | **GET** /api2/json/apiKeyInfo | Read API Key info.
 *AdminApi* | [**apiStatus**](docs/AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices.
 *AdminApi* | [**apiUsage**](docs/AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage.
 *AdminApi* | [**apiUsageHistory**](docs/AdminApi.md#apiUsageHistory) | **GET** /api2/json/apiUsageHistory | Print historical API usage.
 *AdminApi* | [**apiUsageHistoryAggregate**](docs/AdminApi.md#apiUsageHistoryAggregate) | **GET** /api2/json/apiUsageHistoryAggregate | Print historical API usage (in an aggregated view, by service, by day/hour/min).
 *AdminApi* | [**availableServices**](docs/AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of classification services and usage cost in Units per classification (default is 1&#x3D;ONE Unit). Some API endpoints (ex. Corridor) combine multiple classifiers.
+*AdminApi* | [**disable**](docs/AdminApi.md#disable) | **GET** /api2/json/disable/{source}/{disabled} | Activate/deactivate an API Key.
 *AdminApi* | [**learnable**](docs/AdminApi.md#learnable) | **GET** /api2/json/learnable/{source}/{learnable}/{token} | Activate/deactivate learning from a source.
+*AdminApi* | [**learnable1**](docs/AdminApi.md#learnable1) | **GET** /api2/json/learnable/{source}/{learnable} | Activate/deactivate learning from a source.
 *AdminApi* | [**regions**](docs/AdminApi.md#regions) | **GET** /api2/json/regions | Print basic source statistics.
 *AdminApi* | [**softwareVersion**](docs/AdminApi.md#softwareVersion) | **GET** /api2/json/softwareVersion | Get the current software version
 *AdminApi* | [**taxonomyClasses**](docs/AdminApi.md#taxonomyClasses) | **GET** /api2/json/taxonomyClasses/{classifierName} | Print the taxonomy classes valid for the given classifier.
@@ -143,9 +156,15 @@ Class | Method | HTTP request | Description
 *GeneralApi* | [**nameTypeBatch**](docs/GeneralApi.md#nameTypeBatch) | **POST** /api2/json/nameTypeBatch | Infer the likely common type of up to 100 proper nouns (personal name, brand name, place name etc.)
 *GeneralApi* | [**nameTypeGeo**](docs/GeneralApi.md#nameTypeGeo) | **GET** /api2/json/nameTypeGeo/{properNoun}/{countryIso2} | Infer the likely type of a proper noun (personal name, brand name, place name etc.)
 *GeneralApi* | [**nameTypeGeoBatch**](docs/GeneralApi.md#nameTypeGeoBatch) | **POST** /api2/json/nameTypeGeoBatch | Infer the likely common type of up to 100 proper nouns (personal name, brand name, place name etc.)
+*IndianApi* | [**casteIndianBatch**](docs/IndianApi.md#casteIndianBatch) | **POST** /api2/json/casteIndianBatch | [USES 10 UNITS PER NAME] Infer the likely Indian name caste of up to 100 personal Indian Hindu names. 
+*IndianApi* | [**castegroupIndian**](docs/IndianApi.md#castegroupIndian) | **GET** /api2/json/castegroupIndian/{subDivisionIso31662}/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of a first / last name.
+*IndianApi* | [**castegroupIndianBatch**](docs/IndianApi.md#castegroupIndianBatch) | **POST** /api2/json/castegroupIndianBatch | [USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of up to 100 personal first / last names. 
 *IndianApi* | [**castegroupIndianFull**](docs/IndianApi.md#castegroupIndianFull) | **GET** /api2/json/castegroupIndianFull/{subDivisionIso31662}/{personalNameFull} | [USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of a personal full name.
 *IndianApi* | [**castegroupIndianFullBatch**](docs/IndianApi.md#castegroupIndianFullBatch) | **POST** /api2/json/castegroupIndianFullBatch | [USES 10 UNITS PER NAME] Infer the likely Indian name castegroup of up to 100 personal full names. 
+*IndianApi* | [**castegroupIndianHindu**](docs/IndianApi.md#castegroupIndianHindu) | **GET** /api2/json/casteIndian/{subDivisionIso31662}/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer the likely Indian name caste of a personal Hindu name.
 *IndianApi* | [**religion**](docs/IndianApi.md#religion) | **GET** /api2/json/religionIndianFull/{subDivisionIso31662}/{personalNameFull} | [USES 10 UNITS PER NAME] Infer the likely religion of a personal Indian full name, provided the Indian state or Union territory (NB/ this can be inferred using the subclassification endpoint).
+*IndianApi* | [**religion1**](docs/IndianApi.md#religion1) | **GET** /api2/json/religionIndian/{subDivisionIso31662}/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer the likely religion of a personal Indian first/last name, provided the Indian state or Union territory (NB/ this can be inferred using the subclassification endpoint).
+*IndianApi* | [**religionIndianBatch**](docs/IndianApi.md#religionIndianBatch) | **POST** /api2/json/religionIndianBatch | [USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal first/last Indian names, provided the subclassification at State or Union territory level (NB/ can be inferred using the subclassification endpoint).
 *IndianApi* | [**religionIndianFullBatch**](docs/IndianApi.md#religionIndianFullBatch) | **POST** /api2/json/religionIndianFullBatch | [USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal full Indian names, provided the subclassification at State or Union territory level (NB/ can be inferred using the subclassification endpoint).
 *IndianApi* | [**subclassificationIndian**](docs/IndianApi.md#subclassificationIndian) | **GET** /api2/json/subclassificationIndian/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer the likely Indian state of Union territory according to ISO 3166-2:IN based on the name.
 *IndianApi* | [**subclassificationIndianBatch**](docs/IndianApi.md#subclassificationIndianBatch) | **POST** /api2/json/subclassificationIndianBatch | [USES 10 UNITS PER NAME] Infer the likely Indian state of Union territory according to ISO 3166-2:IN based on a list of up to 100 names.
@@ -172,8 +191,8 @@ Class | Method | HTTP request | Description
 *PersonalApi* | [**countryBatch**](docs/PersonalApi.md#countryBatch) | **POST** /api2/json/countryBatch | [USES 10 UNITS PER NAME] Infer the likely country of residence of up to 100 personal full names, or surnames. Assumes names as they are in the country of residence OR the country of origin.
 *PersonalApi* | [**diaspora**](docs/PersonalApi.md#diaspora) | **GET** /api2/json/diaspora/{countryIso2}/{firstName}/{lastName} | [USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of a personal name, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
 *PersonalApi* | [**diasporaBatch**](docs/PersonalApi.md#diasporaBatch) | **POST** /api2/json/diasporaBatch | [USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora of up to 100 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.)
-*PersonalApi* | [**gender**](docs/PersonalApi.md#gender) | **GET** /api2/json/gender/{firstName}/{lastName} | Infer the likely gender of a name.
-*PersonalApi* | [**gender1**](docs/PersonalApi.md#gender1) | **GET** /api2/json/gender/{firstName} | Infer the likely gender of a just a fiven name, assuming default &#39;US&#39; local context. Please use preferably full names and local geographic context for better accuracy.
+*PersonalApi* | [**gender**](docs/PersonalApi.md#gender) | **GET** /api2/json/gender/{firstName} | Infer the likely gender of a just a fiven name, assuming default &#39;US&#39; local context. Please use preferably full names and local geographic context for better accuracy.
+*PersonalApi* | [**gender1**](docs/PersonalApi.md#gender1) | **GET** /api2/json/gender/{firstName}/{lastName} | Infer the likely gender of a name.
 *PersonalApi* | [**genderBatch**](docs/PersonalApi.md#genderBatch) | **POST** /api2/json/genderBatch | Infer the likely gender of up to 100 names, detecting automatically the cultural context.
 *PersonalApi* | [**genderFull**](docs/PersonalApi.md#genderFull) | **GET** /api2/json/genderFull/{fullName} | Infer the likely gender of a full name, ex. John H. Smith
 *PersonalApi* | [**genderFullBatch**](docs/PersonalApi.md#genderFullBatch) | **POST** /api2/json/genderFullBatch | Infer the likely gender of up to 100 full names, detecting automatically the cultural context.
@@ -187,6 +206,8 @@ Class | Method | HTTP request | Description
 *PersonalApi* | [**parseNameBatch**](docs/PersonalApi.md#parseNameBatch) | **POST** /api2/json/parseNameBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John.
 *PersonalApi* | [**parseNameGeo**](docs/PersonalApi.md#parseNameGeo) | **GET** /api2/json/parseName/{nameFull}/{countryIso2} | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. For better accuracy, provide a geographic context.
 *PersonalApi* | [**parseNameGeoBatch**](docs/PersonalApi.md#parseNameGeoBatch) | **POST** /api2/json/parseNameGeoBatch | Infer the likely first/last name structure of a name, ex. John Smith or SMITH, John or SMITH; John. Giving a local context improves precision. 
+*PersonalApi* | [**religion2**](docs/PersonalApi.md#religion2) | **GET** /api2/json/religion/{countryIso2}/{subDivisionIso31662}/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer the likely religion of a personal first/last name. NB: only for INDIA (as of current version).
+*PersonalApi* | [**religionBatch**](docs/PersonalApi.md#religionBatch) | **POST** /api2/json/religionBatch | [USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal first/last names. NB: only for India as of currently.
 *PersonalApi* | [**religionFull**](docs/PersonalApi.md#religionFull) | **GET** /api2/json/religionFull/{countryIso2}/{subDivisionIso31662}/{personalNameFull} | [USES 10 UNITS PER NAME] Infer the likely religion of a personal full name. NB: only for INDIA (as of current version).
 *PersonalApi* | [**religionFullBatch**](docs/PersonalApi.md#religionFullBatch) | **POST** /api2/json/religionFullBatch | [USES 10 UNITS PER NAME] Infer the likely religion of up to 100 personal full names. NB: only for India as of currently.
 *PersonalApi* | [**subclassification**](docs/PersonalApi.md#subclassification) | **GET** /api2/json/subclassification/{countryIso2}/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer the likely origin of a name at a country subclassification level (state or regeion). Initially, this is only supported for India (ISO2 code &#39;IN&#39;).
@@ -220,17 +241,22 @@ Class | Method | HTTP request | Description
  - [APIUsageHistoryOut](docs/APIUsageHistoryOut.md)
  - [BatchCorridorIn](docs/BatchCorridorIn.md)
  - [BatchCorridorOut](docs/BatchCorridorOut.md)
+ - [BatchFirstLastNameCasteOut](docs/BatchFirstLastNameCasteOut.md)
+ - [BatchFirstLastNameCastegroupOut](docs/BatchFirstLastNameCastegroupOut.md)
  - [BatchFirstLastNameDiasporaedOut](docs/BatchFirstLastNameDiasporaedOut.md)
  - [BatchFirstLastNameGenderIn](docs/BatchFirstLastNameGenderIn.md)
  - [BatchFirstLastNameGenderedOut](docs/BatchFirstLastNameGenderedOut.md)
  - [BatchFirstLastNameGeoIn](docs/BatchFirstLastNameGeoIn.md)
  - [BatchFirstLastNameGeoSubclassificationOut](docs/BatchFirstLastNameGeoSubclassificationOut.md)
+ - [BatchFirstLastNameGeoSubdivisionIn](docs/BatchFirstLastNameGeoSubdivisionIn.md)
  - [BatchFirstLastNameGeoZippedIn](docs/BatchFirstLastNameGeoZippedIn.md)
  - [BatchFirstLastNameIn](docs/BatchFirstLastNameIn.md)
  - [BatchFirstLastNameOriginedOut](docs/BatchFirstLastNameOriginedOut.md)
  - [BatchFirstLastNamePhoneCodedOut](docs/BatchFirstLastNamePhoneCodedOut.md)
  - [BatchFirstLastNamePhoneNumberGeoIn](docs/BatchFirstLastNamePhoneNumberGeoIn.md)
  - [BatchFirstLastNamePhoneNumberIn](docs/BatchFirstLastNamePhoneNumberIn.md)
+ - [BatchFirstLastNameReligionedOut](docs/BatchFirstLastNameReligionedOut.md)
+ - [BatchFirstLastNameSubdivisionIn](docs/BatchFirstLastNameSubdivisionIn.md)
  - [BatchFirstLastNameUSRaceEthnicityOut](docs/BatchFirstLastNameUSRaceEthnicityOut.md)
  - [BatchMatchPersonalFirstLastNameIn](docs/BatchMatchPersonalFirstLastNameIn.md)
  - [BatchNameGeoIn](docs/BatchNameGeoIn.md)
@@ -251,11 +277,14 @@ Class | Method | HTTP request | Description
  - [CorridorIn](docs/CorridorIn.md)
  - [CorridorOut](docs/CorridorOut.md)
  - [FeedbackLoopOut](docs/FeedbackLoopOut.md)
+ - [FirstLastNameCasteOut](docs/FirstLastNameCasteOut.md)
+ - [FirstLastNameCastegroupOut](docs/FirstLastNameCastegroupOut.md)
  - [FirstLastNameDiasporaedOut](docs/FirstLastNameDiasporaedOut.md)
  - [FirstLastNameGenderIn](docs/FirstLastNameGenderIn.md)
  - [FirstLastNameGenderedOut](docs/FirstLastNameGenderedOut.md)
  - [FirstLastNameGeoIn](docs/FirstLastNameGeoIn.md)
  - [FirstLastNameGeoSubclassificationOut](docs/FirstLastNameGeoSubclassificationOut.md)
+ - [FirstLastNameGeoSubdivisionIn](docs/FirstLastNameGeoSubdivisionIn.md)
  - [FirstLastNameGeoZippedIn](docs/FirstLastNameGeoZippedIn.md)
  - [FirstLastNameIn](docs/FirstLastNameIn.md)
  - [FirstLastNameOriginedOut](docs/FirstLastNameOriginedOut.md)
@@ -263,6 +292,8 @@ Class | Method | HTTP request | Description
  - [FirstLastNamePhoneCodedOut](docs/FirstLastNamePhoneCodedOut.md)
  - [FirstLastNamePhoneNumberGeoIn](docs/FirstLastNamePhoneNumberGeoIn.md)
  - [FirstLastNamePhoneNumberIn](docs/FirstLastNamePhoneNumberIn.md)
+ - [FirstLastNameReligionedOut](docs/FirstLastNameReligionedOut.md)
+ - [FirstLastNameSubdivisionIn](docs/FirstLastNameSubdivisionIn.md)
  - [FirstLastNameUSRaceEthnicityOut](docs/FirstLastNameUSRaceEthnicityOut.md)
  - [MatchPersonalFirstLastNameIn](docs/MatchPersonalFirstLastNameIn.md)
  - [NameGeoIn](docs/NameGeoIn.md)
@@ -287,9 +318,12 @@ Class | Method | HTTP request | Description
  - [SoftwareVersionOut](docs/SoftwareVersionOut.md)
 
 
+<a id="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
+
 Authentication schemes defined for the API:
+<a id="api_key"></a>
 ### api_key
 
 - **Type**: API key
