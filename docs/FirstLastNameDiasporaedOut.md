@@ -22,7 +22,7 @@ Represents the output of inferring the LIKELY ethnicity from a personal name, gi
 |**probabilityCalibrated** | **Double** | The calibrated probability for ethnicity to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional] |
 |**probabilityAltCalibrated** | **Double** | The calibrated probability for ethnicity OR ethnicityAlt to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional] |
 |**religionStats** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, assuming ethnicity is correctly predicted. |  [optional] |
-|**religionStatsAlt** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, assuming ethnicity OR best alternative is correctly predicted. |  [optional] |
+|**religionStatsAlt** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, for country best alternative. |  [optional] |
 
 
 

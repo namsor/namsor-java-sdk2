@@ -9,8 +9,8 @@ All URIs are relative to *https://v2.namsor.com/NamSorAPIv2*
 | [**genderJapaneseNamePinyin**](JapaneseApi.md#genderJapaneseNamePinyin) | **GET** /api2/json/genderJapaneseName/{japaneseSurname}/{japaneseGivenName} | Infer the likely gender of a Japanese name in LATIN (Pinyin). |
 | [**genderJapaneseNamePinyinBatch**](JapaneseApi.md#genderJapaneseNamePinyinBatch) | **POST** /api2/json/genderJapaneseNameBatch | Infer the likely gender of up to 100 Japanese names in LATIN (Pinyin). |
 | [**japaneseNameGenderKanjiCandidatesBatch**](JapaneseApi.md#japaneseNameGenderKanjiCandidatesBatch) | **POST** /api2/json/japaneseNameGenderKanjiCandidatesBatch | Identify japanese name candidates in KANJI, based on the romanized name (firstName &#x3D; japaneseGivenName; lastName&#x3D;japaneseSurname) with KNOWN gender, ex. Yamamoto Sanae |
-| [**japaneseNameKanjiCandidates**](JapaneseApi.md#japaneseNameKanjiCandidates) | **GET** /api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin} | Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae |
-| [**japaneseNameKanjiCandidates1**](JapaneseApi.md#japaneseNameKanjiCandidates1) | **GET** /api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{knownGender} | Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae - and a known gender. |
+| [**japaneseNameKanjiCandidates**](JapaneseApi.md#japaneseNameKanjiCandidates) | **GET** /api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{knownGender} | Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae - and a known gender. |
+| [**japaneseNameKanjiCandidates1**](JapaneseApi.md#japaneseNameKanjiCandidates1) | **GET** /api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin} | Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae |
 | [**japaneseNameKanjiCandidatesBatch**](JapaneseApi.md#japaneseNameKanjiCandidatesBatch) | **POST** /api2/json/japaneseNameKanjiCandidatesBatch | Identify japanese name candidates in KANJI, based on the romanized name (firstName &#x3D; japaneseGivenName; lastName&#x3D;japaneseSurname), ex. Yamamoto Sanae |
 | [**japaneseNameLatinCandidates**](JapaneseApi.md#japaneseNameLatinCandidates) | **GET** /api2/json/japaneseNameLatinCandidates/{japaneseSurnameKanji}/{japaneseGivenNameKanji} | Romanize japanese name, based on the name in Kanji. |
 | [**japaneseNameLatinCandidatesBatch**](JapaneseApi.md#japaneseNameLatinCandidatesBatch) | **POST** /api2/json/japaneseNameLatinCandidatesBatch | Romanize japanese names, based on the name in KANJI |
@@ -373,78 +373,7 @@ public class Example {
 
 <a id="japaneseNameKanjiCandidates"></a>
 # **japaneseNameKanjiCandidates**
-> NameMatchCandidatesOut japaneseNameKanjiCandidates(japaneseSurnameLatin, japaneseGivenNameLatin)
-
-Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae
-
-### Example
-```java
-// Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.JapaneseApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
-
-    JapaneseApi apiInstance = new JapaneseApi(defaultClient);
-    String japaneseSurnameLatin = "japaneseSurnameLatin_example"; // String | 
-    String japaneseGivenNameLatin = "japaneseGivenNameLatin_example"; // String | 
-    try {
-      NameMatchCandidatesOut result = apiInstance.japaneseNameKanjiCandidates(japaneseSurnameLatin, japaneseGivenNameLatin);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling JapaneseApi#japaneseNameKanjiCandidates");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **japaneseSurnameLatin** | **String**|  | |
-| **japaneseGivenNameLatin** | **String**|  | |
-
-### Return type
-
-[**NameMatchCandidatesOut**](NameMatchCandidatesOut.md)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | A romanized name. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-| **403** | Email not Verified, or API Limit Reached, or API Key Disabled |  -  |
-
-<a id="japaneseNameKanjiCandidates1"></a>
-# **japaneseNameKanjiCandidates1**
-> NameMatchCandidatesOut japaneseNameKanjiCandidates1(japaneseSurnameLatin, japaneseGivenNameLatin, knownGender)
+> NameMatchCandidatesOut japaneseNameKanjiCandidates(japaneseSurnameLatin, japaneseGivenNameLatin, knownGender)
 
 Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae - and a known gender.
 
@@ -474,7 +403,79 @@ public class Example {
     String japaneseGivenNameLatin = "japaneseGivenNameLatin_example"; // String | 
     String knownGender = "knownGender_example"; // String | 
     try {
-      NameMatchCandidatesOut result = apiInstance.japaneseNameKanjiCandidates1(japaneseSurnameLatin, japaneseGivenNameLatin, knownGender);
+      NameMatchCandidatesOut result = apiInstance.japaneseNameKanjiCandidates(japaneseSurnameLatin, japaneseGivenNameLatin, knownGender);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling JapaneseApi#japaneseNameKanjiCandidates");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **japaneseSurnameLatin** | **String**|  | |
+| **japaneseGivenNameLatin** | **String**|  | |
+| **knownGender** | **String**|  | |
+
+### Return type
+
+[**NameMatchCandidatesOut**](NameMatchCandidatesOut.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A romanized name. |  -  |
+| **401** | Missing or incorrect API Key |  -  |
+| **403** | Email not Verified, or API Limit Reached, or API Key Disabled |  -  |
+
+<a id="japaneseNameKanjiCandidates1"></a>
+# **japaneseNameKanjiCandidates1**
+> NameMatchCandidatesOut japaneseNameKanjiCandidates1(japaneseSurnameLatin, japaneseGivenNameLatin)
+
+Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae
+
+### Example
+```java
+// Import classes:
+import com.namsor.sdk2.invoke.ApiClient;
+import com.namsor.sdk2.invoke.ApiException;
+import com.namsor.sdk2.invoke.Configuration;
+import com.namsor.sdk2.invoke.auth.*;
+import com.namsor.sdk2.invoke.models.*;
+import com.namsor.sdk2.api.JapaneseApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
+    
+    // Configure API key authorization: api_key
+    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+    api_key.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //api_key.setApiKeyPrefix("Token");
+
+    JapaneseApi apiInstance = new JapaneseApi(defaultClient);
+    String japaneseSurnameLatin = "japaneseSurnameLatin_example"; // String | 
+    String japaneseGivenNameLatin = "japaneseGivenNameLatin_example"; // String | 
+    try {
+      NameMatchCandidatesOut result = apiInstance.japaneseNameKanjiCandidates1(japaneseSurnameLatin, japaneseGivenNameLatin);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling JapaneseApi#japaneseNameKanjiCandidates1");
@@ -493,7 +494,6 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **japaneseSurnameLatin** | **String**|  | |
 | **japaneseGivenNameLatin** | **String**|  | |
-| **knownGender** | **String**|  | |
 
 ### Return type
 

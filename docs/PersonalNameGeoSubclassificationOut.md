@@ -11,7 +11,7 @@ Classified names at sub country level (region or state)
 |**script** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**explanation** | **String** |  |  [optional] |
-|**name** | **String** | The input name |  [optional] |
+|**name** | **String** | The input name. |  [optional] |
 |**countryIso2** | **String** | The input country ISO2 code |  [optional] |
 |**subClassification** | **String** | Most likely subclassification ISO_3166-2 code |  [optional] |
 |**subClassificationAlt** | **String** | Second best alternative : subclassification ISO_3166-2 code |  [optional] |

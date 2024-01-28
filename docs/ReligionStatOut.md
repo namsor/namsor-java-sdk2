@@ -2,7 +2,7 @@
 
 # ReligionStatOut
 
-Geographic religious statistics, assuming ethnicity OR best alternative is correctly predicted.
+Geographic religious statistics, assuming country is correctly predicted.
 
 ## Properties
 

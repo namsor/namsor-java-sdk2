@@ -11,7 +11,7 @@ Classified genderized names
 |**script** | **String** |  |  [optional] |
 |**id** | **String** |  |  [optional] |
 |**explanation** | **String** |  |  [optional] |
-|**name** | **String** | The input name |  [optional] |
+|**name** | **String** | The input name. |  [optional] |
 |**likelyGender** | [**LikelyGenderEnum**](#LikelyGenderEnum) | Most likely gender |  [optional] |
 |**genderScale** | **Double** | Compatibility to NamSor_v1 Gender Scale M[-1..U..+1]F value. |  [optional] |
 |**score** | **Double** | Compatibility to NamSor_v1 Gender score value. Higher score is better, but score is not normalized. Use calibratedProbability if available.  |  [optional] |

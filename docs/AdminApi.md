@@ -4,8 +4,8 @@ All URIs are relative to *https://v2.namsor.com/NamSorAPIv2*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**anonymize**](AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized}/{token} | Activate/deactivate anonymization for a source. |
-| [**anonymize1**](AdminApi.md#anonymize1) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source. |
+| [**anonymize**](AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source. |
+| [**anonymize1**](AdminApi.md#anonymize1) | **GET** /api2/json/anonymize/{source}/{anonymized}/{token} | Activate/deactivate anonymization for a source. |
 | [**apiKeyInfo**](AdminApi.md#apiKeyInfo) | **GET** /api2/json/apiKeyInfo | Read API Key info. |
 | [**apiStatus**](AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices. |
 | [**apiUsage**](AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage. |
@@ -22,7 +22,76 @@ All URIs are relative to *https://v2.namsor.com/NamSorAPIv2*
 
 <a id="anonymize"></a>
 # **anonymize**
-> APIKeyOut anonymize(source, anonymized, token)
+> anonymize(source, anonymized)
+
+Activate/deactivate anonymization for a source.
+
+### Example
+```java
+// Import classes:
+import com.namsor.sdk2.invoke.ApiClient;
+import com.namsor.sdk2.invoke.ApiException;
+import com.namsor.sdk2.invoke.Configuration;
+import com.namsor.sdk2.invoke.auth.*;
+import com.namsor.sdk2.invoke.models.*;
+import com.namsor.sdk2.api.AdminApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
+    
+    // Configure API key authorization: api_key
+    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+    api_key.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //api_key.setApiKeyPrefix("Token");
+
+    AdminApi apiInstance = new AdminApi(defaultClient);
+    String source = "source_example"; // String | 
+    Boolean anonymized = true; // Boolean | 
+    try {
+      apiInstance.anonymize(source, anonymized);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AdminApi#anonymize");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **source** | **String**|  | |
+| **anonymized** | **Boolean**|  | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Anonymization of a source. |  -  |
+| **401** | Missing or incorrect API Key |  -  |
+
+<a id="anonymize1"></a>
+# **anonymize1**
+> APIKeyOut anonymize1(source, anonymized, token)
 
 Activate/deactivate anonymization for a source.
 
@@ -52,10 +121,10 @@ public class Example {
     Boolean anonymized = true; // Boolean | 
     String token = "token_example"; // String | 
     try {
-      APIKeyOut result = apiInstance.anonymize(source, anonymized, token);
+      APIKeyOut result = apiInstance.anonymize1(source, anonymized, token);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#anonymize");
+      System.err.println("Exception when calling AdminApi#anonymize1");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -85,75 +154,6 @@ public class Example {
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Anonymization of a source. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="anonymize1"></a>
-# **anonymize1**
-> anonymize1(source, anonymized)
-
-Activate/deactivate anonymization for a source.
-
-### Example
-```java
-// Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
-
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    String source = "source_example"; // String | 
-    Boolean anonymized = true; // Boolean | 
-    try {
-      apiInstance.anonymize1(source, anonymized);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#anonymize1");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **source** | **String**|  | |
-| **anonymized** | **Boolean**|  | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-[api_key](../README.md#api_key)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
 
 ### HTTP response details
 | Status code | Description | Response headers |

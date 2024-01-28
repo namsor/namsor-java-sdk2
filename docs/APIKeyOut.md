@@ -19,6 +19,7 @@
 |**disabled** | **Boolean** | The API Key is temporarily or permanently disabled. |  [optional] |
 |**explainable** | **Boolean** | The API Key supports the AI explainability option (may require a specific license). |  [optional] |
 |**ipAddress** | **String** |  |  [optional] |
+|**communityEngageOption** | [**CommunityEngageOptionOut**](CommunityEngageOptionOut.md) |  |  [optional] |
 
 
 

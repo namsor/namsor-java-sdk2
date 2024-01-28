@@ -23,7 +23,7 @@ Represents the output of inferring the LIKELY country of Origin from a personal 
 |**probabilityCalibrated** | **Double** | The calibrated probability for countryOrigin to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional] |
 |**probabilityAltCalibrated** | **Double** | The calibrated probability for countryOrigin OR countryOriginAlt to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional] |
 |**religionStats** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, assuming country of origin is correctly predicted. |  [optional] |
-|**religionStatsAlt** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, assuming country of origin OR best alternative is correctly predicted. |  [optional] |
+|**religionStatsAlt** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, for origin best alternative. |  [optional] |
 
 
 

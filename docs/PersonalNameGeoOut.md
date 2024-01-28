@@ -2,7 +2,6 @@
 
 # PersonalNameGeoOut
 
-Classified geo names
 
 ## Properties
 
@@ -22,7 +21,7 @@ Classified geo names
 |**probabilityCalibrated** | **Double** | The calibrated probability for country to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional] |
 |**probabilityAltCalibrated** | **Double** | The calibrated probability for country OR countryAlt to have been guessed correctly. -1 &#x3D; still calibrating.  |  [optional] |
 |**religionStats** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, assuming country is correctly predicted. |  [optional] |
-|**religionStatsAlt** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, assuming country OR best alternative is correctly predicted. |  [optional] |
+|**religionStatsAlt** | [**List&lt;ReligionStatOut&gt;**](ReligionStatOut.md) | Geographic religious statistics, for country best alternative. |  [optional] |
 
 
 
