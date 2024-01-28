@@ -79,14 +79,13 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-
 // Import classes:
 import com.namsor.sdk2.invoke.ApiClient;
 import com.namsor.sdk2.invoke.ApiException;
 import com.namsor.sdk2.invoke.Configuration;
 import com.namsor.sdk2.invoke.auth.*;
 import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+import com.namsor.sdk2.api.PersonalApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -99,13 +98,14 @@ public class Example {
     // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
     //api_key.setApiKeyPrefix("Token");
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    String source = "source_example"; // String | 
-    Boolean anonymized = true; // Boolean | 
+    PersonalApi apiInstance = new PersonalApi(defaultClient);
+    BatchFirstLastNameGeoIn batchFirstLastNameGeoIn = new BatchFirstLastNameGeoIn(); // BatchFirstLastNameGeoIn | A list of names, with country code.
+	// add a name to the batch, for example John Smith or Elena Rossini etc.
     try {
-      apiInstance.anonymize(source, anonymized);
+      BatchFirstLastNameGenderedOut result = apiInstance.genderGeoBatch(batchFirstLastNameGeoIn);
+      System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#anonymize");
+      System.err.println("Exception when calling PersonalApi#genderGeoBatch");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
