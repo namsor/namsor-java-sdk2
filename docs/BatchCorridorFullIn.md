@@ -1,11 +1,10 @@
 
-# PersonalNameIn
+# BatchCorridorFullIn
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
+**corridorFromTo** | [**List&lt;CorridorIn&gt;**](CorridorIn.md) |  |  [optional]
 
 
 

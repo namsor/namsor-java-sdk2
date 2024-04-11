@@ -1,14 +1,10 @@
 
-
 # BatchPersonalNameDiasporaedOut
 
-Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence.
-
 ## Properties
-
-| Name | Type | Description | Notes |
-|------------ | ------------- | ------------- | -------------|
-|**personalNames** | [**List&lt;PersonalNameDiasporaedOut&gt;**](PersonalNameDiasporaedOut.md) | Classified diaspora names |  [optional] |
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**personalNames** | [**List&lt;PersonalNameDiasporaedOut&gt;**](PersonalNameDiasporaedOut.md) | Classified diaspora names |  [optional]
 
 
 

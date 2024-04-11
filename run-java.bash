@@ -1,8 +1,8 @@
 echo update openapi-generator
-./bin/utils/openapi-generator-cli.sh
+#./bin/utils/openapi-generator-cli.sh
 rm -Rf ./namsor/client/java/
 echo run openapi-generator
-java -jar modules/openapi-generator-cli/target/openapi-generator-cli.jar generate --git-repo-id namsor-java-sdk2 --git-user-id namsor --artifact-version 2.0.29 --group-id com.namsor --artifact-id namsor-sdk2 --invoker-package com.namsor.sdk2.invoke --model-package com.namsor.sdk2.model --api-package com.namsor.sdk2.api -i https://v2uk.namsor.com/NamSorAPIv2/api2/openapi.json -g java -o  namsor/client/java
+/usr/lib/jvm/default-java/bin/java -jar modules/openapi-generator-cli/target/openapi-generator-cli.jar generate --git-repo-id namsor-java-sdk2 --git-user-id namsor --artifact-version 2.0.30 --group-id com.namsor --artifact-id namsor-sdk2 --invoker-package com.namsor.sdk2.invoke --model-package com.namsor.sdk2.model --api-package com.namsor.sdk2.api -i https://v2uk.namsor.com/NamSorAPIv2/api2/openapi.json -g java -o  namsor/client/java
 cd ./namsor/client/java/
 mvn clean package
 cd target

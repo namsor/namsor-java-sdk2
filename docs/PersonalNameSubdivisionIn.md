@@ -1,15 +1,12 @@
 
-
 # PersonalNameSubdivisionIn
 
-
 ## Properties
-
-| Name | Type | Description | Notes |
-|------------ | ------------- | ------------- | -------------|
-|**id** | **String** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
-|**subdivisionIso** | **String** |  |  [optional] |
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **String** |  |  [optional]
+**name** | **String** |  |  [optional]
+**subdivisionIso** | **String** |  |  [optional]
 
 
 

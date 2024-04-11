@@ -1,8 +1,8 @@
 # namsor-sdk2
 
 NamSor API v2
-- API version: 2.0.29
-  - Build date: 2024-01-28T10:15:07.323+01:00[Europe/Berlin]
+- API version: 2.0.30
+  - Build date: 2024-04-11T10:56:47.519625+02:00[Europe/Berlin]
 
 NamSor API v2 : enpoints to process personal names (gender, cultural origin or ethnicity) in all alphabets or languages. By default, enpoints use 1 unit per name (ex. Gender), but Ethnicity classification uses 10 to 20 units per name depending on taxonomy. Use GET methods for small tests, but prefer POST methods for higher throughput (batch processing of up to 100 names at a time). Need something you can't find here? We have many more features coming soon. Let us know, we'll do our best to add it! 
 
@@ -14,8 +14,8 @@ NamSor API v2 : enpoints to process personal names (gender, cultural origin or e
 ## Requirements
 
 Building the API client library requires:
-1. Java 1.8+
-2. Maven (3.8.3+)/Gradle (7.2+)
+1. Java 1.7+
+2. Maven/Gradle
 
 ## Installation
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.namsor</groupId>
   <artifactId>namsor-sdk2</artifactId>
-  <version>2.0.29</version>
+  <version>2.0.30</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -51,14 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-  repositories {
-    mavenCentral()     // Needed if the 'namsor-sdk2' jar has been published to maven central.
-    mavenLocal()       // Needed if the 'namsor-sdk2' jar has been published to the local maven repo.
-  }
-
-  dependencies {
-     implementation "com.namsor:namsor-sdk2:2.0.29"
-  }
+compile "com.namsor:namsor-sdk2:2.0.30"
 ```
 
 ### Others
@@ -71,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/namsor-sdk2-2.0.29.jar`
+* `target/namsor-sdk2-2.0.30.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -79,39 +72,36 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
-// Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
+
+import com.namsor.sdk2.invoke.*;
 import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.PersonalApi;
+import com.namsor.sdk2.model.*;
+import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+import java.io.File;
+import java.util.*;
 
-    PersonalApi apiInstance = new PersonalApi(defaultClient);
-    BatchFirstLastNameGeoIn batchFirstLastNameGeoIn = new BatchFirstLastNameGeoIn(); // BatchFirstLastNameGeoIn | A list of names, with country code.
-	// add a name to the batch, for example John Smith or Elena Rossini etc.
-    try {
-      BatchFirstLastNameGenderedOut result = apiInstance.genderGeoBatch(batchFirstLastNameGeoIn);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling PersonalApi#genderGeoBatch");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
+public class AdminApiExample {
+
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        
+        // Configure API key authorization: api_key
+        ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+        api_key.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //api_key.setApiKeyPrefix("Token");
+
+        AdminApi apiInstance = new AdminApi();
+        String source = "source_example"; // String | 
+        Boolean anonymized = true; // Boolean | 
+        try {
+            apiInstance.anonymize(source, anonymized);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling AdminApi#anonymize");
+            e.printStackTrace();
+        }
     }
-  }
 }
 
 ```
@@ -173,8 +163,8 @@ Class | Method | HTTP request | Description
 *JapaneseApi* | [**genderJapaneseNamePinyin**](docs/JapaneseApi.md#genderJapaneseNamePinyin) | **GET** /api2/json/genderJapaneseName/{japaneseSurname}/{japaneseGivenName} | Infer the likely gender of a Japanese name in LATIN (Pinyin).
 *JapaneseApi* | [**genderJapaneseNamePinyinBatch**](docs/JapaneseApi.md#genderJapaneseNamePinyinBatch) | **POST** /api2/json/genderJapaneseNameBatch | Infer the likely gender of up to 100 Japanese names in LATIN (Pinyin).
 *JapaneseApi* | [**japaneseNameGenderKanjiCandidatesBatch**](docs/JapaneseApi.md#japaneseNameGenderKanjiCandidatesBatch) | **POST** /api2/json/japaneseNameGenderKanjiCandidatesBatch | Identify japanese name candidates in KANJI, based on the romanized name (firstName &#x3D; japaneseGivenName; lastName&#x3D;japaneseSurname) with KNOWN gender, ex. Yamamoto Sanae
-*JapaneseApi* | [**japaneseNameKanjiCandidates**](docs/JapaneseApi.md#japaneseNameKanjiCandidates) | **GET** /api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{knownGender} | Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae - and a known gender.
-*JapaneseApi* | [**japaneseNameKanjiCandidates1**](docs/JapaneseApi.md#japaneseNameKanjiCandidates1) | **GET** /api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin} | Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae
+*JapaneseApi* | [**japaneseNameKanjiCandidates**](docs/JapaneseApi.md#japaneseNameKanjiCandidates) | **GET** /api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin} | Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae
+*JapaneseApi* | [**japaneseNameKanjiCandidates1**](docs/JapaneseApi.md#japaneseNameKanjiCandidates1) | **GET** /api2/json/japaneseNameKanjiCandidates/{japaneseSurnameLatin}/{japaneseGivenNameLatin}/{knownGender} | Identify japanese name candidates in KANJI, based on the romanized name ex. Yamamoto Sanae - and a known gender.
 *JapaneseApi* | [**japaneseNameKanjiCandidatesBatch**](docs/JapaneseApi.md#japaneseNameKanjiCandidatesBatch) | **POST** /api2/json/japaneseNameKanjiCandidatesBatch | Identify japanese name candidates in KANJI, based on the romanized name (firstName &#x3D; japaneseGivenName; lastName&#x3D;japaneseSurname), ex. Yamamoto Sanae
 *JapaneseApi* | [**japaneseNameLatinCandidates**](docs/JapaneseApi.md#japaneseNameLatinCandidates) | **GET** /api2/json/japaneseNameLatinCandidates/{japaneseSurnameKanji}/{japaneseGivenNameKanji} | Romanize japanese name, based on the name in Kanji.
 *JapaneseApi* | [**japaneseNameLatinCandidatesBatch**](docs/JapaneseApi.md#japaneseNameLatinCandidatesBatch) | **POST** /api2/json/japaneseNameLatinCandidatesBatch | Romanize japanese names, based on the name in KANJI
@@ -187,8 +177,10 @@ Class | Method | HTTP request | Description
 *PersonalApi* | [**communityEngageBatch**](docs/PersonalApi.md#communityEngageBatch) | **POST** /api2/json/communityEngageBatch | Infer the likely ethnicity/diaspora, country, gender of up to 100 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.) for community engagement (require special module/pricing)
 *PersonalApi* | [**communityEngageFull**](docs/PersonalApi.md#communityEngageFull) | **GET** /api2/json/communityEngageFull/{countryIso2}/{personalNameFull} | [USES 20 UNITS PER NAME] Infer the likely ethnicity/diaspora, country, gender of a personal name, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.) for community engagement (require special module/pricing)
 *PersonalApi* | [**communityEngageFullBatch**](docs/PersonalApi.md#communityEngageFullBatch) | **POST** /api2/json/communityEngageFullBatch | Infer the likely ethnicity/diaspora, country, gender of up to 100 personal names, given a country of residence ISO2 code (ex. US, CA, AU, NZ etc.) for community engagement (require special module/pricing)
-*PersonalApi* | [**corridor**](docs/PersonalApi.md#corridor) | **GET** /api2/json/corridor/{countryIso2From}/{firstNameFrom}/{lastNameFrom}/{countryIso2To}/{firstNameTo}/{lastNameTo} | [USES 20 UNITS PER NAME COUPLE] Infer several classifications for a cross border interaction between names (ex. remit, travel, intl com)
-*PersonalApi* | [**corridorBatch**](docs/PersonalApi.md#corridorBatch) | **POST** /api2/json/corridorBatch | [USES 20 UNITS PER NAME PAIR] Infer several classifications for up to 100 cross border interaction between names (ex. remit, travel, intl com)
+*PersonalApi* | [**corridor**](docs/PersonalApi.md#corridor) | **GET** /api2/json/corridor/{countryIso2From}/{firstNameFrom}/{lastNameFrom}/{countryIso2To}/{firstNameTo}/{lastNameTo} | [USES 50 UNITS PER NAME COUPLE] Infer several classifications for a cross border interaction between names (ex. remit, travel, intl com)
+*PersonalApi* | [**corridorBatch**](docs/PersonalApi.md#corridorBatch) | **POST** /api2/json/corridorBatch | [USES 50 UNITS PER NAME PAIR] Infer several classifications for up to 100 cross border interaction between names (ex. remit, travel, intl com)
+*PersonalApi* | [**corridorFull**](docs/PersonalApi.md#corridorFull) | **GET** /api2/json/corridorFull/{countryIso2From}/{personalNameFrom}/{countryIso2To}/{personalNameTo} | [USES 50 UNITS PER NAME COUPLE] Infer several classifications for a cross border interaction between names (ex. remit, travel, intl com)
+*PersonalApi* | [**corridorFullBatch**](docs/PersonalApi.md#corridorFullBatch) | **POST** /api2/json/corridorFullBatch | [USES 50 UNITS PER NAME PAIR] Infer several classifications for up to 100 cross border interaction between names (ex. remit, travel, intl com)
 *PersonalApi* | [**country**](docs/PersonalApi.md#country) | **GET** /api2/json/country/{personalNameFull} | [USES 10 UNITS PER NAME] Infer the likely country of residence of a personal full name, or one surname. Assumes names as they are in the country of residence OR the country of origin.
 *PersonalApi* | [**countryBatch**](docs/PersonalApi.md#countryBatch) | **POST** /api2/json/countryBatch | [USES 10 UNITS PER NAME] Infer the likely country of residence of up to 100 personal full names, or surnames. Assumes names as they are in the country of residence OR the country of origin.
 *PersonalApi* | [**countryFnLn**](docs/PersonalApi.md#countryFnLn) | **GET** /api2/json/countryFnLn/{firstName}/{lastName} | [USES 10 UNITS PER NAME] Infer the likely country of residence of a personal first / last name, or one surname. Assumes names as they are in the country of residence OR the country of origin.
@@ -251,6 +243,8 @@ Class | Method | HTTP request | Description
  - [APIUsageHistoryOut](docs/APIUsageHistoryOut.md)
  - [BatchCommunityEngageFullOut](docs/BatchCommunityEngageFullOut.md)
  - [BatchCommunityEngageOut](docs/BatchCommunityEngageOut.md)
+ - [BatchCorridorFullIn](docs/BatchCorridorFullIn.md)
+ - [BatchCorridorFullOut](docs/BatchCorridorFullOut.md)
  - [BatchCorridorIn](docs/BatchCorridorIn.md)
  - [BatchCorridorOut](docs/BatchCorridorOut.md)
  - [BatchFirstLastNameCasteOut](docs/BatchFirstLastNameCasteOut.md)
@@ -292,6 +286,7 @@ Class | Method | HTTP request | Description
  - [BatchProperNounCategorizedOut](docs/BatchProperNounCategorizedOut.md)
  - [CommunityEngageOptionOut](docs/CommunityEngageOptionOut.md)
  - [CommunityEngageOut](docs/CommunityEngageOut.md)
+ - [CorridorFullOut](docs/CorridorFullOut.md)
  - [CorridorIn](docs/CorridorIn.md)
  - [CorridorOut](docs/CorridorOut.md)
  - [FeedbackLoopOut](docs/FeedbackLoopOut.md)
@@ -340,12 +335,9 @@ Class | Method | HTTP request | Description
  - [SoftwareVersionOut](docs/SoftwareVersionOut.md)
 
 
-<a id="documentation-for-authorization"></a>
 ## Documentation for Authorization
 
-
 Authentication schemes defined for the API:
-<a id="api_key"></a>
 ### api_key
 
 - **Type**: API key

@@ -2,25 +2,25 @@
 
 All URIs are relative to *https://v2.namsor.com/NamSorAPIv2*
 
-| Method | HTTP request | Description |
-|------------- | ------------- | -------------|
-| [**anonymize**](AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source. |
-| [**anonymize1**](AdminApi.md#anonymize1) | **GET** /api2/json/anonymize/{source}/{anonymized}/{token} | Activate/deactivate anonymization for a source. |
-| [**apiKeyInfo**](AdminApi.md#apiKeyInfo) | **GET** /api2/json/apiKeyInfo | Read API Key info. |
-| [**apiStatus**](AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices. |
-| [**apiUsage**](AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage. |
-| [**apiUsageHistory**](AdminApi.md#apiUsageHistory) | **GET** /api2/json/apiUsageHistory | Print historical API usage. |
-| [**apiUsageHistoryAggregate**](AdminApi.md#apiUsageHistoryAggregate) | **GET** /api2/json/apiUsageHistoryAggregate | Print historical API usage (in an aggregated view, by service, by day/hour/min). |
-| [**availableServices**](AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of classification services and usage cost in Units per classification (default is 1&#x3D;ONE Unit). Some API endpoints (ex. Corridor) combine multiple classifiers. |
-| [**disable**](AdminApi.md#disable) | **GET** /api2/json/disable/{source}/{disabled} | Activate/deactivate an API Key. |
-| [**learnable**](AdminApi.md#learnable) | **GET** /api2/json/learnable/{source}/{learnable}/{token} | Activate/deactivate learning from a source. |
-| [**learnable1**](AdminApi.md#learnable1) | **GET** /api2/json/learnable/{source}/{learnable} | Activate/deactivate learning from a source. |
-| [**regions**](AdminApi.md#regions) | **GET** /api2/json/regions | Print basic source statistics. |
-| [**softwareVersion**](AdminApi.md#softwareVersion) | **GET** /api2/json/softwareVersion | Get the current software version |
-| [**taxonomyClasses**](AdminApi.md#taxonomyClasses) | **GET** /api2/json/taxonomyClasses/{classifierName} | Print the taxonomy classes valid for the given classifier. |
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**anonymize**](AdminApi.md#anonymize) | **GET** /api2/json/anonymize/{source}/{anonymized} | Activate/deactivate anonymization for a source.
+[**anonymize1**](AdminApi.md#anonymize1) | **GET** /api2/json/anonymize/{source}/{anonymized}/{token} | Activate/deactivate anonymization for a source.
+[**apiKeyInfo**](AdminApi.md#apiKeyInfo) | **GET** /api2/json/apiKeyInfo | Read API Key info.
+[**apiStatus**](AdminApi.md#apiStatus) | **GET** /api2/json/apiStatus | Prints the current status of the classifiers. A classifier name in apiStatus corresponds to a service name in apiServices.
+[**apiUsage**](AdminApi.md#apiUsage) | **GET** /api2/json/apiUsage | Print current API usage.
+[**apiUsageHistory**](AdminApi.md#apiUsageHistory) | **GET** /api2/json/apiUsageHistory | Print historical API usage.
+[**apiUsageHistoryAggregate**](AdminApi.md#apiUsageHistoryAggregate) | **GET** /api2/json/apiUsageHistoryAggregate | Print historical API usage (in an aggregated view, by service, by day/hour/min).
+[**availableServices**](AdminApi.md#availableServices) | **GET** /api2/json/apiServices | List of classification services and usage cost in Units per classification (default is 1&#x3D;ONE Unit). Some API endpoints (ex. Corridor) combine multiple classifiers.
+[**disable**](AdminApi.md#disable) | **GET** /api2/json/disable/{source}/{disabled} | Activate/deactivate an API Key.
+[**learnable**](AdminApi.md#learnable) | **GET** /api2/json/learnable/{source}/{learnable}/{token} | Activate/deactivate learning from a source.
+[**learnable1**](AdminApi.md#learnable1) | **GET** /api2/json/learnable/{source}/{learnable} | Activate/deactivate learning from a source.
+[**regions**](AdminApi.md#regions) | **GET** /api2/json/regions | Print basic source statistics.
+[**softwareVersion**](AdminApi.md#softwareVersion) | **GET** /api2/json/softwareVersion | Get the current software version
+[**taxonomyClasses**](AdminApi.md#taxonomyClasses) | **GET** /api2/json/taxonomyClasses/{classifierName} | Print the taxonomy classes valid for the given classifier.
 
 
-<a id="anonymize"></a>
+<a name="anonymize"></a>
 # **anonymize**
 > anonymize(source, anonymized)
 
@@ -29,46 +29,37 @@ Activate/deactivate anonymization for a source.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    String source = "source_example"; // String | 
-    Boolean anonymized = true; // Boolean | 
-    try {
-      apiInstance.anonymize(source, anonymized);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#anonymize");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+String source = "source_example"; // String | 
+Boolean anonymized = true; // Boolean | 
+try {
+    apiInstance.anonymize(source, anonymized);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#anonymize");
+    e.printStackTrace();
 }
 ```
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **source** | **String**|  | |
-| **anonymized** | **Boolean**|  | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **String**|  |
+ **anonymized** | **Boolean**|  |
 
 ### Return type
 
@@ -83,13 +74,7 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Anonymization of a source. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="anonymize1"></a>
+<a name="anonymize1"></a>
 # **anonymize1**
 > APIKeyOut anonymize1(source, anonymized, token)
 
@@ -98,49 +83,40 @@ Activate/deactivate anonymization for a source.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    String source = "source_example"; // String | 
-    Boolean anonymized = true; // Boolean | 
-    String token = "token_example"; // String | 
-    try {
-      APIKeyOut result = apiInstance.anonymize1(source, anonymized, token);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#anonymize1");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+String source = "source_example"; // String | 
+Boolean anonymized = true; // Boolean | 
+String token = "token_example"; // String | 
+try {
+    APIKeyOut result = apiInstance.anonymize1(source, anonymized, token);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#anonymize1");
+    e.printStackTrace();
 }
 ```
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **source** | **String**|  | |
-| **anonymized** | **Boolean**|  | |
-| **token** | **String**|  | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **String**|  |
+ **anonymized** | **Boolean**|  |
+ **token** | **String**|  |
 
 ### Return type
 
@@ -155,13 +131,7 @@ public class Example {
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Anonymization of a source. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="apiKeyInfo"></a>
+<a name="apiKeyInfo"></a>
 # **apiKeyInfo**
 > APIKeyOut apiKeyInfo()
 
@@ -170,36 +140,27 @@ Read API Key info.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    try {
-      APIKeyOut result = apiInstance.apiKeyInfo();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#apiKeyInfo");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    APIKeyOut result = apiInstance.apiKeyInfo();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#apiKeyInfo");
+    e.printStackTrace();
 }
 ```
 
@@ -219,13 +180,7 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Read API Key (uncached, i.e. DB read) |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="apiStatus"></a>
+<a name="apiStatus"></a>
 # **apiStatus**
 > APIClassifiersStatusOut apiStatus()
 
@@ -234,36 +189,27 @@ Prints the current status of the classifiers. A classifier name in apiStatus cor
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    try {
-      APIClassifiersStatusOut result = apiInstance.apiStatus();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#apiStatus");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    APIClassifiersStatusOut result = apiInstance.apiStatus();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#apiStatus");
+    e.printStackTrace();
 }
 ```
 
@@ -283,13 +229,7 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Available classifiers and status |  -  |
-| **401** | Missing or incorrect token |  -  |
-
-<a id="apiUsage"></a>
+<a name="apiUsage"></a>
 # **apiUsage**
 > APIPeriodUsageOut apiUsage()
 
@@ -298,36 +238,27 @@ Print current API usage.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    try {
-      APIPeriodUsageOut result = apiInstance.apiUsage();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#apiUsage");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    APIPeriodUsageOut result = apiInstance.apiUsage();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#apiUsage");
+    e.printStackTrace();
 }
 ```
 
@@ -347,13 +278,7 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Print current API usage. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="apiUsageHistory"></a>
+<a name="apiUsageHistory"></a>
 # **apiUsageHistory**
 > APIUsageHistoryOut apiUsageHistory()
 
@@ -362,36 +287,27 @@ Print historical API usage.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    try {
-      APIUsageHistoryOut result = apiInstance.apiUsageHistory();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#apiUsageHistory");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    APIUsageHistoryOut result = apiInstance.apiUsageHistory();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#apiUsageHistory");
+    e.printStackTrace();
 }
 ```
 
@@ -411,13 +327,7 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Print historical API usage (NB. new output format form v2.0.15) |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="apiUsageHistoryAggregate"></a>
+<a name="apiUsageHistoryAggregate"></a>
 # **apiUsageHistoryAggregate**
 > APIUsageAggregatedOut apiUsageHistoryAggregate()
 
@@ -426,36 +336,27 @@ Print historical API usage (in an aggregated view, by service, by day/hour/min).
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    try {
-      APIUsageAggregatedOut result = apiInstance.apiUsageHistoryAggregate();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#apiUsageHistoryAggregate");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    APIUsageAggregatedOut result = apiInstance.apiUsageHistoryAggregate();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#apiUsageHistoryAggregate");
+    e.printStackTrace();
 }
 ```
 
@@ -475,13 +376,7 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Print historical API usage. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="availableServices"></a>
+<a name="availableServices"></a>
 # **availableServices**
 > APIServicesOut availableServices()
 
@@ -490,36 +385,27 @@ List of classification services and usage cost in Units per classification (defa
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    try {
-      APIServicesOut result = apiInstance.availableServices();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#availableServices");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    APIServicesOut result = apiInstance.availableServices();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#availableServices");
+    e.printStackTrace();
 }
 ```
 
@@ -539,13 +425,7 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Available services |  -  |
-| **401** | Missing or incorrect token |  -  |
-
-<a id="disable"></a>
+<a name="disable"></a>
 # **disable**
 > disable(source, disabled)
 
@@ -554,46 +434,37 @@ Activate/deactivate an API Key.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    String source = "source_example"; // String | The API Key to set as enabled/disabled.
-    Boolean disabled = true; // Boolean | 
-    try {
-      apiInstance.disable(source, disabled);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#disable");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+String source = "source_example"; // String | The API Key to set as enabled/disabled.
+Boolean disabled = true; // Boolean | 
+try {
+    apiInstance.disable(source, disabled);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#disable");
+    e.printStackTrace();
 }
 ```
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **source** | **String**| The API Key to set as enabled/disabled. | |
-| **disabled** | **Boolean**|  | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **String**| The API Key to set as enabled/disabled. |
+ **disabled** | **Boolean**|  |
 
 ### Return type
 
@@ -608,13 +479,7 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Disabled the API Key. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="learnable"></a>
+<a name="learnable"></a>
 # **learnable**
 > APIKeyOut learnable(source, learnable, token)
 
@@ -623,49 +488,40 @@ Activate/deactivate learning from a source.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    String source = "source_example"; // String | The API Key to set as learnable/non learnable.
-    Boolean learnable = true; // Boolean | 
-    String token = "token_example"; // String | 
-    try {
-      APIKeyOut result = apiInstance.learnable(source, learnable, token);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#learnable");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+String source = "source_example"; // String | The API Key to set as learnable/non learnable.
+Boolean learnable = true; // Boolean | 
+String token = "token_example"; // String | 
+try {
+    APIKeyOut result = apiInstance.learnable(source, learnable, token);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#learnable");
+    e.printStackTrace();
 }
 ```
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **source** | **String**| The API Key to set as learnable/non learnable. | |
-| **learnable** | **Boolean**|  | |
-| **token** | **String**|  | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **String**| The API Key to set as learnable/non learnable. |
+ **learnable** | **Boolean**|  |
+ **token** | **String**|  |
 
 ### Return type
 
@@ -680,13 +536,7 @@ public class Example {
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Set learning from source. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="learnable1"></a>
+<a name="learnable1"></a>
 # **learnable1**
 > learnable1(source, learnable)
 
@@ -695,46 +545,37 @@ Activate/deactivate learning from a source.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    String source = "source_example"; // String | The API Key to set as learnable/non learnable.
-    Boolean learnable = true; // Boolean | 
-    try {
-      apiInstance.learnable1(source, learnable);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#learnable1");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+String source = "source_example"; // String | The API Key to set as learnable/non learnable.
+Boolean learnable = true; // Boolean | 
+try {
+    apiInstance.learnable1(source, learnable);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#learnable1");
+    e.printStackTrace();
 }
 ```
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **source** | **String**| The API Key to set as learnable/non learnable. | |
-| **learnable** | **Boolean**|  | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **String**| The API Key to set as learnable/non learnable. |
+ **learnable** | **Boolean**|  |
 
 ### Return type
 
@@ -749,13 +590,7 @@ null (empty response body)
  - **Content-Type**: Not defined
  - **Accept**: Not defined
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Set learning from source. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="regions"></a>
+<a name="regions"></a>
 # **regions**
 > RegionOut regions()
 
@@ -764,36 +599,27 @@ Print basic source statistics.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    try {
-      RegionOut result = apiInstance.regions();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#regions");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    RegionOut result = apiInstance.regions();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#regions");
+    e.printStackTrace();
 }
 ```
 
@@ -813,13 +639,7 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | List of countries and regions. |  -  |
-| **401** | Missing or incorrect API Key |  -  |
-
-<a id="softwareVersion"></a>
+<a name="softwareVersion"></a>
 # **softwareVersion**
 > SoftwareVersionOut softwareVersion()
 
@@ -828,36 +648,27 @@ Get the current software version
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    try {
-      SoftwareVersionOut result = apiInstance.softwareVersion();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#softwareVersion");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+try {
+    SoftwareVersionOut result = apiInstance.softwareVersion();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#softwareVersion");
+    e.printStackTrace();
 }
 ```
 
@@ -877,13 +688,7 @@ This endpoint does not need any parameter.
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | The current software version |  -  |
-| **401** | Missing or incorrect token |  -  |
-
-<a id="taxonomyClasses"></a>
+<a name="taxonomyClasses"></a>
 # **taxonomyClasses**
 > APIClassifierTaxonomyOut taxonomyClasses(classifierName)
 
@@ -892,45 +697,36 @@ Print the taxonomy classes valid for the given classifier.
 ### Example
 ```java
 // Import classes:
-import com.namsor.sdk2.invoke.ApiClient;
-import com.namsor.sdk2.invoke.ApiException;
-import com.namsor.sdk2.invoke.Configuration;
-import com.namsor.sdk2.invoke.auth.*;
-import com.namsor.sdk2.invoke.models.*;
-import com.namsor.sdk2.api.AdminApi;
+//import com.namsor.sdk2.invoke.ApiClient;
+//import com.namsor.sdk2.invoke.ApiException;
+//import com.namsor.sdk2.invoke.Configuration;
+//import com.namsor.sdk2.invoke.auth.*;
+//import com.namsor.sdk2.api.AdminApi;
 
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://v2.namsor.com/NamSorAPIv2");
-    
-    // Configure API key authorization: api_key
-    ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
-    api_key.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //api_key.setApiKeyPrefix("Token");
+ApiClient defaultClient = Configuration.getDefaultApiClient();
 
-    AdminApi apiInstance = new AdminApi(defaultClient);
-    String classifierName = "classifierName_example"; // String | 
-    try {
-      APIClassifierTaxonomyOut result = apiInstance.taxonomyClasses(classifierName);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling AdminApi#taxonomyClasses");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
+// Configure API key authorization: api_key
+ApiKeyAuth api_key = (ApiKeyAuth) defaultClient.getAuthentication("api_key");
+api_key.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.setApiKeyPrefix("Token");
+
+AdminApi apiInstance = new AdminApi();
+String classifierName = "classifierName_example"; // String | 
+try {
+    APIClassifierTaxonomyOut result = apiInstance.taxonomyClasses(classifierName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdminApi#taxonomyClasses");
+    e.printStackTrace();
 }
 ```
 
 ### Parameters
 
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **classifierName** | **String**|  | |
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **classifierName** | **String**|  |
 
 ### Return type
 
@@ -944,10 +740,4 @@ public class Example {
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Available plans |  -  |
-| **401** | Missing or incorrect token |  -  |
 

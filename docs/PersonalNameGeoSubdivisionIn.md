@@ -1,16 +1,13 @@
 
-
 # PersonalNameGeoSubdivisionIn
 
-
 ## Properties
-
-| Name | Type | Description | Notes |
-|------------ | ------------- | ------------- | -------------|
-|**id** | **String** |  |  [optional] |
-|**name** | **String** |  |  [optional] |
-|**countryIso2** | **String** |  |  [optional] |
-|**subdivisionIso** | **String** |  |  [optional] |
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**id** | **String** |  |  [optional]
+**name** | **String** |  |  [optional]
+**countryIso2** | **String** |  |  [optional]
+**subdivisionIso** | **String** |  |  [optional]
 
 
 
